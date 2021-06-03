@@ -7,6 +7,7 @@ public class User
     private String email;
     private String password;
     private String phoneNumber;
+    private String bio = null;
 
     public User(String userName, String email, String password)
     {
@@ -76,5 +77,15 @@ public class User
                 ", password='" + password + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
+    }
+
+    public void setBio(String bio)
+    {
+        this.bio = bio;
+    }
+
+    public String getBio()
+    {
+        return bio;
     }
 }
