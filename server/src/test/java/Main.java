@@ -1,29 +1,31 @@
-import api.Handler;
-import api.Response;
-import application.User;
-import com.google.gson.Gson;
+import api.ApiHandler;
+import api.Request;
 import api.RequestPipeline;
+import api.Response;
+import application.datamanagement.database.DatabaseManager;
 
 import java.io.IOException;
 import java.net.ServerSocket;
-import java.util.ArrayList;
+import java.sql.SQLException;
 
 public class Main
 {
-    public static void main(String[] args) throws IOException
+    public static void main(String[] args) throws IOException, SQLException
     {
         ServerSocket serverSocket = new ServerSocket(8080);
-        RequestPipeline queryPipeline = new RequestPipeline(serverSocket);
-        Handler handler = new Handler(queryPipeline);
-        handler.listen();
-        Object object = handler.getObject();
-        User user1 = (User) object;
-        handler.listen();
-        Object object2 = handler.getObject();
-        User user2 = (User) object2;
-        ArrayList<User> users = new ArrayList<>();
-        users.add(user1);
-        users.add(user2);
-        System.out.println(users);
+        RequestPipeline requestPipeline = new RequestPipeline(serverSocket);
+        ApiHandler handler = new ApiHandler(requestPipeline);
+        DatabaseManager databaseManager = new DatabaseManager();
+        Request request = handler.listen();
+        if (request.getLabel().equals("IS_NEW"))
+        {
+            System.out.println("i am in if");
+            if (!databaseManager.isNew(request.getUsername()))
+            {
+                ApiHandler apiHandler = new ApiHandler(requestPipeline);
+                Response itsNew = new Response("true");
+                apiHandler.sendResponse(itsNew);
+            }
+        }
     }
 }

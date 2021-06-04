@@ -15,12 +15,12 @@ public class RequestPipeline
 
     public RequestPipeline(ServerSocket serverSocket) throws IOException
     {
-        initialize(serverSocket);
+        this.serverSocket = serverSocket;
+        initialize();
     }
 
-    private void initialize(ServerSocket serverSocket) throws IOException
+    private void initialize() throws IOException
     {
-        this.serverSocket = serverSocket;
         socket = serverSocket.accept();
         dataInputStream = new DataInputStream(this.socket.getInputStream());
         dataOutputStream = new DataOutputStream(this.socket.getOutputStream());

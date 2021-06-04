@@ -33,4 +33,13 @@ public class DatabaseManager
         }
         preparedStatement.execute();
     }
+
+    public boolean isNew(String usernameToCheck) throws SQLException
+    {
+        String searchQuery = "SELECT username FROM users " +
+                "WHERE username = ?";
+        PreparedStatement preparedStatement = CONNECTION.prepareStatement(searchQuery);
+        preparedStatement.setString(1,usernameToCheck);
+        return preparedStatement.execute();
+    }
 }

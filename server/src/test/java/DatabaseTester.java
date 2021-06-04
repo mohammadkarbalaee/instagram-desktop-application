@@ -15,7 +15,7 @@ public class DatabaseTester
         DataManager dataManager = new DataManager();
         User user = new User("hasan","hasan@yahoo.com","dbaa");
         user.setBio("here i am");
-        File file = new File("C:\\Users\\Muhammad\\Desktop\\hasan.jpg");
+        File file = new File("C:\\Users\\Muhammad\\Desktop\\ali.jpg");
         FileInputStream inputStream = new FileInputStream(file);
         BufferedImage bufferedImage = ImageIO.read(inputStream);
         bufferedImage.flush();
