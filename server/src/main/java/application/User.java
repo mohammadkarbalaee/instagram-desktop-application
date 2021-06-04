@@ -1,13 +1,14 @@
 package application;
 
+import java.awt.image.BufferedImage;
+
 public class User
 {
-    private String name;
     private String userName;
     private String email;
     private String password;
-    private String phoneNumber;
     private String bio = null;
+    private BufferedImage profilePhoto = null;
 
     public User(String userName, String email, String password)
     {
@@ -16,26 +17,16 @@ public class User
         this.password = password;
     }
 
-    public String getPhoneNumber()
+    public void setProfilePhoto(BufferedImage profilePhoto)
     {
-        return phoneNumber;
+        this.profilePhoto = profilePhoto;
     }
 
-    public void setPhoneNumber(String phoneNumber)
+    public BufferedImage getProfilePhoto()
     {
-        this.phoneNumber =
-                phoneNumber;
+        return profilePhoto;
     }
 
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
 
     public String getUserName()
     {
@@ -65,18 +56,6 @@ public class User
     public void setPassword(String password)
     {
         this.password = password;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", userName='" + userName + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
     }
 
     public void setBio(String bio)

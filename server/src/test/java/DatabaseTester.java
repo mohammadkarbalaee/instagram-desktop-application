@@ -1,13 +1,26 @@
-import application.Database.DatabaseManager;
+import application.DataManagement.DataManager;
 import application.User;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class DatabaseTester
 {
-    public static void main(String[] args) throws SQLException
+    public static void main(String[] args) throws SQLException, IOException
     {
-        DatabaseManager databaseManager = new DatabaseManager();
-        databaseManager.addUserRecord(new User("muhammad.ksht","muhammad.ksht@gmail.com","123456"));
+        DataManager dataManager = new DataManager();
+        User user = new User("hasan","hasan@yahoo.com","dbaa");
+        user.setBio("here i am");
+        File file = new File("C:\\Users\\Muhammad\\Desktop\\hasan.jpg");
+        FileInputStream inputStream = new FileInputStream(file);
+        BufferedImage bufferedImage = ImageIO.read(inputStream);
+        bufferedImage.flush();
+        inputStream.close();
+        user.setProfilePhoto(bufferedImage);
+        dataManager.saveUser(user);
     }
 }
