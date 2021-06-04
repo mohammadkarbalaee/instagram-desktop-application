@@ -1,4 +1,4 @@
-import application.DataManagement.DataManager;
+import application.datamanagement.DataManager;
 import application.User;
 
 import javax.imageio.ImageIO;

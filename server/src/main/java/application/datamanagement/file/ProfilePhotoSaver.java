@@ -1,13 +1,10 @@
-package application.DataManagement.File;
-
-import application.DataManagement.DataManager;
+package application.datamanagement.file;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class ProfilePhotoSaver
 {

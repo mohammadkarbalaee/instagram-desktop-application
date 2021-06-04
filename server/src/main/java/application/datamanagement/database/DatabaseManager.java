@@ -1,6 +1,5 @@
-package application.DataManagement.Database;
+package application.datamanagement.database;
 
-import application.DataManagement.DataManager;
 import application.User;
 
 import java.sql.Connection;

@@ -1,7 +1,7 @@
-package application.DataManagement;
+package application.datamanagement;
 
-import application.DataManagement.Database.DatabaseManager;
-import application.DataManagement.File.ProfilePhotoSaver;
+import application.datamanagement.database.DatabaseManager;
+import application.datamanagement.file.ProfilePhotoSaver;
 import application.User;
 
 import java.io.IOException;
