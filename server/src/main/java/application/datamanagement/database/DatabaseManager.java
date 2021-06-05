@@ -1,18 +1,16 @@
 package application.datamanagement.database;
 
-import application.User;
+import application.util.User;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+
 
 public class DatabaseManager
 {
     private final String URL_CONNECTION = "jdbc:mysql://localhost:3306/jdbc?user=root";
     private final Connection CONNECTION = DriverManager.getConnection(URL_CONNECTION);
 
-    public DatabaseManager() throws SQLException{}
+    public DatabaseManager() throws SQLException {}
 
     public void addUserRecord(User user) throws SQLException
     {
@@ -40,6 +38,16 @@ public class DatabaseManager
                 "WHERE username = ?";
         PreparedStatement preparedStatement = CONNECTION.prepareStatement(searchQuery);
         preparedStatement.setString(1,usernameToCheck);
-        return preparedStatement.execute();
+        ResultSet resultSet = preparedStatement.executeQuery();
+        boolean result;
+        if (!resultSet.next())
+        {
+            result = true;
+        }
+        else
+        {
+            result = false;
+        }
+        return result;
     }
 }

@@ -3,12 +3,12 @@ package api;
 public class Request
 {
     private String label;
-    private String serializedObject;
-    private String username;
+    private String body;
 
-    public String getUsername()
+    public Request(String label, String body)
     {
-        return username;
+        this.label = label;
+        this.body = body;
     }
 
     public String getLabel()
@@ -16,8 +16,8 @@ public class Request
         return label;
     }
 
-    public String getSerializedObject()
+    public String getBody()
     {
-        return serializedObject;
+        return body;
     }
 }

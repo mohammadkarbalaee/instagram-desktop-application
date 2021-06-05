@@ -1,6 +1,4 @@
-package application;
-
-import java.awt.image.BufferedImage;
+package application.signup;
 
 public class User
 {
@@ -8,7 +6,6 @@ public class User
     private String email;
     private String password;
     private String bio = null;
-    private BufferedImage profilePhoto = null;
 
     public User(String userName, String email, String password)
     {
@@ -16,17 +13,6 @@ public class User
         this.email = email;
         this.password = password;
     }
-
-    public void setProfilePhoto(BufferedImage profilePhoto)
-    {
-        this.profilePhoto = profilePhoto;
-    }
-
-    public BufferedImage getProfilePhoto()
-    {
-        return profilePhoto;
-    }
-
 
     public String getUserName()
     {

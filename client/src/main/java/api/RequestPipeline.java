@@ -7,28 +7,36 @@ import java.net.Socket;
 
 public class RequestPipeline
 {
-    private Socket socket;
-    private DataInputStream dataInputStream;
-    private DataOutputStream dataOutputStream;
-
-    public RequestPipeline(Socket socket) throws IOException
+    private static Socket socket;
+    static
     {
-        initialize(socket);
+        try
+        {
+            socket = new Socket("localhost",8080);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
-    private void initialize(Socket socket) throws IOException
+    private static DataInputStream dataInputStream;
+    private static DataOutputStream dataOutputStream;
+
+    public RequestPipeline() throws IOException {}
+
+    public static void build() throws IOException
     {
-        this.socket = socket;
-        dataInputStream = new DataInputStream(this.socket.getInputStream());
-        dataOutputStream = new DataOutputStream(this.socket.getOutputStream());
+        dataInputStream = new DataInputStream(socket.getInputStream());
+        dataOutputStream = new DataOutputStream(socket.getOutputStream());
     }
 
-    public DataInputStream getDataInputStream()
+    public static DataInputStream getDataInputStream()
     {
         return dataInputStream;
     }
 
-    public DataOutputStream getDataOutputStream()
+    public static DataOutputStream getDataOutputStream()
     {
         return dataOutputStream;
     }

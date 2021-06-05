@@ -1,35 +1,26 @@
 package api;
 
-import com.google.gson.Gson;
-
-import java.io.*;
-import java.net.ServerSocket;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.Socket;
 
 public class RequestPipeline
 {
-    private ServerSocket serverSocket;
+    private DataInputStream dataInputStream;
+    private DataOutputStream dataOutputStream;
     private Socket socket;
-    protected DataInputStream dataInputStream;
-    protected DataOutputStream dataOutputStream;
 
-    public RequestPipeline(ServerSocket serverSocket) throws IOException
+    public RequestPipeline(Socket socket) throws IOException
     {
-        this.serverSocket = serverSocket;
-        initialize();
+        this.socket = socket;
+        build();
     }
 
-    private void initialize() throws IOException
+    private void build() throws IOException
     {
-        socket = serverSocket.accept();
-        dataInputStream = new DataInputStream(this.socket.getInputStream());
-        dataOutputStream = new DataOutputStream(this.socket.getOutputStream());
-    }
-
-    public Request listen() throws IOException
-    {
-        Gson gson = new Gson();
-        return gson.fromJson(dataInputStream.readUTF(),Request.class);
+        dataInputStream = new DataInputStream(socket.getInputStream());
+        dataOutputStream = new DataOutputStream(socket.getOutputStream());
     }
 
     public DataInputStream getDataInputStream()
