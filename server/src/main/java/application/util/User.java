@@ -1,12 +1,11 @@
-package application;
+package application.util;
 
 public class User
 {
-    private String name;
     private String userName;
     private String email;
     private String password;
-    private String phoneNumber;
+    private String bio = null;
 
     public User(String userName, String email, String password)
     {
@@ -15,26 +14,6 @@ public class User
         this.password = password;
     }
 
-    public String getPhoneNumber()
-    {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber)
-    {
-        this.phoneNumber =
-                phoneNumber;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
 
     public String getUserName()
     {
@@ -64,5 +43,15 @@ public class User
     public void setPassword(String password)
     {
         this.password = password;
+    }
+
+    public void setBio(String bio)
+    {
+        this.bio = bio;
+    }
+
+    public String getBio()
+    {
+        return bio;
     }
 }

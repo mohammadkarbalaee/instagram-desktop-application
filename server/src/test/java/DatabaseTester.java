@@ -1,5 +1,5 @@
 import application.datamanagement.DataManager;
-import application.User;
+import application.util.User;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

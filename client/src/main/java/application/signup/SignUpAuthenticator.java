@@ -1,17 +1,15 @@
-package application;
+package application.signup;
 
-import api.Handler;
+import api.ApiHandler;
 import api.Request;
 
 import java.io.IOException;
 
 public class SignUpAuthenticator
 {
-    private Handler handler;
-
     public boolean checkPasswordStrength(String password)
     {
-        String passwordRegex = "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[?!#$%^&*()_+])[a-zA-Z0-9?!#$%^&*()_+]{8,}";
+        String passwordRegex = "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[?!#$%^&@*()_+])[a-zA-Z0-9?!#$%^&@*()_+]{8,}";
         return password.matches(passwordRegex);
     }
 
@@ -24,9 +22,8 @@ public class SignUpAuthenticator
     public boolean isNew(String username) throws IOException
     {
         Request checkIsNew = new Request("IS_NEW",username);
-        handler = new Handler(checkIsNew);
-        handler.send();
-        return handler.receiveIS_NEWresponse();
+        ApiHandler apiHandler = new ApiHandler(checkIsNew);
+        apiHandler.sendRequest();
+        return apiHandler.receiveIS_NEWresponse();
     }
-
 }

@@ -6,22 +6,22 @@ import java.io.IOException;
 
 public class ApiHandler
 {
-    RequestPipeline requestPipeline;
-    Gson gson = new Gson();
+    private final Gson gson = new Gson();
+    private final RequestPipeline requestPipeline;
 
-    public ApiHandler(RequestPipeline requestPipeline) throws IOException
+    public ApiHandler(RequestPipeline requestPipeline)
     {
         this.requestPipeline = requestPipeline;
     }
 
-    public Request listen() throws IOException
+    public Request listenToClient() throws IOException
     {
         return gson.fromJson(requestPipeline.getDataInputStream().readUTF(),Request.class);
     }
 
-    public void sendResponse(Response response) throws IOException
+    public void answerToClient(Response response) throws IOException
     {
-        requestPipeline.dataOutputStream.writeUTF(gson.toJson(response));
-        requestPipeline.dataOutputStream.flush();
+        requestPipeline.getDataOutputStream().writeUTF(gson.toJson(response));
+        requestPipeline.getDataOutputStream().flush();
     }
 }
