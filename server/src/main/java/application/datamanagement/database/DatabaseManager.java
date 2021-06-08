@@ -1,6 +1,7 @@
 package application.datamanagement.database;
 
 import application.util.User;
+import application.util.followerfollowing.FollowerFollowingPack;
 
 import java.sql.*;
 
@@ -29,7 +30,10 @@ public class DatabaseManager
         {
             preparedStatement.setString(4,"");
         }
+
         preparedStatement.execute();
+
+        preparedStatement.close();
     }
 
     public boolean isNew(String usernameToCheck) throws SQLException
@@ -49,5 +53,48 @@ public class DatabaseManager
             result = false;
         }
         return result;
+    }
+
+    public void setFollowerFollowing(FollowerFollowingPack pack) throws SQLException
+    {
+        String query1;
+        String query2;
+        PreparedStatement statement1;
+        PreparedStatement statement2;
+
+        if (pack.isForUnfollow())
+        {
+            query1 = "DELETE FROM followers " +
+                    "WHERE username = ?";
+            query2 = "DELETE FROM followings " +
+                    "WHERE username = ?";
+
+            statement1 = CONNECTION.prepareStatement(query1);
+            statement2 = CONNECTION.prepareStatement(query2);
+
+            statement1.setString(1,pack.getUsername());
+            statement2.setString(1,pack.getFollower());
+        }
+        else
+        {
+            query1 = "INSERT INTO followers(username,followers)" +
+                    " VALUES (?, ?)";
+            query2 = "INSERT INTO followings(username,followings)" +
+                    " VALUES (?, ?)";
+
+            statement1 = CONNECTION.prepareStatement(query1);
+            statement2 = CONNECTION.prepareStatement(query2);
+
+            statement1.setString(1,pack.getUsername());
+            statement1.setString(2,pack.getFollower());
+            statement2.setString(1,pack.getFollower());
+            statement2.setString(2,pack.getUsername());
+        }
+
+        statement1.execute();
+        statement2.execute();
+
+        statement1.close();
+        statement2.close();
     }
 }

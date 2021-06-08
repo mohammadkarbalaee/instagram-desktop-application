@@ -21,7 +21,6 @@ public class ApiHandler
 
     public void sendRequest() throws IOException
     {
-        System.out.println("request is " + request);
         RequestPipeline.getDataOutputStream().writeUTF(gson.toJson(request));
         RequestPipeline.getDataOutputStream().flush();
     }

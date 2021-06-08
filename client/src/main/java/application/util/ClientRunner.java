@@ -1,23 +1,23 @@
 package application.util;
 
 import api.ApiHandler;
+import api.Request;
 import api.RequestPipeline;
-import application.signup.SignUpper;
-import application.signup.User;
+import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Runner
+public class ClientRunner
 {
     public static void main(String[] args) throws IOException
     {
         Scanner in = new Scanner(System.in);
+        Gson gson = new Gson();
         RequestPipeline.build();
-        User user = new User("reza","z@sbu.com","123aaaBBB@#");
-        user.setBio("HELLO EVERYONE");
-        SignUpper signUpper = new SignUpper(user);
-        ApiHandler apiHandler = new ApiHandler(signUpper.makeRequest());
+        FollowerFollowingPack pack = new FollowerFollowingPack("reyhan","muhammad.ksht", true);
+        Request request = new Request("SEND_FOLLOWER",gson.toJson(pack));
+        ApiHandler apiHandler = new ApiHandler(request);
         apiHandler.sendRequest();
         in.next();
     }

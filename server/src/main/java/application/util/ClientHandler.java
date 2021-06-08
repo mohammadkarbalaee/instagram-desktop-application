@@ -6,6 +6,7 @@ import api.RequestPipeline;
 import api.Response;
 import application.datamanagement.DataManager;
 import application.datamanagement.database.DatabaseManager;
+import application.util.followerfollowing.FollowerFollowingPack;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -35,10 +36,11 @@ public class ClientHandler implements Runnable
     @Override
     public void run()
     {
-       action();
+        try{ action();}
+        catch (SQLException throwables) {throwables.printStackTrace();}
     }
 
-    private void action()
+    private void action() throws SQLException
     {
         while(true)
         {
@@ -66,6 +68,11 @@ public class ClientHandler implements Runnable
                     dataManager.saveUser(gson.fromJson(request.getBody(), User.class));
                 }
                 catch (SQLException | IOException throwables) {}
+            }
+            else if (request.getLabel().equals("SEND_FOLLOWER"))
+            {
+                FollowerFollowingPack pack = gson.fromJson(request.getBody(),FollowerFollowingPack.class);
+                databaseManager.setFollowerFollowing(pack);
             }
         }
     }
