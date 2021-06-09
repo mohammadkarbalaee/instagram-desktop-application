@@ -1,5 +1,6 @@
 package api;
 
+import application.search.SearchResult;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -38,5 +39,13 @@ public class ApiHandler
         {
             return false;
         }
+    }
+
+    public SearchResult receiveSearchResult() throws IOException
+    {
+        String json = RequestPipeline.getDataInputStream().readUTF();
+        Response responseObject = gson.fromJson(json,Response.class);
+        String searchResultJson = responseObject.getBody();
+        return gson.fromJson(searchResultJson,SearchResult.class);
     }
 }

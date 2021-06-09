@@ -7,6 +7,7 @@ import api.Response;
 import application.datamanagement.DataManager;
 import application.datamanagement.database.DatabaseManager;
 import application.util.followerfollowing.FollowerFollowingPack;
+import application.util.search.SearchResult;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -37,10 +38,10 @@ public class ClientHandler implements Runnable
     public void run()
     {
         try{ action();}
-        catch (SQLException throwables) {throwables.printStackTrace();}
+        catch (SQLException | IOException throwables) {throwables.printStackTrace();}
     }
 
-    private void action() throws SQLException
+    private void action() throws SQLException, IOException
     {
         while(true)
         {
@@ -53,7 +54,7 @@ public class ClientHandler implements Runnable
             {
                 try
                 {
-                    if (databaseManager.isNew(request.getBody()))
+                    if (!databaseManager.checkExistence(request.getBody()))
                     {
                         Response itsNew = new Response("true");
                         apiHandler.answerToClient(itsNew);
@@ -73,6 +74,20 @@ public class ClientHandler implements Runnable
             {
                 FollowerFollowingPack pack = gson.fromJson(request.getBody(),FollowerFollowingPack.class);
                 databaseManager.setFollowerFollowing(pack);
+            }
+            else if(request.getLabel().equals("GET_SEARCH_RESULT"))
+            {
+                SearchResult searchResult = databaseManager.getSearchResult(request.getBody());
+                if (searchResult == null)
+                {
+                    Response response = new Response("null");
+                    apiHandler.answerToClient(response);
+                }
+                else
+                {
+                    Response response = new Response(gson.toJson(searchResult));
+                    apiHandler.answerToClient(response);
+                }
             }
         }
     }
