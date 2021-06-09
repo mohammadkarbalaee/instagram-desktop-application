@@ -1,4 +1,4 @@
-package application.util;
+package application.followerfollowing;
 
 public class FollowerFollowingPack
 {

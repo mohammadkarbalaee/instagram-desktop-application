@@ -2,6 +2,7 @@ package application.datamanagement.database;
 
 import application.util.User;
 import application.util.followerfollowing.FollowerFollowingPack;
+import application.util.search.SearchResult;
 
 import java.sql.*;
 
@@ -36,7 +37,7 @@ public class DatabaseManager
         preparedStatement.close();
     }
 
-    public boolean isNew(String usernameToCheck) throws SQLException
+    public boolean checkExistence(String usernameToCheck) throws SQLException
     {
         String searchQuery = "SELECT username FROM users " +
                 "WHERE username = ?";
@@ -46,12 +47,15 @@ public class DatabaseManager
         boolean result;
         if (!resultSet.next())
         {
-            result = true;
+            result = false;
         }
         else
         {
-            result = false;
+            result = true;
         }
+
+        preparedStatement.close();
+
         return result;
     }
 
@@ -77,9 +81,9 @@ public class DatabaseManager
         }
         else
         {
-            query1 = "INSERT INTO followers(username,followers)" +
+            query1 = "INSERT INTO followers(username,follower)" +
                     " VALUES (?, ?)";
-            query2 = "INSERT INTO followings(username,followings)" +
+            query2 = "INSERT INTO followings(username,following)" +
                     " VALUES (?, ?)";
 
             statement1 = CONNECTION.prepareStatement(query1);
@@ -96,5 +100,54 @@ public class DatabaseManager
 
         statement1.close();
         statement2.close();
+    }
+
+    public SearchResult getSearchResult(String usernameToManipulate) throws SQLException
+    {
+        if (checkExistence(usernameToManipulate))
+        {
+            SearchResult searchResult = new SearchResult();
+
+            String getFollowersQuery = "SELECT * FROM followers " +
+                    "WHERE username = ?";
+            PreparedStatement statement1 = CONNECTION.prepareStatement(getFollowersQuery);
+            statement1.setString(1,usernameToManipulate);
+            ResultSet followersSet = statement1.executeQuery();
+            while (followersSet.next())
+            {
+                searchResult.addFollowers(followersSet.getString("follower"));
+            }
+            statement1.close();
+
+            String getFollowingsQuery = "SELECT * FROM followings " +
+                    "WHERE username = ?";
+            PreparedStatement statement2 = CONNECTION.prepareStatement(getFollowingsQuery);
+            statement2.setString(1,usernameToManipulate);
+            ResultSet followingsSet = statement2.executeQuery();
+            while (followingsSet.next())
+            {
+                searchResult.addFollowings(followingsSet.getString("following"));
+            }
+            statement2.close();
+
+            String getUser = "SELECT * FROM users " +
+                    "WHERE username = ?";
+            PreparedStatement statement3 = CONNECTION.prepareStatement(getUser);
+            statement3.setString(1,usernameToManipulate);
+            ResultSet userSet = statement3.executeQuery();
+            searchResult.setUsername(usernameToManipulate);
+            while (userSet.next())
+            {
+                searchResult.setEmail(userSet.getString("email"));
+                searchResult.setBio(userSet.getString("bio"));
+            }
+            statement3.close();
+
+            return searchResult;
+        }
+        else
+        {
+            return null;
+        }
     }
 }
