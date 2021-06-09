@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="javafx-sdk-11.0">
+    <ANNOTATIONS>
+      <root url="file://$USER_HOME$/Downloads/Compressed/javafx-sdk-11.0.2" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/Downloads/Compressed/javafx-sdk-11.0.2" />
+      <root url="jar://$USER_HOME$/Downloads/Compressed/openjfx-11.0.2_windows-x64_bin-sdk.zip!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$USER_HOME$/Downloads/Compressed/javafx-sdk-11.0.2" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="file://$USER_HOME$/Downloads/Compressed/javafx-sdk-11.0.2" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/Compressed/javafx-sdk-11.0.2" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Downloads/Compressed/javafx-sdk-11.0.2" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/Compressed/javafx-sdk-11.0.2" recursive="false" type="SOURCES" />
+  </library>
+</component>
