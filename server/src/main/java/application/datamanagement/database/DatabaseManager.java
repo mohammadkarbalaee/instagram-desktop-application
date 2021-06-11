@@ -9,12 +9,21 @@ import java.sql.*;
 
 public class DatabaseManager
 {
-    private final String URL_CONNECTION = "jdbc:mysql://localhost:3306/jdbc?user=root";
-    private final Connection CONNECTION = DriverManager.getConnection(URL_CONNECTION);
+    private static final String URL_CONNECTION = "jdbc:mysql://localhost:3306/jdbc?user=root";
+    private static Connection CONNECTION;
 
-    public DatabaseManager() throws SQLException {}
+    static
+    {
+        try
+        {
+            CONNECTION = DriverManager.getConnection(URL_CONNECTION);
+        } catch (SQLException throwables)
+        {
+            throwables.printStackTrace();
+        }
+    }
 
-    public void addUserRecord(User user) throws SQLException
+    synchronized public static void addUserRecord(User user) throws SQLException
     {
         String insertQuery = "INSERT INTO users(username,password,email,bio)" +
                 " VALUES (?, ?, ?, ?)";
@@ -37,7 +46,7 @@ public class DatabaseManager
         preparedStatement.close();
     }
 
-    public boolean checkExistence(String usernameToCheck) throws SQLException
+    synchronized public static boolean checkExistence(String usernameToCheck) throws SQLException
     {
         String searchQuery = "SELECT username FROM users " +
                 "WHERE username = ?";
@@ -59,7 +68,7 @@ public class DatabaseManager
         return result;
     }
 
-    public void setFollowerFollowing(FollowerFollowingPack pack) throws SQLException
+    synchronized public static void setFollowerFollowing(FollowerFollowingPack pack) throws SQLException
     {
         String query1;
         String query2;
@@ -102,7 +111,7 @@ public class DatabaseManager
         statement2.close();
     }
 
-    public SearchResult getSearchResult(String usernameToManipulate) throws SQLException
+    synchronized public static SearchResult getSearchResult(String usernameToManipulate) throws SQLException
     {
         if (checkExistence(usernameToManipulate))
         {

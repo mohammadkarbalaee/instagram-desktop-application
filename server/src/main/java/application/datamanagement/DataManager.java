@@ -9,13 +9,8 @@ import java.sql.SQLException;
 
 public class DataManager
 {
-    DatabaseManager databaseManager = new DatabaseManager();
-    ProfilePhotoSaver profilePhotoSaver = new ProfilePhotoSaver();
-
-    public DataManager() throws SQLException {}
-
-    public void saveUser(User user) throws SQLException, IOException
+    synchronized public static void saveUser(User user) throws SQLException, IOException
     {
-        databaseManager.addUserRecord(user);
+        DatabaseManager.addUserRecord(user);
     }
 }
