@@ -48,4 +48,12 @@ public class ApiHandler
         String searchResultJson = responseObject.getBody();
         return gson.fromJson(searchResultJson,SearchResult.class);
     }
+
+    public Integer receiveFollowerFollowingQuantity() throws IOException
+    {
+        String json = RequestPipeline.getDataInputStream().readUTF();
+        Response responseObject = gson.fromJson(json,Response.class);
+        String body = responseObject.getBody();
+        return Integer.parseInt(body);
+    }
 }

@@ -16,14 +16,9 @@ public class ClientRunner
         Scanner in = new Scanner(System.in);
         Gson gson = new Gson();
         RequestPipeline.build();
-        FollowerFollowingPack pack = new FollowerFollowingPack("reyhan","muhammad.ksht", false);
-        Request request1 = new Request("SEND_FOLLOWER",gson.toJson(pack));
-        ApiHandler apiHandler = new ApiHandler(request1);
+        Request request = new Request("GET_FOLLOWINGS_COUNT","muhammad.ksht");
+        ApiHandler apiHandler = new ApiHandler(request);
         apiHandler.sendRequest();
-        Request request2 = new Request("GET_SEARCH_RESULT","reyhan");
-        apiHandler.setRequest(request2);
-        apiHandler.sendRequest();
-        System.out.println(apiHandler.receiveSearchResult());
-        in.next();
+        System.out.println(apiHandler.receiveFollowerFollowingQuantity());
     }
 }

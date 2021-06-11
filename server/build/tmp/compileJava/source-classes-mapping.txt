@@ -1,24 +1,24 @@
 application/util/User.java
  application.util.User
-application/util/ClientHandler.java
- application.util.ClientHandler
+application/util/followerfollowing/FollowerFollowingPack.java
+ application.util.followerfollowing.FollowerFollowingPack
 api/Response.java
  api.Response
-application/datamanagement/database/DatabaseManager.java
- application.datamanagement.database.DatabaseManager
+api/Request.java
+ api.Request
 application/util/search/SearchResult.java
  application.util.search.SearchResult
 application/datamanagement/file/ProfilePhotoSaver.java
  application.datamanagement.file.ProfilePhotoSaver
 api/RequestPipeline.java
  api.RequestPipeline
-application/datamanagement/DataManager.java
- application.datamanagement.DataManager
-application/util/ServerRunner.java
- application.util.ServerRunner
 api/ApiHandler.java
  api.ApiHandler
-api/Request.java
- api.Request
-application/util/followerfollowing/FollowerFollowingPack.java
- application.util.followerfollowing.FollowerFollowingPack
+application/datamanagement/DataManager.java
+ application.datamanagement.DataManager
+application/datamanagement/database/DatabaseManager.java
+ application.datamanagement.database.DatabaseManager
+application/util/ClientHandler.java
+ application.util.ClientHandler
+application/util/ServerRunner.java
+ application.util.ServerRunner

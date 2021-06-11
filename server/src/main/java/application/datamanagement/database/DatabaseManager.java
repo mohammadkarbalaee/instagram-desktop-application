@@ -159,4 +159,36 @@ public class DatabaseManager
             return null;
         }
     }
+
+    synchronized public static Integer getFollowersQuantity(String username) throws SQLException
+    {
+        int quantity = 0;
+        String getFollowersQuery = "SELECT * FROM followers " +
+                "WHERE username = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(getFollowersQuery);
+        statement.setString(1,username);
+        ResultSet followersSet = statement.executeQuery();
+        while (followersSet.next())
+        {
+            quantity++;
+        }
+        statement.close();
+        return quantity;
+    }
+
+    synchronized public static Integer getFollowingsQuantity(String username) throws SQLException
+    {
+        int quantity = 0;
+        String getFollowingsQuery = "SELECT * FROM followings " +
+                "WHERE username = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(getFollowingsQuery);
+        statement.setString(1,username);
+        ResultSet followingsSet = statement.executeQuery();
+        while (followingsSet.next())
+        {
+            quantity++;
+        }
+        statement.close();
+        return quantity;
+    }
 }
