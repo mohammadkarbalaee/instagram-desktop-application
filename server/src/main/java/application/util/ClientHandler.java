@@ -18,11 +18,9 @@ public class ClientHandler implements Runnable
 {
     private final Socket socket;
     private ApiHandler apiHandler;
-    private final DatabaseManager databaseManager = new DatabaseManager();
-    private final DataManager dataManager = new DataManager();
     private final Gson gson = new Gson();
 
-    public ClientHandler(Socket socket) throws IOException, SQLException
+    public ClientHandler(Socket socket) throws IOException
     {
         this.socket = socket;
         build();
@@ -54,7 +52,7 @@ public class ClientHandler implements Runnable
             {
                 try
                 {
-                    if (!databaseManager.checkExistence(request.getBody()))
+                    if (!DatabaseManager.checkExistence(request.getBody()))
                     {
                         Response itsNew = new Response("true");
                         apiHandler.answerToClient(itsNew);
@@ -66,18 +64,18 @@ public class ClientHandler implements Runnable
             {
                 try
                 {
-                    dataManager.saveUser(gson.fromJson(request.getBody(), User.class));
+                    DataManager.saveUser(gson.fromJson(request.getBody(), User.class));
                 }
                 catch (SQLException | IOException throwables) {}
             }
             else if (request.getLabel().equals("SEND_FOLLOWER"))
             {
                 FollowerFollowingPack pack = gson.fromJson(request.getBody(),FollowerFollowingPack.class);
-                databaseManager.setFollowerFollowing(pack);
+                DatabaseManager.setFollowerFollowing(pack);
             }
             else if(request.getLabel().equals("GET_SEARCH_RESULT"))
             {
-                SearchResult searchResult = databaseManager.getSearchResult(request.getBody());
+                SearchResult searchResult = DatabaseManager.getSearchResult(request.getBody());
                 if (searchResult == null)
                 {
                     Response response = new Response("null");
