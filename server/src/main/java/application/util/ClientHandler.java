@@ -48,6 +48,7 @@ public class ClientHandler implements Runnable
             try {request = apiHandler.listenToClient();}
             catch (IOException e) {}
 
+            assert request != null;
             if (request.getLabel().equals("IS_NEW"))
             {
                 try
@@ -86,6 +87,16 @@ public class ClientHandler implements Runnable
                     Response response = new Response(gson.toJson(searchResult));
                     apiHandler.answerToClient(response);
                 }
+            }
+            else if (request.getLabel().equals("GET_FOLLOWERS_COUNT"))
+            {
+                Response response = new Response(DatabaseManager.getFollowersQuantity(request.getBody()).toString());
+                apiHandler.answerToClient(response);
+            }
+            else if (request.getLabel().equals("GET_FOLLOWINGS_COUNT"))
+            {
+                Response response = new Response(DatabaseManager.getFollowingsQuantity(request.getBody()).toString());
+                apiHandler.answerToClient(response);
             }
         }
     }
