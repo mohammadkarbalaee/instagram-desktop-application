@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SigningController">
+   <left>
+      <AnchorPane prefHeight="404.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="logoImageView" fitHeight="407.0" fitWidth="198.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Photo/logo.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="330.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="titleImageView" fitHeight="64.0" fitWidth="129.0" layoutX="92.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Photo/title.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="instagramImageView" fitHeight="80.0" fitWidth="80.0" layoutX="242.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Photo/instagram.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="30.0" layoutY="89.0" prefHeight="25.0" prefWidth="62.0" text="Username" textFill="#8d076e">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="123.0" prefHeight="25.0" prefWidth="62.0" text="Password" textFill="#8d076e">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="159.0" prefHeight="25.0" prefWidth="62.0" text="Email" textFill="#8d076e">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="email" layoutX="129.0" layoutY="159.0" prefHeight="24.0" prefWidth="162.0" promptText="email" />
+            <PasswordField fx:id="password" layoutX="130.0" layoutY="123.0" prefHeight="25.0" prefWidth="160.0" promptText="Password" />
+            <Button fx:id="cancelButton" layoutX="69.0" layoutY="262.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="21.0" prefWidth="185.0" text="Cancel" textFill="#8d076e">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="loginButton" layoutX="203.0" layoutY="212.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="27.0" prefWidth="87.0" text="Login" textFill="#8d076e">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Label layoutX="30.0" layoutY="213.0" prefHeight="24.0" prefWidth="139.0" text="Already have an account?" textFill="#8d076e" />
+            <Label layoutX="54.0" layoutY="349.0" prefHeight="25.0" prefWidth="170.0" text="All rights reserved to Instagram" textFill="#8d076e" />
+            <TextField fx:id="username" layoutX="129.0" layoutY="89.0" prefHeight="24.0" prefWidth="162.0" promptText="Username" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
