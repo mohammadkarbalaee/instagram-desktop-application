@@ -14,11 +14,11 @@ api/RequestPipeline.java
  api.RequestPipeline
 api/ApiHandler.java
  api.ApiHandler
-application/datamanagement/DataManager.java
- application.datamanagement.DataManager
-application/datamanagement/database/DatabaseManager.java
- application.datamanagement.database.DatabaseManager
-application/util/ClientHandler.java
- application.util.ClientHandler
 application/util/ServerRunner.java
  application.util.ServerRunner
+application/util/ClientHandler.java
+ application.util.ClientHandler
+application/datamanagement/database/DatabaseManager.java
+ application.datamanagement.database.DatabaseManager
+application/datamanagement/DataManager.java
+ application.datamanagement.DataManager

@@ -1,10 +1,10 @@
 package application.util;
 
+
+import com.google.gson.Gson;
 import api.ApiHandler;
 import api.Request;
 import api.RequestPipeline;
-import application.followerfollowing.FollowerFollowingPack;
-import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.util.Scanner;

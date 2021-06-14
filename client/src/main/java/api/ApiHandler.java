@@ -1,7 +1,7 @@
 package api;
 
-import application.search.SearchResult;
 import com.google.gson.Gson;
+import application.search.SearchResult;
 
 import java.io.IOException;
 
@@ -9,6 +9,8 @@ public class ApiHandler
 {
     private final Gson gson = new Gson();
     private Request request;
+
+    public ApiHandler() {}
 
     public ApiHandler(Request request)
     {
@@ -33,6 +35,7 @@ public class ApiHandler
         String response = responseObject.getBody();
         if (response.equals("true"))
         {
+            System.out.println(response);
             return true;
         }
         else
@@ -55,5 +58,12 @@ public class ApiHandler
         Response responseObject = gson.fromJson(json,Response.class);
         String body = responseObject.getBody();
         return Integer.parseInt(body);
+    }
+
+    public String receivePassword() throws IOException
+    {
+        String json = RequestPipeline.getDataInputStream().readUTF();
+        Response responseObject = gson.fromJson(json,Response.class);
+        return responseObject.getBody();
     }
 }

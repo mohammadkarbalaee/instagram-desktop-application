@@ -55,8 +55,13 @@ public class ClientHandler implements Runnable
                 {
                     if (!DatabaseManager.checkExistence(request.getBody()))
                     {
-                        Response itsNew = new Response("true");
-                        apiHandler.answerToClient(itsNew);
+                        Response isNew = new Response("true");
+                        apiHandler.answerToClient(isNew);
+                    }
+                    else
+                    {
+                        Response isNew = new Response("false");
+                        apiHandler.answerToClient(isNew);
                     }
                 }
                 catch (SQLException | IOException throwables) {}
@@ -96,6 +101,11 @@ public class ClientHandler implements Runnable
             else if (request.getLabel().equals("GET_FOLLOWINGS_COUNT"))
             {
                 Response response = new Response(DatabaseManager.getFollowingsQuantity(request.getBody()).toString());
+                apiHandler.answerToClient(response);
+            }
+            else if (request.getLabel().equals("GET_PASSWORD"))
+            {
+                Response response = new Response(DatabaseManager.getPassword(request.getBody()));
                 apiHandler.answerToClient(response);
             }
         }

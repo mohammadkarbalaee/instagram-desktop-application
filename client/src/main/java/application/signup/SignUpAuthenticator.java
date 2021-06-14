@@ -26,4 +26,20 @@ public class SignUpAuthenticator
         apiHandler.sendRequest();
         return apiHandler.receiveIS_NEWresponse();
     }
+
+    public boolean isPasswordMatch(String username,String givenPassword) throws IOException
+    {
+        Request getPassword = new Request("GET_PASSWORD",username);
+        ApiHandler apiHandler = new ApiHandler(getPassword);
+        apiHandler.sendRequest();
+        String truePassword = apiHandler.receivePassword();
+        if (givenPassword.equals(truePassword))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

@@ -191,4 +191,19 @@ public class DatabaseManager
         statement.close();
         return quantity;
     }
+
+    synchronized public static String getPassword(String username) throws SQLException
+    {
+        String getPasswordQuery = "SELECT password FROM users " +
+                "WHERE username = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(getPasswordQuery);
+        statement.setString(1,username);
+        ResultSet passwordSet = statement.executeQuery();
+        String password = null;
+        while (passwordSet.next())
+        {
+            password = passwordSet.getString("password");
+        }
+        return password;
+    }
 }
