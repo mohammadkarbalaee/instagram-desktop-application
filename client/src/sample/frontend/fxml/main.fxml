@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #fff;" stylesheets="@../mainmenu/css/styles.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <ImageView fitHeight="69.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../mainmenu/photos/instagram_32px.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../mainmenu/photos/instagram-text.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="264.0" prefWidth="300.0" spacing="5.0">
+               <children>
+                  <ImageView fitHeight="140.0" fitWidth="140.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../mainmenu/photos/photo_2021-06-10_18-43-13.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label contentDisplay="CENTER" prefHeight="31.0" prefWidth="284.0" text="      Hasan Rokn abady">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="CENTER" prefHeight="29.0" prefWidth="284.0" text="                 @Hasan_Rokn" textFill="#686868">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="473.0" prefWidth="300.0" spacing="15.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" stylesheets="@../mainmenu/css/styles.css">
+                     <children>
+                        <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../mainmenu/photos/home_48px.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="21.0" prefWidth="159.0" text="Feed">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="-20.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="mouse-moved" />
+                        <String fx:value="selected" />
+                     </styleClass>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../mainmenu/css/styles.css">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../mainmenu/photos/time_machine_100px.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="21.0" prefWidth="159.0" text="Stories">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="-20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../mainmenu/css/styles.css">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../mainmenu/photos/search_100px.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="21.0" prefWidth="159.0" text="Explore">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="-20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../mainmenu/css/styles.css">
+                     <children>
+                        <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../mainmenu/photos/bell_100px.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="21.0" prefWidth="159.0" text="Notifications">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="-20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../mainmenu/css/styles.css">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../mainmenu/photos/paper_plane_100px.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="21.0" prefWidth="159.0" text="Direct">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="-20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../mainmenu/css/styles.css">
+                     <children>
+                        <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../mainmenu/photos/igtv_100px.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="21.0" prefWidth="159.0" text="IG TV">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="-20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../mainmenu/css/styles.css">
+                     <children>
+                        <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../mainmenu/photos/settings_100px.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="21.0" prefWidth="159.0" text="Settings">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="-20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../mainmenu/css/styles.css">
+                     <children>
+                        <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../mainmenu/photos/contacts_64px.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="21.0" prefWidth="159.0" text="Profile">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="-20.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="primary-color" stylesheets="@../mainmenu/css/styles.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0">
+               <children>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="45.0" prefWidth="170.0" spacing="10.0" stylesheets="@../mainmenu/css/styles.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../mainmenu/photos/add_100px.png" />
+                           </image>
+                        </ImageView>
+                        <Label lineSpacing="10.0" prefHeight="28.0" prefWidth="106.0" text="Add Post">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="whit_background" />
+                        <String fx:value="shadow" />
+                        <String fx:value="rect-round" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin></Pane>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="45.0" prefWidth="330.0" spacing="10.0" stylesheets="@../mainmenu/css/styles.css">
+                     <children>
+                        <TextField prefHeight="31.0" prefWidth="246.0" promptText="Search" styleClass="transparent" stylesheets="@../mainmenu/css/styles.css">
+                           <font>
+                              <Font name="System Italic" size="14.0" />
+                           </font>
+                        </TextField>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../mainmenu/photos/search_100px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <styleClass>
+                        <String fx:value="whit_background" />
+                        <String fx:value="shadow" />
+                        <String fx:value="rect-round" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+            <Label prefHeight="43.0" prefWidth="159.0" text="Feed">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Label>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="transparent" stylesheets="@../mainmenu/css/styles.css" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+               <content>
+                  <GridPane fx:id="postGrid">
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

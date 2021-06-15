@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFxApplication.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/api/ApiHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/api/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/api/RequestPipeline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/api/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/backend/followerfollowing/FollowerFollowingPack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/backend/search/SearchResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/backend/signup/SignUpAuthenticator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/backend/signup/SignUpperLogInner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/backend/signup/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/backend/util/ClientRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/frontend/fxml/ApplicationRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/frontend/fxml/login.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/frontend/fxml/main.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/frontend/fxml/post.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/frontend/fxml/signup.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/PostController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/frontend/signuplogin/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/frontend/signuplogin/SigningController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/model/Post.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/add_100px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/bell_100px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/change_user_64px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/contacts_64px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/heart_10MMM0px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/heart_32px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/home_24px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/home_30px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/home_48px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/igtv_100px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/instagram-text.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/instagram_32px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/paper_plane_100px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/photo_2021-06-10_18-43-13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/post1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/post2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/post3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/post4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/post5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/post6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/post7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/search_100px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/settings_100px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/time_machine_100px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/topic_100px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/userProf1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/userProf2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/userProf3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/userProf4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/userProf5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/userProf6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gui/menu/src/sample/photo/userProf7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Photo/instagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/signuplogin/photos/instagram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Photo/instagramLoginImage.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/signuplogin/photos/instagramLoginImage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Photo/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/signuplogin/photos/logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Photo/logoLogin.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/signuplogin/photos/logoLogin.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Photo/title.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/signuplogin/photos/title.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Photo/titleLoginImage.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/signuplogin/photos/titleLoginImage.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ApplicationRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/ApiHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/Request.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/RequestPipeline.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/Response.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/followerfollowing/FollowerFollowingPack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/search/SearchResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/signup/SignUpAuthenticator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/signup/SignUpperLogInner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/signup/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/util/ClientRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/login/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/login/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/signup/SigningController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/signup/signup.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/model/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/add_100px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/add_100px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/bell_100px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/bell_100px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/change_user_64px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/change_user_64px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/contacts_64px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/contacts_64px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/heart_10MMM0px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/heart_10MMM0px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/heart_32px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/heart_32px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/home_24px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/home_24px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/home_30px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/home_30px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/home_48px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/home_48px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/igtv_100px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/igtv_100px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/instagram-text.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/instagram-text.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/instagram_32px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/instagram_32px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/paper_plane_100px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/paper_plane_100px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/photo_2021-06-10_18-43-13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/photo_2021-06-10_18-43-13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/post1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/post1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/post2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/post2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/post3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/post3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/post4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/post4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/post5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/post5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/post6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/post6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/post7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/post7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/search_100px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/search_100px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/settings_100px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/settings_100px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/time_machine_100px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/time_machine_100px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/topic_100px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/topic_100px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/userProf1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/userProf1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/userProf2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/userProf2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/userProf3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/userProf3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/userProf4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/userProf4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/userProf5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/userProf5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/userProf6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/userProf6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/photo/userProf7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/photos/userProf7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/menu/src/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/sample/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/menu/src/sample/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/sample/post.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/menu/src/sample/post.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gui/menu/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../gui/menu/src/sample/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/checksums/checksums.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="JavaFxApplication" />
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/sample/Main.java" />
+        <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/Controller.java" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1612" />
+    <option name="height" value="876" />
+  </component>
+  <component name="ProjectId" id="1tzetXcq18oxFOsw5zULiaBUW24" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaFxApplication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaFxApplication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaFxApplication" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/openjfx-16_windows-x64_bin-sdk/javafx-sdk-16/lib" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.22682928" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend\mainmenu" />
+      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client" />
+      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend\fxml" />
+      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend\signuplogin\photos" />
+      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ApplicationRunner">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+    <configuration name="ApplicationRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sample.ApplicationRunner" />
+      <module name="JavaFxApplication" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sample.frontend.fxml.ApplicationRunner" />
+      <module name="JavaFxApplication" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Muhammad\Downloads\openjfx-16_windows-x64_bin-sdk\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.frontend.fxml.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sample.frontend.mainmenu.Main" />
+      <module name="JavaFxApplication" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.frontend.mainmenu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <module name="client" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.ApplicationRunner" />
+      <item itemvalue="Application.Main (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ApplicationRunner" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.ApplicationRunner" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+      <created>1359379246138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1359379246138</updated>
+      <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1623776564032" duration="1065000" />
+      <workItem from="1623777672138" duration="2291000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1302000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1612" height="876" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24967742" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="45" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="27" selection-start="136" selection-end="136" vertical-scroll-proportion="0.17171717">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -6,7 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import model.Post;
+import sample.model.Post;
 
 import java.io.IOException;
 import java.net.URL;
@@ -65,43 +65,43 @@ public class Controller implements Initializable
 
         //post 1
         list.add(
-                  addPost("/photo/userProf1.png", "/photo/post1.jpg" ,
+                  addPost("/sample/photo/userProf1.png", "/sample/photo/post1.jpg",
                   "user 1", "2 DAYS AGO", "12", "2")
                 );
 
         //post 2
         list.add(
-                addPost("/photo/userProf2.png", "/photo/post2.jpg" ,
+                addPost("/sample/photo/userProf2.png", "/sample/photo/post2.jpg",
                         "user 2", "4 DAYS AGO", "20", "5")
         );
 
         //post 3
         list.add(
-                addPost("/photo/userProf3.png", "/photo/post3.jpg" ,
+                addPost("/sample/photo/userProf3.png", "/sample/photo/post3.jpg",
                         "user 3", "4 DAYS AGO", "40", "4")
         );
 
         //post 4
         list.add(
-                addPost("/photo/userProf4.png", "/photo/post4.jpg" ,
+                addPost("/sample/photo/userProf4.png", "/sample/photo/post4.jpg",
                         "user 4", "6 DAYS AGO", "30", "6")
         );
 
         //post 5
         list.add(
-                addPost("/photo/userProf5.png", "/photo/post5.jpg" ,
+                addPost("/sample/photo/userProf5.png", "/sample/photo/post5.jpg",
                         "user 5", "10 DAYS AGO", "35", "2")
         );
 
         //post 6
         list.add(
-                addPost("/photo/userProf6.png", "/photo/post6.jpg" ,
+                addPost("/sample/photo/userProf6.png", "/sample/photo/post6.jpg",
                         "user 6", "12 DAYS AGO", "80", "9")
         );
 
         //post 7
         list.add(
-                addPost("/photo/userProf7.png", "/photo/post7.jpg" ,
+                addPost("/sample/photo/userProf7.png", "/sample/photo/post7.jpg",
                         "user 7", "25 DAYS AGO", "10", "1")
         );
 

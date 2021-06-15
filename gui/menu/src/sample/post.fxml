@@ -10,18 +10,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="365.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PostController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="365.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PostController">
    <children>
       <ImageView fx:id="postImage" fitHeight="365.0" fitWidth="365.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../photo/post1.jpg" />
+            <Image url="@photo/post1.jpg" />
          </image>
       </ImageView>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
          <children>
             <ImageView fx:id="profileImage" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../photo/userProf1.png" />
+                  <Image url="@photo/userProf1.png" />
                </image>
             </ImageView>
             <VBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="104.0">
@@ -45,7 +45,7 @@
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../photo/heart_10MMM0px.png" />
+                              <Image url="@photo/heart_10MMM0px.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="likes" prefHeight="20.0" prefWidth="26.0" text=" 20">
@@ -59,7 +59,7 @@
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../photo/topic_100px.png" />
+                              <Image url="@photo/topic_100px.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="comments" prefHeight="20.0" prefWidth="36.0" text=" 2">
