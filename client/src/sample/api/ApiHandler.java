@@ -1,6 +1,7 @@
 package sample.api;
 
 import com.google.gson.Gson;
+import sample.backend.post.Post;
 import sample.backend.search.SearchResult;
 
 import java.io.IOException;
@@ -65,5 +66,21 @@ public class ApiHandler
         String json = RequestPipeline.getDataInputStream().readUTF();
         Response responseObject = gson.fromJson(json,Response.class);
         return responseObject.getBody();
+    }
+
+    public Integer receivePostsQuantity() throws IOException
+    {
+        String json = RequestPipeline.getDataInputStream().readUTF();
+        Response responseObject = gson.fromJson(json,Response.class);
+        String body = responseObject.getBody();
+        return Integer.parseInt(body);
+    }
+
+    public Post receiveWantedPost() throws IOException
+    {
+        String json = RequestPipeline.getDataInputStream().readUTF();
+        Response responseObject = gson.fromJson(json,Response.class);
+        String body = responseObject.getBody();
+        return gson.fromJson(body,Post.class);
     }
 }

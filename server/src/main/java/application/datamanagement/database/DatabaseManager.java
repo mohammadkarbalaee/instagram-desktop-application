@@ -2,6 +2,7 @@ package application.datamanagement.database;
 
 import application.util.User;
 import application.util.followerfollowing.FollowerFollowingPack;
+import application.util.post.Post;
 import application.util.search.SearchResult;
 
 import java.sql.*;
@@ -204,6 +205,55 @@ public class DatabaseManager
         {
             password = passwordSet.getString("password");
         }
+        statement.close();
         return password;
+    }
+
+    synchronized public static void savePost(Post post) throws SQLException
+    {
+        Integer nth = getPostQuantity(post.getOwner()) + 1;
+        String savePostQuery = "INSERT INTO posts(owner,caption,image_path,nth)" +
+                " VALUES (?, ?, ?,?)";
+        PreparedStatement statement = CONNECTION.prepareStatement(savePostQuery);
+        statement.setString(1,post.getOwner());
+        statement.setString(2,post.getCaption());
+        statement.setString(3,System.getProperty("user.dir") + "\\PostPhotos\\" + post.getOwner() + nth + ".jpg");
+        statement.setInt(4,nth);
+        statement.execute();
+        statement.close();
+    }
+
+    synchronized public static Integer getPostQuantity(String owner) throws SQLException
+    {
+        int quantity = 0;
+        String getPostsQuery = "SELECT owner FROM posts " +
+                "WHERE owner = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(getPostsQuery);
+        statement.setString(1,owner);
+        ResultSet postsSet = statement.executeQuery();
+        while (postsSet.next())
+        {
+            quantity++;
+        }
+        statement.close();
+        return quantity;
+    }
+
+    synchronized public static Post getPost(String owner,String nth) throws SQLException
+    {
+        Post wantedPost = new Post();
+        String getPostQuery = "SELECT * FROM posts " +
+                "WHERE owner = ? & nth = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(getPostQuery);
+        statement.setString(1,owner);
+        statement.setInt(2,Integer.parseInt(nth));
+        ResultSet postSet = statement.executeQuery();
+        while (postSet.next())
+        {
+            wantedPost.setOwner(owner);
+            wantedPost.setCaption(postSet.getString("caption"));
+        }
+        statement.close();
+        return wantedPost;
     }
 }
