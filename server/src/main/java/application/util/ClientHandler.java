@@ -4,9 +4,9 @@ import api.ApiHandler;
 import api.Request;
 import api.RequestPipeline;
 import api.Response;
-import application.datamanagement.DataManager;
 import application.datamanagement.database.DatabaseManager;
 import application.util.followerfollowing.FollowerFollowingPack;
+import application.util.post.Post;
 import application.util.search.SearchResult;
 import com.google.gson.Gson;
 
@@ -70,9 +70,9 @@ public class ClientHandler implements Runnable
             {
                 try
                 {
-                    DataManager.saveUser(gson.fromJson(request.getBody(), User.class));
+                    DatabaseManager.addUserRecord(gson.fromJson(request.getBody(), User.class));
                 }
-                catch (SQLException | IOException throwables) {}
+                catch (SQLException throwables) {}
             }
             else if (request.getLabel().equals("SEND_FOLLOWER"))
             {
@@ -106,6 +106,23 @@ public class ClientHandler implements Runnable
             else if (request.getLabel().equals("GET_PASSWORD"))
             {
                 Response response = new Response(DatabaseManager.getPassword(request.getBody()));
+                apiHandler.answerToClient(response);
+            }
+            else if (request.getLabel().equals("SAVE_POST"))
+            {
+                Post post = gson.fromJson(request.getBody(),Post.class);
+                DatabaseManager.savePost(post);
+            }
+            else if (request.getLabel().equals("GET_POSTS_QUANTITY"))
+            {
+                Response response = new Response(DatabaseManager.getPostQuantity(request.getBody()).toString());
+                apiHandler.answerToClient(response);
+            }
+            else if (request.getLabel().equals("GET_POST"))
+            {
+                String[] pair = request.getBody().split("/");
+                Post wantedPost = DatabaseManager.getPost(pair[0],pair[1]);
+                Response response = new Response(gson.toJson(wantedPost));
                 apiHandler.answerToClient(response);
             }
         }
