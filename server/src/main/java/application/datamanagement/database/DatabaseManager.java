@@ -1,6 +1,7 @@
 package application.datamanagement.database;
 
 import application.util.User;
+import application.util.directmessage.ChatRoom;
 import application.util.followerfollowing.FollowerFollowingPack;
 import application.util.post.Post;
 import application.util.search.SearchResult;
@@ -255,5 +256,21 @@ public class DatabaseManager
         }
         statement.close();
         return wantedPost;
+    }
+
+    synchronized public static boolean checkChatroomTableExistence(ChatRoom chatRoom)
+    {
+        String checkQuery = "SELECT * FROM " + chatRoom.getChatRoomTableName();
+        try
+        {
+            PreparedStatement statement = CONNECTION.prepareStatement(checkQuery);
+            statement.execute();
+            statement.close();
+            return true;
+        }
+        catch (SQLException throwables)
+        {
+            return false;
+        }
     }
 }

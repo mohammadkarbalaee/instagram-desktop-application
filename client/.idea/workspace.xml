@@ -3,16 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/api/ApiHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/api/ApiHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/backend/util/ClientRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/backend/util/ClientRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/application/datamanagement/DataManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/main/java/application/datamanagement/database/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/application/datamanagement/database/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/application/util/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/application/util/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/application/util/ServerRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/application/util/ServerRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,17 +276,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -348,6 +334,7 @@
       <workItem from="1623776564032" duration="1065000" />
       <workItem from="1623777672138" duration="3909000" />
       <workItem from="1623949954364" duration="5650000" />
+      <workItem from="1624010743604" duration="614000" />
     </task>
     <servers />
   </component>

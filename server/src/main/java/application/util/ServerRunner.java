@@ -1,5 +1,8 @@
 package application.util;
 
+import application.datamanagement.database.DatabaseManager;
+import application.util.directmessage.ChatRoom;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.sql.SQLException;
@@ -11,7 +14,7 @@ public class ServerRunner
     public static void main(String[] args) throws IOException, SQLException
     {
         ServerSocket serverSocket =  new ServerSocket(8080);
-        ExecutorService threadPool = Executors.newFixedThreadPool(8);
+        ExecutorService threadPool = Executors.newFixedThreadPool(100);
 
         while (true)
         {
