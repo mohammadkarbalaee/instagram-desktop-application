@@ -1,10 +1,12 @@
 package sample.api;
 
 import com.google.gson.Gson;
+import sample.backend.directmessage.Message;
 import sample.backend.post.Post;
 import sample.backend.search.SearchResult;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ApiHandler
 {
@@ -82,5 +84,19 @@ public class ApiHandler
         Response responseObject = gson.fromJson(json,Response.class);
         String body = responseObject.getBody();
         return gson.fromJson(body,Post.class);
+    }
+
+    public Message[] receiveChatroomMessages() throws IOException
+    {
+        String json = RequestPipeline.getDataInputStream().readUTF();
+        Response responseObject = gson.fromJson(json,Response.class);
+        String body = responseObject.getBody();
+        String[] messageObjects = body.split("/");
+        Message[] messages = new Message[messageObjects.length];
+        for (int i = 0; i < messages.length; i++)
+        {
+            messages[i] = gson.fromJson(messageObjects[i],Message.class);
+        }
+        return messages;
     }
 }

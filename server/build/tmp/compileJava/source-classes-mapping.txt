@@ -16,9 +16,13 @@ api/ApiHandler.java
  api.ApiHandler
 application/util/post/Post.java
  application.util.post.Post
-application/util/ServerRunner.java
- application.util.ServerRunner
+application/util/directmessage/Message.java
+ application.util.directmessage.Message
+application/util/directmessage/ChatRoom.java
+ application.util.directmessage.ChatRoom
 application/util/ClientHandler.java
  application.util.ClientHandler
 application/datamanagement/database/DatabaseManager.java
  application.datamanagement.database.DatabaseManager
+application/util/ServerRunner.java
+ application.util.ServerRunner
