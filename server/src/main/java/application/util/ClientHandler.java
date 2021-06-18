@@ -5,6 +5,8 @@ import api.Request;
 import api.RequestPipeline;
 import api.Response;
 import application.datamanagement.database.DatabaseManager;
+import application.util.directmessage.ChatRoom;
+import application.util.directmessage.Message;
 import application.util.followerfollowing.FollowerFollowingPack;
 import application.util.post.Post;
 import application.util.search.SearchResult;
@@ -123,6 +125,29 @@ public class ClientHandler implements Runnable
                 String[] pair = request.getBody().split("/");
                 Post wantedPost = DatabaseManager.getPost(pair[0],pair[1]);
                 Response response = new Response(gson.toJson(wantedPost));
+                apiHandler.answerToClient(response);
+            }
+            else if (request.getLabel().equals("SAVE_MESSAGE"))
+            {
+                Message message = gson.fromJson(request.getBody(),Message.class);
+                ChatRoom chatRoom = new ChatRoom(message.getSender(),message.getReceiver());
+                if (DatabaseManager.checkChatroomTableExistence(chatRoom))
+                {
+                    System.out.println("i am adding");
+                    DatabaseManager.addMessageToChatroom(chatRoom,message);
+                }
+                else
+                {
+                    System.out.println("i am making");
+                    System.out.println(chatRoom.getChatroomTableName());
+                    DatabaseManager.createChatroomTable(chatRoom);
+                    DatabaseManager.addMessageToChatroom(chatRoom,message);
+                }
+            }
+            else if (request.getLabel().equals("GET_MESSAGES"))
+            {
+                ChatRoom chatRoom = gson.fromJson(request.getBody(),ChatRoom.class);
+                Response response = new Response(DatabaseManager.getMessages(chatRoom));
                 apiHandler.answerToClient(response);
             }
         }

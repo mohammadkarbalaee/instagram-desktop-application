@@ -1,4 +1,4 @@
-package application.util.directmessage;
+package sample.backend.directmessage;
 
 public class ChatRoom
 {

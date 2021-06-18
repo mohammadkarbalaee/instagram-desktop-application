@@ -1,16 +1,16 @@
-package application.util.directmessage;
+package sample.backend.directmessage;
 
-public class ChatRoom
+public class Message
 {
     private String sender;
     private String receiver;
-    private String chatroomTableName;
+    private String text;
 
-    public ChatRoom(String sender, String receiver)
+    public Message(String sender, String receiver, String text)
     {
         this.sender = sender;
         this.receiver = receiver;
-        chatroomTableName = sender + "_" + receiver;
+        this.text = text;
     }
 
     public String getSender()
@@ -33,13 +33,13 @@ public class ChatRoom
         this.receiver = receiver;
     }
 
-    public String getChatroomTableName()
+    public String getText()
     {
-        return chatroomTableName;
+        return text;
     }
 
-    public void setChatroomTableName(String chatroomTableName)
+    public void setText(String text)
     {
-        this.chatroomTableName = chatroomTableName;
+        this.text = text;
     }
 }

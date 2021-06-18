@@ -2,9 +2,11 @@ package application.datamanagement.database;
 
 import application.util.User;
 import application.util.directmessage.ChatRoom;
+import application.util.directmessage.Message;
 import application.util.followerfollowing.FollowerFollowingPack;
 import application.util.post.Post;
 import application.util.search.SearchResult;
+import com.google.gson.Gson;
 
 import java.sql.*;
 
@@ -13,6 +15,7 @@ public class DatabaseManager
 {
     private static final String URL_CONNECTION = "jdbc:mysql://localhost:3306/jdbc?user=root";
     private static Connection CONNECTION;
+    private static final Gson gson = new Gson();
 
     static
     {
@@ -260,7 +263,7 @@ public class DatabaseManager
 
     synchronized public static boolean checkChatroomTableExistence(ChatRoom chatRoom)
     {
-        String checkQuery = "SELECT * FROM " + chatRoom.getChatRoomTableName();
+        String checkQuery = "SELECT * FROM " + chatRoom.getChatroomTableName();
         try
         {
             PreparedStatement statement = CONNECTION.prepareStatement(checkQuery);
@@ -272,5 +275,55 @@ public class DatabaseManager
         {
             return false;
         }
+    }
+
+    synchronized public static void createChatroomTable(ChatRoom chatRoom) throws SQLException
+    {
+        String createTableQuery = "create table if not exists jdbc." + chatRoom.getChatroomTableName() + "\n(\n" +
+                "  message_id_number int not null AUTO_INCREMENT,\n" +
+                "  sender varchar(50) not null,\n" +
+                "  receiver varchar(50) not null,\n" +
+                "  message varchar(10000) not null,\n" +
+                "  primary key (message_id_number)\n" +
+                ")";
+        Statement statement = CONNECTION.createStatement();
+        statement.execute(createTableQuery);
+        statement.close();
+    }
+
+    synchronized public static void addMessageToChatroom(ChatRoom chatRoom, Message message) throws SQLException
+    {
+        String insertQuery = "INSERT INTO " + chatRoom.getChatroomTableName() +
+                "(sender,receiver,message)" +
+                " VALUES (?, ?, ?)";
+        PreparedStatement statement = CONNECTION.prepareStatement(insertQuery);
+        statement.setString(1,message.getSender());
+        statement.setString(2,message.getReceiver());
+        statement.setString(3,message.getText());
+        statement.execute();
+        statement.close();
+    }
+
+    synchronized public static String getMessages(ChatRoom chatRoom) throws SQLException
+    {
+        String getMessagesQuery = "SELECT * FROM " + chatRoom.getChatroomTableName();
+        Statement statement = CONNECTION.createStatement();
+        ResultSet resultSet = statement.executeQuery(getMessagesQuery);
+        String messagesJson = "";
+        Message message;
+        String sender;
+        String receiver;
+        String text;
+
+        while (resultSet.next())
+        {
+            sender = resultSet.getString("sender");
+            receiver = resultSet.getString("receiver");
+            text = resultSet.getString("message");
+            message = new Message(sender,receiver,text);
+            messagesJson += gson.toJson(message) + "/";
+        }
+        statement.close();
+        return messagesJson;
     }
 }

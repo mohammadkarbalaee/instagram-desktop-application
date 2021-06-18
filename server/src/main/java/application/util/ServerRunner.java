@@ -1,8 +1,5 @@
 package application.util;
 
-import application.datamanagement.database.DatabaseManager;
-import application.util.directmessage.ChatRoom;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.sql.SQLException;
