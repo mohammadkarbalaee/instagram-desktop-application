@@ -1,12 +1,12 @@
 package sample.api;
 
+
 import com.google.gson.Gson;
 import sample.backend.directmessage.Message;
 import sample.backend.post.Post;
 import sample.backend.search.SearchResult;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class ApiHandler
 {

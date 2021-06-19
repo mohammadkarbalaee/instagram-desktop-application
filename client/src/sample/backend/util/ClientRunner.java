@@ -7,7 +7,6 @@ import sample.api.Request;
 import sample.api.RequestPipeline;
 import sample.backend.directmessage.ChatRoom;
 import sample.backend.directmessage.Message;
-import sample.backend.post.Post;
 
 import java.io.IOException;
 import java.util.Scanner;
