@@ -48,15 +48,15 @@ public class SigningController implements Initializable
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        File instagramFile = new File("Photo/instagram.png");
+        File instagramFile = new File("/sample/frontend/signuplogin/photos/instagram.png");
         Image instagramImage = new Image(instagramFile.toURI().toString());
         instagramImageView.setImage(instagramImage);
 
-        File logoFile = new File("Photo/logo.jpg");
+        File logoFile = new File("/sample/frontend/signuplogin/photos/logo.jpg");
         Image logoImage = new Image(logoFile.toURI().toString());
         logoImageView.setImage(logoImage);
 
-        File titleFile = new File("Photo/title.jpg");
+        File titleFile = new File("/sample/frontend/signuplogin/photos/title.jpg");
         Image titleImage = new Image(titleFile.toURI().toString());
         titleImageView.setImage(titleImage);
     }

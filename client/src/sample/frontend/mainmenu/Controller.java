@@ -34,7 +34,7 @@ public class Controller implements Initializable
             for (int i = 0; i < posts.size(); i++)
             {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("post.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("../fxml/post.fxml"));
 
                 VBox postBox = fxmlLoader.load();
 
@@ -65,43 +65,43 @@ public class Controller implements Initializable
 
         //post 1
         list.add(
-                  addPost("/sample/photo/userProf1.png", "/sample/photo/post1.jpg",
+                  addPost("/sample/frontend/mainmenu/photos/userProf1.png", "/sample/frontend/mainmenu/photos/post1.jpg",
                   "user 1", "2 DAYS AGO", "12", "2")
                 );
 
         //post 2
         list.add(
-                addPost("/sample/photo/userProf2.png", "/sample/photo/post2.jpg",
+                addPost("/sample/frontend/mainmenu/photos/userProf2.png", "/sample/frontend/mainmenu/photos/post2.jpg",
                         "user 2", "4 DAYS AGO", "20", "5")
         );
 
         //post 3
         list.add(
-                addPost("/sample/photo/userProf3.png", "/sample/photo/post3.jpg",
+                addPost("/sample/frontend/mainmenu/photos/userProf3.png", "/sample/frontend/mainmenu/photos/post3.jpg",
                         "user 3", "4 DAYS AGO", "40", "4")
         );
 
         //post 4
         list.add(
-                addPost("/sample/photo/userProf4.png", "/sample/photo/post4.jpg",
+                addPost("/sample/frontend/mainmenu/photos/userProf4.png", "/sample/frontend/mainmenu/photos/post4.jpg",
                         "user 4", "6 DAYS AGO", "30", "6")
         );
 
         //post 5
         list.add(
-                addPost("/sample/photo/userProf5.png", "/sample/photo/post5.jpg",
+                addPost("/sample/frontend/mainmenu/photos/userProf5.png", "/sample/frontend/mainmenu/photos/post5.jpg",
                         "user 5", "10 DAYS AGO", "35", "2")
         );
 
         //post 6
         list.add(
-                addPost("/sample/photo/userProf6.png", "/sample/photo/post6.jpg",
+                addPost("/sample/frontend/mainmenu/photos/userProf6.png", "/sample/frontend/mainmenu/photos/post6.jpg",
                         "user 6", "12 DAYS AGO", "80", "9")
         );
 
         //post 7
         list.add(
-                addPost("/sample/photo/userProf7.png", "/sample/photo/post7.jpg",
+                addPost("/sample/frontend/mainmenu/photos/userProf7.png", "/sample/frontend/mainmenu/photos/post7.jpg",
                         "user 7", "25 DAYS AGO", "10", "1")
         );
 
