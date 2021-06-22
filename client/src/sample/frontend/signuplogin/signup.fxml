@@ -12,7 +12,7 @@
          <children>
             <ImageView fx:id="logoImageView" fitHeight="407.0" fitWidth="198.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../signuplogin/photos/logo.jpg" />
+                  <Image url="@photos/logo.jpg" />
                </image>
             </ImageView>
             <ProgressBar fx:id="progressbar" layoutX="23.0" layoutY="283.0" prefHeight="26.0" prefWidth="151.0" progress="0.0" visible="false">
@@ -30,12 +30,12 @@
          <children>
             <ImageView fx:id="titleImageView" fitHeight="64.0" fitWidth="129.0" layoutX="92.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../signuplogin/photos/title.jpg" />
+                  <Image url="@photos/title.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="instagramImageView" fitHeight="80.0" fitWidth="80.0" layoutX="242.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../signuplogin/photos/instagram.png" />
+                  <Image url="@photos/instagram.png" />
                </image>
             </ImageView>
             <Label layoutX="30.0" layoutY="89.0" prefHeight="25.0" prefWidth="62.0" text="Username" textFill="#8d076e">

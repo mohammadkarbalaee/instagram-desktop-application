@@ -1,6 +1,5 @@
-package sample.frontend.fxml;
+package sample.frontend;
 
-import sample.api.RequestPipeline;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,10 +13,10 @@ public class ApplicationRunner extends Application
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-        RequestPipeline.build();
-        Parent root = FXMLLoader.load(getClass().getResource("signup.fxml"));
+//        RequestPipeline.build();
+        Parent root = FXMLLoader.load(getClass().getResource("post/savepost.fxml"));
         primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.setScene(new Scene(root, 520, 400));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 

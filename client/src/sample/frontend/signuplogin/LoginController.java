@@ -93,7 +93,7 @@ public class LoginController implements Initializable {
 
     public void gotoMain() throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("../fxml/main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../main.fxml"));
         Stage mainStage = new Stage();
         mainStage.initStyle(StageStyle.UNDECORATED);
         mainStage.setScene(new Scene(root, 520, 400));
