@@ -9,6 +9,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import sample.api.ApiHandler;
+import sample.api.Request;
+import sample.backend.post.Post;
+import sample.frontend.ApplicationRunner;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -53,7 +57,7 @@ public class SavepostController
         stage.close();
     }
 
-    public void onSaveClick()
+    public void onSaveClick() throws IOException
     {
         caption = captionField.getText();
         if (file == null)
@@ -62,7 +66,11 @@ public class SavepostController
         }
         else
         {
-            // todo backend syncing
+            Post newPost = new Post("hasan"/*ApplicationRunner.getLoggedInUsername()*/,caption);
+            Request savePostRequest = new Request("SAVE_POST", ApplicationRunner.getGson().toJson(newPost));
+            ApiHandler apiHandler = new ApiHandler(savePostRequest);
+            apiHandler.sendRequest();
+            apiHandler.sendPhoto(file);
         }
     }
 }
