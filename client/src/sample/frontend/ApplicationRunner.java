@@ -24,6 +24,11 @@ public class ApplicationRunner extends Application
         return gson;
     }
 
+    public static void setLoggedInUsername(String loggedInUsername)
+    {
+        ApplicationRunner.loggedInUsername = loggedInUsername;
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception
     {

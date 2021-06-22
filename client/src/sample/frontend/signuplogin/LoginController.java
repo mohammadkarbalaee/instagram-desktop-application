@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.backend.signup.SignUpperLogInner;
 import sample.backend.signup.User;
+import sample.frontend.ApplicationRunner;
 
 import java.io.File;
 import java.io.IOException;
@@ -75,6 +76,7 @@ public class LoginController implements Initializable {
         {
             if (loginner.isPasswordMatch())
             {
+                ApplicationRunner.setLoggedInUsername(usernameField.getText());
                 gotoMain();
             }
             else
