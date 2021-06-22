@@ -1,4 +1,3 @@
-
 package sample.frontend.mainmenu;
 
 import javafx.application.Application;
@@ -11,7 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample/fronted/fxml/main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/main.fxml"));
         primaryStage.setTitle("Instagram");
         primaryStage.setScene(new Scene(root,1510, 850));
         primaryStage.show();
@@ -22,5 +21,3 @@ public class Main extends Application {
         launch(args);
     }
 }
-
-

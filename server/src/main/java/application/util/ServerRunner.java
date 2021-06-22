@@ -11,7 +11,7 @@ public class ServerRunner
     public static void main(String[] args) throws IOException, SQLException
     {
         ServerSocket serverSocket =  new ServerSocket(8080);
-        ExecutorService threadPool = Executors.newFixedThreadPool(100);
+        ExecutorService threadPool = Executors.newFixedThreadPool(8);
 
         while (true)
         {

@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import sample.backend.signup.SignUpperLogInner;
 import sample.backend.signup.User;
 
@@ -47,15 +47,15 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        File instagram = new File("/sample/frontend/signuplogin/photos/instagramLoginImage.png");
+        File instagram = new File("Photo/instagramLoginImage.png");
         Image instagramImageView = new Image(instagram.toURI().toString());
         instagramImageViewer.setImage(instagramImageView);
 
-        File title = new File("/sample/frontend/signuplogin/photos/titleLoginImage.jpg");
+        File title = new File("Photo/titleLoginImage.jpg");
         Image titleImageView = new Image(title.toURI().toString());
         titleImageViewer.setImage(titleImageView);
 
-        File logo = new File("/sample/frontend/signuplogin/photos/logoLogin.jpg");
+        File logo = new File("Photo/logoLogin.jpg");
         Image logoImageView = new Image(logo.toURI().toString());
         logoLogin.setImage(logoImageView);
     }
@@ -66,16 +66,16 @@ public class LoginController implements Initializable {
         stage.close();
     }
 
-    public void okButtonOnAction(ActionEvent event) throws IOException
+    public void okButtonOnAction() throws IOException
     {
-        gotoMain(event);
+        gotoMain();
         User oldUser = new User(usernameField.getText(),"",passwordField.getText());
         SignUpperLogInner loginner = new SignUpperLogInner(oldUser);
         if (!loginner.checkUserUniqueness())
         {
             if (loginner.isPasswordMatch())
             {
-                gotoMain(event);
+                gotoMain();
             }
             else
             {
@@ -91,18 +91,12 @@ public class LoginController implements Initializable {
         }
     }
 
-    public void gotoMain(ActionEvent event) throws IOException
+    public void gotoMain() throws IOException
     {
-//        Parent root = FXMLLoader.load(getClass().getResource("../fxml/main.fxml"));
-//        Stage mainStage = new Stage();
-//        //mainStage.initStyle(StageStyle.UNDECORATED);
-//        mainStage.setScene(new Scene(root));
-//        mainStage.show();
-
-        Parent parent = FXMLLoader.load(getClass().getResource("../fxml/main.fxml"));
-        Stage stage = (Stage)    ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/main.fxml"));
+        Stage mainStage = new Stage();
+        mainStage.initStyle(StageStyle.UNDECORATED);
+        mainStage.setScene(new Scene(root, 520, 400));
+        mainStage.show();
     }
 }

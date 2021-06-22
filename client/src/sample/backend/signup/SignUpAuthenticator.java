@@ -21,8 +21,10 @@ public class SignUpAuthenticator
 
     public boolean isNew(String username) throws IOException
     {
-        Request checkIsNew = new Request("IS_NEW",username);
-        ApiHandler apiHandler = new ApiHandler(checkIsNew);
+        Request
+                checkIsNew = new Request("IS_NEW",username);
+        ApiHandler
+                apiHandler = new ApiHandler(checkIsNew);
         apiHandler.sendRequest();
         return apiHandler.receiveIS_NEWresponse();
     }

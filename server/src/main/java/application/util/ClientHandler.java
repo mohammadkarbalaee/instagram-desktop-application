@@ -5,6 +5,7 @@ import api.Request;
 import api.RequestPipeline;
 import api.Response;
 import application.datamanagement.database.DatabaseManager;
+import application.datamanagement.file.PhotoManager;
 import application.util.directmessage.ChatRoom;
 import application.util.directmessage.Message;
 import application.util.followerfollowing.FollowerFollowingPack;
@@ -113,7 +114,7 @@ public class ClientHandler implements Runnable
             else if (request.getLabel().equals("SAVE_POST"))
             {
                 Post post = gson.fromJson(request.getBody(),Post.class);
-                DatabaseManager.savePost(post);
+                DatabaseManager.savePost(post, PhotoManager.savePostPhoto(post.getOwner(),apiHandler.getPostImage()));
             }
             else if (request.getLabel().equals("GET_POSTS_QUANTITY"))
             {
@@ -126,20 +127,18 @@ public class ClientHandler implements Runnable
                 Post wantedPost = DatabaseManager.getPost(pair[0],pair[1]);
                 Response response = new Response(gson.toJson(wantedPost));
                 apiHandler.answerToClient(response);
+                apiHandler.sendPhoto(PhotoManager.getPostPhoto(DatabaseManager.getPostSavedAddress(pair[0],pair[1])));
             }
             else if (request.getLabel().equals("SAVE_MESSAGE"))
             {
-                Message message = gson.fromJson(request.getBody(),Message.class);
+                Message message = gson.fromJson(request.getBody(), Message.class);
                 ChatRoom chatRoom = new ChatRoom(message.getSender(),message.getReceiver());
                 if (DatabaseManager.checkChatroomTableExistence(chatRoom))
                 {
-                    System.out.println("i am adding");
                     DatabaseManager.addMessageToChatroom(chatRoom,message);
                 }
                 else
                 {
-                    System.out.println("i am making");
-                    System.out.println(chatRoom.getChatroomTableName());
                     DatabaseManager.createChatroomTable(chatRoom);
                     DatabaseManager.addMessageToChatroom(chatRoom,message);
                 }
@@ -150,6 +149,7 @@ public class ClientHandler implements Runnable
                 Response response = new Response(DatabaseManager.getMessages(chatRoom));
                 apiHandler.answerToClient(response);
             }
+
         }
     }
 }

@@ -1,11 +1,13 @@
 package sample.api;
 
-
 import com.google.gson.Gson;
 import sample.backend.directmessage.Message;
 import sample.backend.post.Post;
 import sample.backend.search.SearchResult;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 public class ApiHandler
@@ -86,6 +88,20 @@ public class ApiHandler
         return gson.fromJson(body,Post.class);
     }
 
+    public void sendPhoto(String location) throws IOException
+    {
+        File file = new File(location);
+        BufferedImage bufferedImage = ImageIO.read(file);
+        ImageIO.write(bufferedImage,"png",RequestPipeline.getDataOutputStream());
+        bufferedImage.flush();
+        RequestPipeline.getDataOutputStream().flush();
+    }
+
+    public BufferedImage receivePostPhoto() throws IOException
+    {
+        return ImageIO.read(RequestPipeline.getDataInputStream());
+    }
+
     public Message[] receiveChatroomMessages() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
@@ -99,4 +115,5 @@ public class ApiHandler
         }
         return messages;
     }
+
 }

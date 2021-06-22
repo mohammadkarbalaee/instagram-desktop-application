@@ -213,7 +213,7 @@ public class DatabaseManager
         return password;
     }
 
-    synchronized public static void savePost(Post post) throws SQLException
+    synchronized public static void savePost(Post post,String saveAddress) throws SQLException
     {
         Integer nth = getPostQuantity(post.getOwner()) + 1;
         String savePostQuery = "INSERT INTO posts(owner,caption,image_path,nth)" +
@@ -221,7 +221,7 @@ public class DatabaseManager
         PreparedStatement statement = CONNECTION.prepareStatement(savePostQuery);
         statement.setString(1,post.getOwner());
         statement.setString(2,post.getCaption());
-        statement.setString(3,System.getProperty("user.dir") + "\\PostPhotos\\" + post.getOwner() + nth + ".jpg");
+        statement.setString(3,saveAddress);
         statement.setInt(4,nth);
         statement.execute();
         statement.close();
@@ -259,6 +259,23 @@ public class DatabaseManager
         }
         statement.close();
         return wantedPost;
+    }
+
+    synchronized public static String getPostSavedAddress(String owner,String nth) throws SQLException
+    {
+        String address = null;
+        String getPostQuery = "SELECT * FROM posts " +
+                "WHERE owner = ? & nth = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(getPostQuery);
+        statement.setString(1,owner);
+        statement.setInt(2,Integer.parseInt(nth));
+        ResultSet postSet = statement.executeQuery();
+        while (postSet.next())
+        {
+            address = postSet.getString("image_path");
+        }
+        statement.close();
+        return address;
     }
 
     synchronized public static boolean checkChatroomTableExistence(ChatRoom chatRoom)
@@ -326,4 +343,5 @@ public class DatabaseManager
         statement.close();
         return messagesJson;
     }
+
 }
