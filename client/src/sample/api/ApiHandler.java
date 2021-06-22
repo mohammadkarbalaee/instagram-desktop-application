@@ -88,9 +88,8 @@ public class ApiHandler
         return gson.fromJson(body,Post.class);
     }
 
-    public void sendPhoto(String location) throws IOException
+    public void sendPhoto(File file) throws IOException
     {
-        File file = new File(location);
         BufferedImage bufferedImage = ImageIO.read(file);
         ImageIO.write(bufferedImage,"png",RequestPipeline.getDataOutputStream());
         bufferedImage.flush();
