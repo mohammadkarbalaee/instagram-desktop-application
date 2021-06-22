@@ -17,13 +17,13 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <left>
-      <VBox prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #fff;" stylesheets="@../mainmenu/css/styles.css" BorderPane.alignment="CENTER">
+      <VBox prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #fff;" stylesheets="@mainmenu/css/styles.css" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <ImageView fitHeight="69.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../mainmenu/photos/instagram_32px.png" />
+                        <Image url="@mainmenu/photos/instagram_32px.png" />
                      </image>
                      <HBox.margin>
                         <Insets bottom="5.0" />
@@ -31,7 +31,7 @@
                   </ImageView>
                   <ImageView fitHeight="25.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../mainmenu/photos/instagram-text.png" />
+                        <Image url="@mainmenu/photos/instagram-text.png" />
                      </image>
                      <HBox.margin>
                         <Insets />
@@ -46,7 +46,7 @@
                <children>
                   <ImageView fitHeight="140.0" fitWidth="140.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../mainmenu/photos/photo_2021-06-10_18-43-13.jpg" />
+                        <Image url="@mainmenu/photos/photo_2021-06-10_18-43-13.jpg" />
                      </image>
                   </ImageView>
                   <Label contentDisplay="CENTER" prefHeight="31.0" prefWidth="284.0" text="      Hasan Rokn abady">
@@ -63,11 +63,11 @@
             </VBox>
             <VBox prefHeight="473.0" prefWidth="300.0" spacing="15.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" stylesheets="@../mainmenu/css/styles.css">
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" stylesheets="@mainmenu/css/styles.css">
                      <children>
                         <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../mainmenu/photos/home_48px.png" />
+                              <Image url="@mainmenu/photos/home_48px.png" />
                            </image>
                         </ImageView>
                         <Label prefHeight="21.0" prefWidth="159.0" text="Feed">
@@ -84,11 +84,11 @@
                         <String fx:value="selected" />
                      </styleClass>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../mainmenu/css/styles.css">
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@mainmenu/css/styles.css">
                      <children>
                         <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../mainmenu/photos/time_machine_100px.png" />
+                              <Image url="@mainmenu/photos/time_machine_100px.png" />
                            </image>
                         </ImageView>
                         <Label prefHeight="21.0" prefWidth="159.0" text="Stories">
@@ -101,11 +101,11 @@
                         <Insets left="-20.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../mainmenu/css/styles.css">
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@mainmenu/css/styles.css">
                      <children>
                         <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../mainmenu/photos/search_100px.png" />
+                              <Image url="@mainmenu/photos/search_100px.png" />
                            </image>
                         </ImageView>
                         <Label prefHeight="21.0" prefWidth="159.0" text="Explore">
@@ -118,11 +118,11 @@
                         <Insets left="-20.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../mainmenu/css/styles.css">
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@mainmenu/css/styles.css">
                      <children>
                         <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../mainmenu/photos/bell_100px.png" />
+                              <Image url="@mainmenu/photos/bell_100px.png" />
                            </image>
                         </ImageView>
                         <Label prefHeight="21.0" prefWidth="159.0" text="Notifications">
@@ -135,11 +135,11 @@
                         <Insets left="-20.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../mainmenu/css/styles.css">
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@mainmenu/css/styles.css">
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../mainmenu/photos/paper_plane_100px.png" />
+                              <Image url="@mainmenu/photos/paper_plane_100px.png" />
                            </image>
                         </ImageView>
                         <Label prefHeight="21.0" prefWidth="159.0" text="Direct">
@@ -152,11 +152,11 @@
                         <Insets left="-20.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../mainmenu/css/styles.css">
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@mainmenu/css/styles.css">
                      <children>
                         <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../mainmenu/photos/igtv_100px.png" />
+                              <Image url="@mainmenu/photos/igtv_100px.png" />
                            </image>
                         </ImageView>
                         <Label prefHeight="21.0" prefWidth="159.0" text="IG TV">
@@ -169,11 +169,11 @@
                         <Insets left="-20.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../mainmenu/css/styles.css">
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@mainmenu/css/styles.css">
                      <children>
                         <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../mainmenu/photos/settings_100px.png" />
+                              <Image url="@mainmenu/photos/settings_100px.png" />
                            </image>
                         </ImageView>
                         <Label prefHeight="21.0" prefWidth="159.0" text="Settings">
@@ -186,11 +186,11 @@
                         <Insets left="-20.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@../mainmenu/css/styles.css">
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@mainmenu/css/styles.css">
                      <children>
                         <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../mainmenu/photos/contacts_64px.png" />
+                              <Image url="@mainmenu/photos/contacts_64px.png" />
                            </image>
                         </ImageView>
                         <Label prefHeight="21.0" prefWidth="159.0" text="Profile">
@@ -209,15 +209,15 @@
       </VBox>
    </left>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="primary-color" stylesheets="@../mainmenu/css/styles.css" BorderPane.alignment="CENTER">
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="primary-color" stylesheets="@mainmenu/css/styles.css" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0">
                <children>
-                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="45.0" prefWidth="170.0" spacing="10.0" stylesheets="@../mainmenu/css/styles.css">
+                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="45.0" prefWidth="170.0" spacing="10.0" stylesheets="@mainmenu/css/styles.css">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../mainmenu/photos/add_100px.png" />
+                              <Image url="@mainmenu/photos/add_100px.png" />
                            </image>
                         </ImageView>
                         <Label lineSpacing="10.0" prefHeight="28.0" prefWidth="106.0" text="Add Post">
@@ -239,16 +239,16 @@
                      <HBox.margin>
                         <Insets left="10.0" right="10.0" />
                      </HBox.margin></Pane>
-                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="45.0" prefWidth="330.0" spacing="10.0" stylesheets="@../mainmenu/css/styles.css">
+                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="45.0" prefWidth="330.0" spacing="10.0" stylesheets="@mainmenu/css/styles.css">
                      <children>
-                        <TextField prefHeight="31.0" prefWidth="246.0" promptText="Search" styleClass="transparent" stylesheets="@../mainmenu/css/styles.css">
+                        <TextField prefHeight="31.0" prefWidth="246.0" promptText="Search" styleClass="transparent" stylesheets="@mainmenu/css/styles.css">
                            <font>
                               <Font name="System Italic" size="14.0" />
                            </font>
                         </TextField>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../mainmenu/photos/search_100px.png" />
+                              <Image url="@mainmenu/photos/search_100px.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -271,7 +271,7 @@
                   <Insets left="20.0" />
                </VBox.margin>
             </Label>
-            <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="transparent" stylesheets="@../mainmenu/css/styles.css" VBox.vgrow="ALWAYS">
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="transparent" stylesheets="@mainmenu/css/styles.css" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets left="20.0" right="20.0" />
                </VBox.margin>

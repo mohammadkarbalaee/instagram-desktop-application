@@ -61,7 +61,7 @@ public class SigningController implements Initializable
         titleImageView.setImage(titleImage);
     }
 
-    public void okButtonSignupOnAction() throws IOException, InterruptedException
+    public void okButtonSignupOnAction() throws IOException
     {
         User newUser = new User(username.getText(),email.getText(),password.getText());
         SignUpperLogInner signUpper =  new SignUpperLogInner(newUser);
@@ -106,7 +106,7 @@ public class SigningController implements Initializable
 
     public void alreadyHaveAnAccount() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
             Stage loginStage = new Stage();
             loginStage.initStyle(StageStyle.UNDECORATED);
             loginStage.setScene(new Scene(root, 520, 400));
