@@ -1,11 +1,12 @@
 package application.datamanagement.database;
 
-import application.util.User;
-import application.util.directmessage.ChatRoom;
-import application.util.directmessage.Message;
-import application.util.followerfollowing.FollowerFollowingPack;
-import application.util.post.Post;
-import application.util.search.SearchResult;
+import application.datacomponents.comment.Comment;
+import application.datacomponents.signuplogin.User;
+import application.datacomponents.directmessage.ChatRoom;
+import application.datacomponents.directmessage.Message;
+import application.datacomponents.followerfollowing.FollowerFollowingPack;
+import application.datacomponents.post.Post;
+import application.datacomponents.search.SearchResult;
 import com.google.gson.Gson;
 
 import java.sql.*;
@@ -344,4 +345,16 @@ public class DatabaseManager
         return messagesJson;
     }
 
+    synchronized public static void addComment(Comment newComment) throws SQLException
+    {
+        String insertQuery = "INSERT INTO comments" +
+                "(text,author,post)" +
+                " VALUES (?, ?, ?)";
+        PreparedStatement statement = CONNECTION.prepareStatement(insertQuery);
+        statement.setString(1,newComment.getText());
+        statement.setString(2,newComment.getAuthor());
+        statement.setString(3,newComment.getPost());
+        statement.execute();
+        statement.close();
+    }
 }

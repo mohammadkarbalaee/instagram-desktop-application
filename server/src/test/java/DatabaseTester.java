@@ -1,5 +1,5 @@
 import application.datamanagement.DataManager;
-import application.util.User;
+import application.datacomponents.signuplogin.User;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
