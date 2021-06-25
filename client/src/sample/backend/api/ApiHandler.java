@@ -1,10 +1,10 @@
 package sample.backend.api;
 
 import com.google.gson.Gson;
-import sample.backend.comment.Comment;
-import sample.backend.directmessage.Message;
-import sample.backend.post.Post;
-import sample.backend.search.SearchResult;
+import sample.backend.application.comment.Comment;
+import sample.backend.application.directmessage.Message;
+import sample.backend.application.post.Post;
+import sample.backend.application.search.SearchResult;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

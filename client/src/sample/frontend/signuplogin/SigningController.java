@@ -12,8 +12,8 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.backend.api.ApiHandler;
-import sample.backend.signuplogin.SignUpperLogInner;
-import sample.backend.signuplogin.User;
+import sample.backend.application.signuplogin.SignUpperLogInner;
+import sample.backend.application.signuplogin.User;
 
 import java.io.File;
 import java.io.IOException;

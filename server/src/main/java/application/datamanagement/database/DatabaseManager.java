@@ -1,6 +1,7 @@
 package application.datamanagement.database;
 
 import application.datacomponents.comment.Comment;
+import application.datacomponents.like.Like;
 import application.datacomponents.signuplogin.User;
 import application.datacomponents.directmessage.ChatRoom;
 import application.datacomponents.directmessage.Message;
@@ -394,5 +395,17 @@ public class DatabaseManager
         }
         statement.close();
         return commentsJson;
+    }
+
+    synchronized public static void addLike(Like like) throws SQLException
+    {
+        String insertQuery = "INSERT INTO likes" +
+                "(liker,post)" +
+                " VALUES (?, ?)";
+        PreparedStatement statement = CONNECTION.prepareStatement(insertQuery);
+        statement.setString(1,like.getLiker());
+        statement.setString(2,like.getPost());
+        statement.execute();
+        statement.close();
     }
 }
