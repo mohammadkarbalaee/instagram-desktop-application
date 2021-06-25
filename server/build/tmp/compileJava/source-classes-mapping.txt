@@ -8,8 +8,8 @@ api/ApiHandler.java
  api.ApiHandler
 application/datacomponents/followerfollowing/FollowerFollowingPack.java
  application.datacomponents.followerfollowing.FollowerFollowingPack
-application/requestahandlers/posts/LikeHandler.java
- application.requestahandlers.posts.LikeHandler
+application/datacomponents/directmessage/ChatRoom.java
+ application.datacomponents.directmessage.ChatRoom
 application/datacomponents/search/SearchResult.java
  application.datacomponents.search.SearchResult
 application/datacomponents/signuplogin/User.java
@@ -20,8 +20,8 @@ application/datacomponents/directmessage/Message.java
  application.datacomponents.directmessage.Message
 application/datacomponents/post/Post.java
  application.datacomponents.post.Post
-application/datacomponents/directmessage/ChatRoom.java
- application.datacomponents.directmessage.ChatRoom
+application/datacomponents/like/Like.java
+ application.datacomponents.like.Like
 api/RequestTerminal.java
  api.RequestTerminal
 ServerRunner.java
@@ -40,6 +40,8 @@ application/requestahandlers/followersfollowings/FollowersHandler.java
  application.requestahandlers.followersfollowings.FollowersHandler
 application/requestahandlers/posts/CommentHandler.java
  application.requestahandlers.posts.CommentHandler
+application/requestahandlers/posts/LikeHandler.java
+ application.requestahandlers.posts.LikeHandler
 application/requestahandlers/signupslogins/LoginHandler.java
  application.requestahandlers.signupslogins.LoginHandler
 application/requestahandlers/searches/SearchHandler.java

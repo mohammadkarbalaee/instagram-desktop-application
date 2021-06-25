@@ -30,7 +30,7 @@ public class FollowersHandler
 
     public static void deliverFollowingsQuantity(String username) throws IOException, SQLException
     {
-        Response response = new Response(DatabaseManager.getFollowersQuantity(username).toString());
+        Response response = new Response(DatabaseManager.getFollowingsQuantity(username).toString());
         apiHandler.answerToClient(response);
     }
 }

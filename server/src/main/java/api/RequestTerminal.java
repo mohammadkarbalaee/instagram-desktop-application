@@ -4,11 +4,13 @@ import application.datacomponents.comment.Comment;
 import application.datacomponents.directmessage.ChatRoom;
 import application.datacomponents.directmessage.Message;
 import application.datacomponents.followerfollowing.FollowerFollowingPack;
+import application.datacomponents.like.Like;
 import application.datacomponents.post.Post;
 import application.datacomponents.signuplogin.User;
 import application.requestahandlers.directmessages.DirectHandler;
 import application.requestahandlers.followersfollowings.FollowersHandler;
 import application.requestahandlers.posts.CommentHandler;
+import application.requestahandlers.posts.LikeHandler;
 import application.requestahandlers.posts.PostHandler;
 import application.requestahandlers.searches.SearchHandler;
 import application.requestahandlers.signupslogins.LoginHandler;
@@ -60,6 +62,7 @@ public class RequestTerminal implements Runnable
         PostHandler.build(apiHandler);
         CommentHandler.build(apiHandler);
         DirectHandler.build(apiHandler);
+        LikeHandler.build(apiHandler);
     }
 
     private void routePicker() throws SQLException, IOException
@@ -114,6 +117,21 @@ public class RequestTerminal implements Runnable
                     break;
                 case "GET_COMMENTS":
                     CommentHandler.deliverComments(request.getBody());
+                    break;
+                case "ADD_LIKE":
+                    LikeHandler.addLike(gson.fromJson(request.getBody(), Like.class));
+                    break;
+                case "GET_LIKES_QUANTITY":
+                    LikeHandler.deliverLikesQuantity(request.getBody());
+                    break;
+                case "GET_LIKES":
+                    LikeHandler.deliverLikes(request.getBody());
+                    break;
+                case "GET_IS_LIKE_NEW":
+                    LikeHandler.deliverIsNew(gson.fromJson(request.getBody(),Like.class));
+                    break;
+                case "ADD_DISLIKE":
+                    LikeHandler.addDisLike(gson.fromJson(request.getBody(),Like.class));
                     break;
             }
         }

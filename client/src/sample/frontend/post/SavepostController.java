@@ -11,7 +11,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import sample.backend.api.ApiHandler;
 import sample.backend.api.Request;
-import sample.backend.post.Post;
+import sample.backend.application.post.Post;
 import sample.frontend.ApplicationRunner;
 
 import javax.imageio.ImageIO;

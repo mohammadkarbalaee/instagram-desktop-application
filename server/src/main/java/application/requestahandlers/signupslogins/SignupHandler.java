@@ -19,7 +19,7 @@ public class SignupHandler
 
     public static void deliverIsNew(String username) throws IOException, SQLException
     {
-        if (!DatabaseManager.checkExistence(username))
+        if (DatabaseManager.isUserNew(username))
         {
             Response isNew = new Response("true");
             apiHandler.answerToClient(isNew);

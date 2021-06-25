@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/ClientBackendTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/ClientBackendTester.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/api/ApiHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/api/ApiHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/backend/ClientBackendTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/backend/ClientBackendTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/backend/api/ApiHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/backend/api/ApiHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/api/ClientHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/api/ServerRunner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/application/data/comment/Comment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/application/data/directmessage/ChatRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/application/data/directmessage/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/application/data/followerfollowing/FollowerFollowingPack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/application/data/post/Post.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/application/data/search/SearchResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/application/data/signuplogin/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/application/datamanagement/database/DatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/build/classes/java/main/application/datamanagement/database/DatabaseManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../server/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/api/RequestTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/api/RequestTerminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/application/datamanagement/database/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/application/datamanagement/database/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/application/requestahandlers/posts/CommentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/application/requestahandlers/posts/CommentHandler.java" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -330,17 +303,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -413,6 +375,9 @@
       <workItem from="1624535144472" duration="1426000" />
       <workItem from="1624600577805" duration="321000" />
       <workItem from="1624602843313" duration="5243000" />
+      <workItem from="1624617167185" duration="247000" />
+      <workItem from="1624630649396" duration="280000" />
+      <workItem from="1624630993408" duration="4079000" />
     </task>
     <servers />
   </component>
