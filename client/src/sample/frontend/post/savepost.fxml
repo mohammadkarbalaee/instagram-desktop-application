@@ -8,27 +8,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: #ffffed;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.post.SavepostController">
+<AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: white; -fx-border-style: solid;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.post.SavepostController">
    <children>
       <ImageView fx:id="imageView" fitHeight="325.0" fitWidth="357.0" layoutX="15.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@./photos/postlogo.png" />
          </image>
       </ImageView>
-      <Button fx:id="openButton" layoutX="99.0" layoutY="448.0" mnemonicParsing="false" onAction="#onFileChooserClick" prefHeight="35.0" prefWidth="147.0" text="Choose a photo" textFill="#b409a0" textOverrun="CENTER_WORD_ELLIPSIS" />
-      <TextField fx:id="captionField" layoutX="350.0" layoutY="29.0" prefHeight="554.0" prefWidth="329.0" promptText="type in your caption">
+      <Button fx:id="openButton" layoutX="99.0" layoutY="448.0" mnemonicParsing="false" onAction="#onFileChooserClick" prefHeight="35.0" prefWidth="147.0" text="Choose a photo" textOverrun="CENTER_WORD_ELLIPSIS" />
+      <TextField fx:id="captionField" layoutX="350.0" layoutY="29.0" prefHeight="554.0" prefWidth="329.0" promptText="type in your caption" style="-fx-border-color: #d8b1fa; -fx-background-radius: 40; -fx-border-radius: 40; -fx-border-width: 2;">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <Label layoutX="116.0" layoutY="29.0" prefHeight="91.0" prefWidth="136.0" text="New post" textFill="#a60894">
+      <Label layoutX="116.0" layoutY="29.0" prefHeight="91.0" prefWidth="136.0" style="-fx-border-radius: 30; -fx-background-color: white; -fx-background-radius: 30;" text="New post" textFill="#a60894">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="cancelButton" layoutX="20.0" layoutY="620.0" mnemonicParsing="false" onAction="#onCancelClick" prefHeight="58.0" prefWidth="79.0" text="cancel" textFill="#a603b1" />
-      <Button fx:id="saveButton" layoutX="573.0" layoutY="620.0" mnemonicParsing="false" onAction="#onSaveClick" prefHeight="58.0" prefWidth="106.0" text="save" textFill="#a603b1" />
-      <Label fx:id="alert" layoutX="173.0" layoutY="624.0" prefHeight="52.0" prefWidth="274.0" alignment="CENTER" textFill="#fc0404">
+      <Button fx:id="cancelButton" layoutX="20.0" layoutY="620.0" mnemonicParsing="false" onAction="#onCancelClick" prefHeight="58.0" prefWidth="79.0" text="cancel" />
+      <Button fx:id="saveButton" layoutX="573.0" layoutY="620.0" mnemonicParsing="false" onAction="#onSaveClick" prefHeight="58.0" prefWidth="106.0" text="save" />
+      <Label fx:id="alert" alignment="CENTER" layoutX="173.0" layoutY="624.0" prefHeight="52.0" prefWidth="274.0" textFill="#fc0404">
          <font>
             <Font size="20.0" />
          </font>
