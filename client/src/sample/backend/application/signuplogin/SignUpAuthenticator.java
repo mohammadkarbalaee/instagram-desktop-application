@@ -26,7 +26,7 @@ public class SignUpAuthenticator
         ApiHandler
                 apiHandler = new ApiHandler(checkIsNew);
         apiHandler.sendRequest();
-        return apiHandler.receiveIS_NEWresponse();
+        return apiHandler.receiveIsNew();
     }
 
     public boolean isPasswordMatch(String username,String givenPassword) throws IOException

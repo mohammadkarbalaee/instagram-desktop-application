@@ -121,6 +121,15 @@ public class RequestTerminal implements Runnable
                 case "ADD_LIKE":
                     LikeHandler.addLike(gson.fromJson(request.getBody(), Like.class));
                     break;
+                case "GET_LIKES_QUANTITY":
+                    LikeHandler.deliverLikesQuantity(request.getBody());
+                    break;
+                case "GET_LIKES":
+                    LikeHandler.deliverLikes(request.getBody());
+                    break;
+                case "GET_IS_LIKE_NEW":
+                    LikeHandler.deliverIsNew(gson.fromJson(request.getBody(),Like.class));
+                    break;
             }
         }
     }

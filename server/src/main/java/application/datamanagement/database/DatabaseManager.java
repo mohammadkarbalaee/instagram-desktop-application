@@ -53,7 +53,7 @@ public class DatabaseManager
         preparedStatement.close();
     }
 
-    synchronized public static boolean checkExistence(String usernameToCheck) throws SQLException
+    synchronized public static boolean isUserNew(String usernameToCheck) throws SQLException
     {
         String searchQuery = "SELECT username FROM users " +
                 "WHERE username = ?";
@@ -120,7 +120,7 @@ public class DatabaseManager
 
     synchronized public static SearchResult getSearchResult(String usernameToManipulate) throws SQLException
     {
-        if (checkExistence(usernameToManipulate))
+        if (isUserNew(usernameToManipulate))
         {
             SearchResult searchResult = new SearchResult();
 
@@ -407,5 +407,64 @@ public class DatabaseManager
         statement.setString(2,like.getPost());
         statement.execute();
         statement.close();
+    }
+
+    synchronized public static Integer getLikesQuantity(String post) throws SQLException
+    {
+        int quantity = 0;
+        String query = "SELECT post FROM likes " +
+                "WHERE post = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(query);
+        statement.setString(1,post);
+        ResultSet postsSet = statement.executeQuery();
+        while (postsSet.next())
+        {
+            quantity++;
+        }
+        statement.close();
+        return quantity;
+    }
+
+    synchronized public static String getLikes(String post) throws SQLException
+    {
+        String query = "SELECT * FROM likes WHERE post = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(query);
+        statement.setString(1,post);
+        ResultSet resultSet = statement.executeQuery();
+        String likesJson = "";
+        Like like;
+        String liker;
+
+        while (resultSet.next())
+        {
+            liker = resultSet.getString("liker");
+            like = new Like(liker,post);
+            likesJson += gson.toJson(like) + "@";
+        }
+        statement.close();
+        return likesJson;
+    }
+
+    synchronized public static boolean isLikeNew(Like like) throws SQLException
+    {
+        String searchQuery = "SELECT * FROM likes " +
+                "WHERE liker = ? && post = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(searchQuery);
+        statement.setString(1,like.getLiker());
+        statement.setString(2,like.getPost());
+        ResultSet resultSet = statement.executeQuery();
+        boolean result;
+        if (!resultSet.next())
+        {
+            result = false;
+        }
+        else
+        {
+            result = true;
+        }
+
+        statement.close();
+
+        return result;
     }
 }

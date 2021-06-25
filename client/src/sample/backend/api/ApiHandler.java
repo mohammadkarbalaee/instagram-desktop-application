@@ -3,6 +3,7 @@ package sample.backend.api;
 import com.google.gson.Gson;
 import sample.backend.application.comment.Comment;
 import sample.backend.application.directmessage.Message;
+import sample.backend.application.like.Like;
 import sample.backend.application.post.Post;
 import sample.backend.application.search.SearchResult;
 
@@ -34,14 +35,13 @@ public class ApiHandler
         RequestPipeline.getDataOutputStream().flush();
     }
 
-    public boolean receiveIS_NEWresponse() throws IOException
+    public boolean receiveIsNew() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
         Response responseObject = gson.fromJson(json,Response.class);
         String response = responseObject.getBody();
         if (response.equals("true"))
         {
-            System.out.println(response);
             return true;
         }
         else
@@ -58,7 +58,7 @@ public class ApiHandler
         return gson.fromJson(searchResultJson,SearchResult.class);
     }
 
-    public Integer receiveFollowerFollowingQuantity() throws IOException
+    public Integer receiveQuantity() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
         Response responseObject = gson.fromJson(json,Response.class);
@@ -71,14 +71,6 @@ public class ApiHandler
         String json = RequestPipeline.getDataInputStream().readUTF();
         Response responseObject = gson.fromJson(json,Response.class);
         return responseObject.getBody();
-    }
-
-    public Integer receivePostsQuantity() throws IOException
-    {
-        String json = RequestPipeline.getDataInputStream().readUTF();
-        Response responseObject = gson.fromJson(json,Response.class);
-        String body = responseObject.getBody();
-        return Integer.parseInt(body);
     }
 
     public Post receiveWantedPost() throws IOException
@@ -116,14 +108,6 @@ public class ApiHandler
         return messages;
     }
 
-    public Integer receiveCommentQuantity() throws IOException
-    {
-        String json = RequestPipeline.getDataInputStream().readUTF();
-        Response responseObject = gson.fromJson(json,Response.class);
-        String body = responseObject.getBody();
-        return Integer.parseInt(body);
-    }
-
     public Comment[] receiveComments() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
@@ -136,5 +120,19 @@ public class ApiHandler
             comments[i] = gson.fromJson(commentObjects[i],Comment.class);
         }
         return comments;
+    }
+
+    public Like[] receiveLikes() throws IOException
+    {
+        String json = RequestPipeline.getDataInputStream().readUTF();
+        Response responseObject = gson.fromJson(json,Response.class);
+        String body = responseObject.getBody();
+        String[] likeObjects = body.split("@");
+        Like[] likes = new Like[likeObjects.length];
+        for (int i = 0; i < likes.length; i++)
+        {
+            likes[i] = gson.fromJson(likeObjects[i],Like.class);
+        }
+        return likes;
     }
 }

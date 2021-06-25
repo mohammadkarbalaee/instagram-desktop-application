@@ -8,8 +8,8 @@ api/ApiHandler.java
  api.ApiHandler
 application/datacomponents/followerfollowing/FollowerFollowingPack.java
  application.datacomponents.followerfollowing.FollowerFollowingPack
-application/requestahandlers/posts/LikeHandler.java
- application.requestahandlers.posts.LikeHandler
+application/datacomponents/directmessage/ChatRoom.java
+ application.datacomponents.directmessage.ChatRoom
 application/datacomponents/search/SearchResult.java
  application.datacomponents.search.SearchResult
 application/datacomponents/signuplogin/User.java
@@ -20,14 +20,12 @@ application/datacomponents/directmessage/Message.java
  application.datacomponents.directmessage.Message
 application/datacomponents/post/Post.java
  application.datacomponents.post.Post
-application/datacomponents/directmessage/ChatRoom.java
- application.datacomponents.directmessage.ChatRoom
-api/RequestTerminal.java
- api.RequestTerminal
+application/datacomponents/like/Like.java
+ application.datacomponents.like.Like
+application/requestahandlers/searches/SearchHandler.java
+ application.requestahandlers.searches.SearchHandler
 ServerRunner.java
  ServerRunner
-application/requestahandlers/signupslogins/SignupHandler.java
- application.requestahandlers.signupslogins.SignupHandler
 application/requestahandlers/directmessages/DirectHandler.java
  application.requestahandlers.directmessages.DirectHandler
 application/datamanagement/database/DatabaseManager.java
@@ -42,5 +40,9 @@ application/requestahandlers/posts/CommentHandler.java
  application.requestahandlers.posts.CommentHandler
 application/requestahandlers/signupslogins/LoginHandler.java
  application.requestahandlers.signupslogins.LoginHandler
-application/requestahandlers/searches/SearchHandler.java
- application.requestahandlers.searches.SearchHandler
+application/requestahandlers/signupslogins/SignupHandler.java
+ application.requestahandlers.signupslogins.SignupHandler
+application/requestahandlers/posts/LikeHandler.java
+ application.requestahandlers.posts.LikeHandler
+api/RequestTerminal.java
+ api.RequestTerminal

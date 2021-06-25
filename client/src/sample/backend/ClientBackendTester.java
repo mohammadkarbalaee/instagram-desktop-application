@@ -17,8 +17,9 @@ public class ClientBackendTester
         Gson gson = new Gson();
         RequestPipeline.build();
         Like like = new Like("hasan","reyhan/1");
-        Request request = new Request("ADD_LIKE",gson.toJson(like));
+        Request request = new Request("GET_IS_LIKE_NEW",gson.toJson(like));
         ApiHandler apiHandler = new ApiHandler(request);
         apiHandler.sendRequest();
+        System.out.println(apiHandler.receiveIsNew());
     }
 }
