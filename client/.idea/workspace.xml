@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/ApplicationRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/ApplicationRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/post/savepost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/post/savepost.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/signuplogin/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/signuplogin/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/frontend/ApplicationRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/ApplicationRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/frontend/signuplogin/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/signuplogin/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/frontend/post/savepost.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/post/savepost.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,12 +161,12 @@
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/sample/frontend/post/photos" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.22682928" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -180,7 +184,7 @@
       <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend\signuplogin\photos" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ApplicationRunner (2)">
+  <component name="RunManager" selected="Application.App">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -206,6 +210,14 @@
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="App" />
+      <module name="JavaFxApplication" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApplicationRunner (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sample.frontend.fxml.ApplicationRunner" />
       <module name="JavaFxApplication" />
@@ -227,20 +239,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sample.frontend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ApplicationRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sample.ApplicationRunner" />
-      <module name="JavaFxApplication" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sample.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -361,14 +359,15 @@
       <item itemvalue="Application.ClientRunner" />
       <item itemvalue="Application.ApplicationRunner (1)" />
       <item itemvalue="Application.ApplicationRunner (2)" />
+      <item itemvalue="Application.App" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
         <item itemvalue="Application.ApplicationRunner (2)" />
         <item itemvalue="Application.ApplicationRunner (1)" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.ClientRunner" />
-        <item itemvalue="Application.ApplicationRunner" />
       </list>
     </recent_temporary>
   </component>
@@ -386,6 +385,13 @@
       <workItem from="1623949954364" duration="5650000" />
       <workItem from="1624010743604" duration="5589000" />
       <workItem from="1624099868059" duration="14297000" />
+      <workItem from="1624427753892" duration="3445000" />
+      <workItem from="1624456368057" duration="3000" />
+      <workItem from="1624489079746" duration="2000" />
+      <workItem from="1624510568722" duration="3000" />
+      <workItem from="1624534754786" duration="359000" />
+      <workItem from="1624535144472" duration="1426000" />
+      <workItem from="1624600577805" duration="321000" />
     </task>
     <servers />
   </component>
