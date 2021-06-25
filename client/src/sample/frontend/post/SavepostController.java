@@ -9,8 +9,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import sample.api.ApiHandler;
-import sample.api.Request;
+import sample.backend.api.ApiHandler;
+import sample.backend.api.Request;
 import sample.backend.post.Post;
 import sample.frontend.ApplicationRunner;
 

@@ -1,28 +1,30 @@
-application/util/User.java
- application.util.User
-application/util/followerfollowing/FollowerFollowingPack.java
- application.util.followerfollowing.FollowerFollowingPack
+api/RequestPipeline.java
+ api.RequestPipeline
+api/ApiHandler.java
+ api.ApiHandler
 api/Response.java
  api.Response
 api/Request.java
  api.Request
-application/util/search/SearchResult.java
- application.util.search.SearchResult
-application/util/directmessage/ChatRoom.java
- application.util.directmessage.ChatRoom
-api/RequestPipeline.java
- api.RequestPipeline
-application/util/directmessage/Message.java
- application.util.directmessage.Message
-application/util/post/Post.java
- application.util.post.Post
-application/util/ClientHandler.java
- application.util.ClientHandler
+application/data/comment/Comment.java
+ application.data.comment.Comment
+application/data/search/SearchResult.java
+ application.data.search.SearchResult
+application/data/signuplogin/User.java
+ application.data.signuplogin.User
 application/datamanagement/database/DatabaseManager.java
  application.datamanagement.database.DatabaseManager
+application/data/post/Post.java
+ application.data.post.Post
+application/data/followerfollowing/FollowerFollowingPack.java
+ application.data.followerfollowing.FollowerFollowingPack
 application/datamanagement/file/PhotoManager.java
  application.datamanagement.file.PhotoManager
-application/util/ServerRunner.java
- application.util.ServerRunner
-api/ApiHandler.java
- api.ApiHandler
+application/data/directmessage/ChatRoom.java
+ application.data.directmessage.ChatRoom
+application/data/directmessage/Message.java
+ application.data.directmessage.Message
+api/ClientHandler.java
+ api.ClientHandler
+api/ServerRunner.java
+ api.ServerRunner

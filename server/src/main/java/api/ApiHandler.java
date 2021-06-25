@@ -9,7 +9,7 @@ import java.io.IOException;
 public class ApiHandler
 {
     private final Gson gson = new Gson();
-    private final RequestPipeline requestPipeline;
+    private RequestPipeline requestPipeline = null;
 
     public ApiHandler(RequestPipeline requestPipeline)
     {

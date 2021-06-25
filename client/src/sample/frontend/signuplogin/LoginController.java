@@ -14,8 +14,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import sample.backend.signup.SignUpperLogInner;
-import sample.backend.signup.User;
+import sample.backend.signuplogin.SignUpperLogInner;
+import sample.backend.signuplogin.User;
 import sample.frontend.ApplicationRunner;
 
 import java.io.File;
