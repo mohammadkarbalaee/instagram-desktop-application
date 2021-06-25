@@ -47,4 +47,9 @@ public class LikeHandler
             apiHandler.answerToClient(isNew);
         }
     }
+
+    public static void addDisLike(Like like) throws SQLException
+    {
+        DatabaseManager.addDislike(like);
+    }
 }

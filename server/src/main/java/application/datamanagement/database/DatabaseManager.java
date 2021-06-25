@@ -467,4 +467,15 @@ public class DatabaseManager
 
         return result;
     }
+
+    synchronized public static void addDislike(Like like) throws SQLException
+    {
+        String query = "DELETE FROM likes " +
+                "WHERE liker = ? && post = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(query);
+        statement.setString(1,like.getLiker());
+        statement.setString(2,like.getPost());
+        statement.execute();
+        statement.close();
+    }
 }

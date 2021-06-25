@@ -130,6 +130,9 @@ public class RequestTerminal implements Runnable
                 case "GET_IS_LIKE_NEW":
                     LikeHandler.deliverIsNew(gson.fromJson(request.getBody(),Like.class));
                     break;
+                case "ADD_DISLIKE":
+                    LikeHandler.addDisLike(gson.fromJson(request.getBody(),Like.class));
+                    break;
             }
         }
     }

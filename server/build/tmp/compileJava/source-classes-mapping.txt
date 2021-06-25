@@ -22,10 +22,12 @@ application/datacomponents/post/Post.java
  application.datacomponents.post.Post
 application/datacomponents/like/Like.java
  application.datacomponents.like.Like
-application/requestahandlers/searches/SearchHandler.java
- application.requestahandlers.searches.SearchHandler
+api/RequestTerminal.java
+ api.RequestTerminal
 ServerRunner.java
  ServerRunner
+application/requestahandlers/signupslogins/SignupHandler.java
+ application.requestahandlers.signupslogins.SignupHandler
 application/requestahandlers/directmessages/DirectHandler.java
  application.requestahandlers.directmessages.DirectHandler
 application/datamanagement/database/DatabaseManager.java
@@ -38,11 +40,9 @@ application/requestahandlers/followersfollowings/FollowersHandler.java
  application.requestahandlers.followersfollowings.FollowersHandler
 application/requestahandlers/posts/CommentHandler.java
  application.requestahandlers.posts.CommentHandler
-application/requestahandlers/signupslogins/LoginHandler.java
- application.requestahandlers.signupslogins.LoginHandler
-application/requestahandlers/signupslogins/SignupHandler.java
- application.requestahandlers.signupslogins.SignupHandler
 application/requestahandlers/posts/LikeHandler.java
  application.requestahandlers.posts.LikeHandler
-api/RequestTerminal.java
- api.RequestTerminal
+application/requestahandlers/signupslogins/LoginHandler.java
+ application.requestahandlers.signupslogins.LoginHandler
+application/requestahandlers/searches/SearchHandler.java
+ application.requestahandlers.searches.SearchHandler
