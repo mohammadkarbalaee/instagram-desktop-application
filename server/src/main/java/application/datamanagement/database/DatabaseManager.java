@@ -357,4 +357,42 @@ public class DatabaseManager
         statement.execute();
         statement.close();
     }
+
+    synchronized public static Integer getCommentsQuanity(String post) throws SQLException
+    {
+        int quantity = 0;
+        String query = "SELECT post FROM comments " +
+                "WHERE post = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(query);
+        statement.setString(1,post);
+        ResultSet postsSet = statement.executeQuery();
+        while (postsSet.next())
+        {
+            quantity++;
+        }
+        statement.close();
+        return quantity;
+    }
+
+    synchronized public static String getComments(String post) throws SQLException
+    {
+        String query = "SELECT * FROM comments WHERE post = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(query);
+        statement.setString(1,post);
+        ResultSet resultSet = statement.executeQuery();
+        String commentsJson = "";
+        Comment comment;
+        String text;
+        String author;
+
+        while (resultSet.next())
+        {
+            author = resultSet.getString("author");
+            text = resultSet.getString("text");
+            comment = new Comment(text,author,post);
+            commentsJson += gson.toJson(comment) + "@";
+        }
+        statement.close();
+        return commentsJson;
+    }
 }
