@@ -1,8 +1,6 @@
 package api;
 
 import application.datacomponents.comment.Comment;
-import application.datamanagement.database.DatabaseManager;
-import application.datamanagement.file.PhotoManager;
 import application.datacomponents.directmessage.ChatRoom;
 import application.datacomponents.directmessage.Message;
 import application.datacomponents.followerfollowing.FollowerFollowingPack;
@@ -24,7 +22,6 @@ import java.sql.SQLException;
 public class RequestTerminal implements Runnable
 {
     private final Socket socket;
-    private Request request;
     private ApiHandler apiHandler;
     private final Gson gson = new Gson();
 
@@ -69,7 +66,7 @@ public class RequestTerminal implements Runnable
     {
         while(true)
         {
-            request = apiHandler.listenToClient();
+            Request request = apiHandler.listenToClient();
 
             switch (request.getLabel())
             {
@@ -111,6 +108,12 @@ public class RequestTerminal implements Runnable
                     break;
                 case "ADD_COMMENT":
                     CommentHandler.addComment(gson.fromJson(request.getBody(), Comment.class));
+                    break;
+                case "GET_COMMENTS_QUANTITY":
+                    CommentHandler.deliverCommentQuantity(request.getBody());
+                    break;
+                case "GET_COMMENTS":
+                    CommentHandler.deliverComments(request.getBody());
                     break;
             }
         }

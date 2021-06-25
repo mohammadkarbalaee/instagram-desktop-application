@@ -1,6 +1,7 @@
 package sample.backend.api;
 
 import com.google.gson.Gson;
+import sample.backend.comment.Comment;
 import sample.backend.directmessage.Message;
 import sample.backend.post.Post;
 import sample.backend.search.SearchResult;
@@ -121,5 +122,19 @@ public class ApiHandler
         Response responseObject = gson.fromJson(json,Response.class);
         String body = responseObject.getBody();
         return Integer.parseInt(body);
+    }
+
+    public Comment[] receiveComments() throws IOException
+    {
+        String json = RequestPipeline.getDataInputStream().readUTF();
+        Response responseObject = gson.fromJson(json,Response.class);
+        String body = responseObject.getBody();
+        String[] commentObjects = body.split("@");
+        Comment[] comments = new Comment[commentObjects.length];
+        for (int i = 0; i < comments.length; i++)
+        {
+            comments[i] = gson.fromJson(commentObjects[i],Comment.class);
+        }
+        return comments;
     }
 }
