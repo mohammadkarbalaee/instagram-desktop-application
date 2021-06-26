@@ -89,7 +89,7 @@ public class ApiHandler
         RequestPipeline.getDataOutputStream().flush();
     }
 
-    public BufferedImage receivePostPhoto() throws IOException
+    public BufferedImage receivePhoto() throws IOException
     {
         return ImageIO.read(RequestPipeline.getDataInputStream());
     }

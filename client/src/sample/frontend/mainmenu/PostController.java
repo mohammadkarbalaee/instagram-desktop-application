@@ -1,11 +1,11 @@
 package sample.frontend.mainmenu;
 
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import sample.frontend.mainmenu.model.Post;
 import javafx.scene.image.ImageView;
+import sample.backend.application.post.Post;
+
+import java.io.IOException;
 
 
 public class PostController
@@ -15,13 +15,7 @@ public class PostController
     private ImageView postImage;
 
     @FXML
-    private ImageView profileImage;
-
-    @FXML
-    private Label username;
-
-    @FXML
-    private Label date;
+    private Label owner;
 
     @FXML
     private Label likes;
@@ -29,22 +23,11 @@ public class PostController
     @FXML
     private Label comments;
 
-
-
-
-
-    public void setData(Post post)
+    public void setData(Post post) throws IOException
     {
-        Image imageForPost = new Image(getClass().getResourceAsStream(post.getPostImageSrc()));
-        postImage.setImage(imageForPost);
-
-        Image imageForProfile = new Image(getClass().getResourceAsStream(post.getProfileImageSrc()));
-        profileImage.setImage(imageForProfile);
-
-
-        username.setText(post.getUsername());
-        date.setText(post.getDate());
-        likes.setText(post.getNumLikes());
-        comments.setText(post.getNumComments());
+        postImage.setImage(post.getImage());
+        owner.setText(post.getOwner());
+        likes.setText(post.getLikesQuantity().toString());
+        comments.setText(post.getCommentsQuantity().toString());
     }
 }

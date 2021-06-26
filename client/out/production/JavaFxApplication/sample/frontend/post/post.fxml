@@ -26,7 +26,7 @@
             </ImageView>
             <VBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="104.0">
                <children>
-                  <Label fx:id="username" prefHeight="25.0" prefWidth="86.0" text=" user 1">
+                  <Label fx:id="owner" prefHeight="25.0" prefWidth="86.0" text=" user 1">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
