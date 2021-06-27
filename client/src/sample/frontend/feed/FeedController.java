@@ -1,13 +1,18 @@
-package sample.frontend.mainmenu;
+package sample.frontend.feed;
 
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import sample.backend.api.ApiHandler;
 import sample.backend.api.Request;
 import sample.backend.application.post.Post;
@@ -16,10 +21,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class FeedController implements Initializable
 {
+    @FXML
+    public Button addpostButton;
     @FXML
     private GridPane postGrid;
 
@@ -141,5 +149,15 @@ public class FeedController implements Initializable
         apiHandler.setRequest(getPostsQuantityRequest);
         apiHandler.sendRequest();
         return apiHandler.receiveQuantity();
+    }
+
+    public void onAddPostClick() throws IOException
+    {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../post/savepost.fxml")));
+        Scene scene = new Scene(root);
+        Stage savePostStage = new Stage();
+        savePostStage.initStyle(StageStyle.UNDECORATED);
+        savePostStage.setScene(scene);
+        savePostStage.show();
     }
 }

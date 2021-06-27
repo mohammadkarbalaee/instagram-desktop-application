@@ -1,4 +1,4 @@
-package sample.frontend.signuplogin;
+package sample.frontend.register;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -95,7 +95,7 @@ public class LoginController implements Initializable {
 
     public void gotoMain() throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("../mainmenu/main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../feed/feed.fxml"));
         Stage mainStage = new Stage();
         mainStage.initStyle(StageStyle.UNDECORATED);
         mainStage.setScene(new Scene(root, 520, 400));

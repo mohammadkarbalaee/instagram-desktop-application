@@ -1,4 +1,4 @@
-package sample.frontend.mainmenu;
+package sample.frontend.feed;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +13,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception
     {
         RequestPipeline.build();
-        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("feed.fxml"));
         primaryStage.setTitle("Instagram");
         primaryStage.setScene(new Scene(root,1510, 850));
         primaryStage.setFullScreen(true);
