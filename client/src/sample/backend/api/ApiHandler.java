@@ -73,7 +73,7 @@ public class ApiHandler
         return Integer.parseInt(body);
     }
 
-    public String receivePassword() throws IOException
+    public String receivePlainString() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
         Response responseObject = gson.fromJson(json,Response.class);
@@ -146,7 +146,7 @@ public class ApiHandler
         return likes;
     }
 
-    public String[] receiveFollowings() throws IOException
+    public String[] receiveFollowersFollowings() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
         Response responseObject = gson.fromJson(json,Response.class);

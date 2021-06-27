@@ -34,7 +34,7 @@ public class SignUpAuthenticator
         Request getPassword = new Request("GET_PASSWORD",username);
         ApiHandler apiHandler = new ApiHandler(getPassword);
         apiHandler.sendRequest();
-        String truePassword = apiHandler.receivePassword();
+        String truePassword = apiHandler.receivePlainString();
         if (givenPassword.equals(truePassword))
         {
             return true;

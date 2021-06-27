@@ -106,6 +106,9 @@ public class RequestTerminal implements Runnable
                 case "GET_PASSWORD":
                     loginHandler.deliverPassword(request.getBody());
                     break;
+                case "GET_BIO":
+                    loginHandler.deliverBio(request.getBody());
+                    break;
                 case "SAVE_POST":
                     postHandler.addPost(gson.fromJson(request.getBody(), Post.class));
                     break;
@@ -150,6 +153,9 @@ public class RequestTerminal implements Runnable
                     break;
                 case "GET_FOLLOWINGS":
                     followersHandler.deliverFollowings(request.getBody());
+                    break;
+                case "GET_FOLLOWERS":
+                    followersHandler.deliverFollowers(request.getBody());
                     break;
                 case "SET_PROFILE_PIC":
                     signupHandler.setProfilePic(request.getBody());

@@ -1,4 +1,4 @@
-package sample.frontend.feed;
+package sample.frontend.profile;
 
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
@@ -18,40 +18,42 @@ import javafx.stage.StageStyle;
 import sample.backend.api.ApiHandler;
 import sample.backend.api.Request;
 import sample.backend.application.post.Post;
+import sample.frontend.feed.PostController;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class FeedController implements Initializable
+public class ProfileController implements Initializable
 {
     @FXML
-    public Button addpostButton;
-    @FXML
-    public ImageView profileView;
-    @FXML
-    public Button setpicButton;
+    public ImageView profileIMG;
     @FXML
     public Label username;
     @FXML
-    public Button profileButton;
+    public Label numFollowersID;
+    @FXML
+    public Label numFollowingID;
+    @FXML
+    public Button followers;
+    @FXML
+    public Button followings;
+    @FXML
+    public Label bio;
     @FXML
     private GridPane postGrid;
 
     private final ApiHandler apiHandler = new ApiHandler();
     private final ArrayList<Post> posts = new ArrayList<>();
-    private final ArrayList<String> followings = new ArrayList<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        username.setText("hasan");
         try
         {
-            viewProfilePic();
+            viewAppearances();
         }
         catch (IOException e)
         {
@@ -60,23 +62,48 @@ public class FeedController implements Initializable
         viewPosts();
     }
 
-    private void viewProfilePic() throws IOException
+    private void viewAppearances() throws IOException
     {
-        Request request = new Request("IS_PROFILE_PIC_SET","hasan");
-        apiHandler.setRequest(request);
+        bio.setText(mineBio("muhammad.ksht"));
+        username.setText("muhammad.ksht");
+        Request isSetRequest;
+        isSetRequest = new Request("IS_PROFILE_PIC_SET","muhammad.ksht");
+        apiHandler.setRequest(isSetRequest);
         apiHandler.sendRequest();
-
         if (apiHandler.receiveIsProfileSet())
         {
-            request = new Request("GET_PROFILE_PIC","hasan");
-            apiHandler.setRequest(request);
-            apiHandler.sendRequest();
-            profileView.setImage(SwingFXUtils.toFXImage(apiHandler.receivePhoto(),null));
+            profileIMG.setImage(mineProfileImage("muhammad.ksht"));
         }
         else
         {
-            setpicButton.setVisible(true);
+            profileIMG.setImage(new Image(getClass().getResourceAsStream("../feed/photos/userProf1.png")));
         }
+        numFollowersID.setText(String.valueOf(mineFollowersQuantity("muhammad.ksht")));
+        numFollowingID.setText(String.valueOf(mineFollowingsQuantity("muhammad.ksht")));
+    }
+
+    private String mineBio(String username) throws IOException
+    {
+        Request request = new Request("GET_BIO",username);
+        apiHandler.setRequest(request);
+        apiHandler.sendRequest();
+        return apiHandler.receivePlainString();
+    }
+
+    private Integer mineFollowersQuantity(String username) throws IOException
+    {
+        Request request = new Request("GET_FOLLOWERS_COUNT",username);
+        apiHandler.setRequest(request);
+        apiHandler.sendRequest();
+        return apiHandler.receiveQuantity();
+    }
+
+    private Integer mineFollowingsQuantity(String username) throws IOException
+    {
+        Request request = new Request("GET_FOLLOWINGS_COUNT",username);
+        apiHandler.setRequest(request);
+        apiHandler.sendRequest();
+        return apiHandler.receiveQuantity();
     }
 
     private void viewPosts()
@@ -123,34 +150,22 @@ public class FeedController implements Initializable
 
     private void mineData() throws IOException
     {
-        mineFollowings();
         Image postImage;
         Integer commentsQuantity;
         Integer likesQuantity;
         Post mainPostContext;
         String postID;
-        for (int i = 0; i < followings.size(); i++)
+        int postsQuantity = minePostsQuantity("hasan");
+        for (int i = 1; i <= postsQuantity; i++)
         {
-            int postsQuantity = minePostsQuantity(followings.get(i));
-            for (int j = 0; j < postsQuantity; j++)
-            {
-                postID = followings.get(i) + "/" + (j + 1);
-                mainPostContext = minePostBody(postID);
-                likesQuantity = mineLikesQuantity(postID);
-                commentsQuantity = mineCommentsQuantity(postID);
-                postImage = minePostImage(postID);
+            postID = "hasan" + "/" + i;
+            mainPostContext = minePostBody(postID);
+            likesQuantity = mineLikesQuantity(postID);
+            commentsQuantity = mineCommentsQuantity(postID);
+            postImage = minePostImage(postID);
 
-                posts.add(new Post(mainPostContext.getCaption(),mainPostContext.getOwner(),postImage,likesQuantity,commentsQuantity,mainPostContext.getDateTime()));
-            }
+            posts.add(new Post(mainPostContext.getCaption(),mainPostContext.getOwner(),postImage,likesQuantity,commentsQuantity,mainPostContext.getDateTime()));
         }
-    }
-
-    private void mineFollowings() throws IOException
-    {
-        Request getFollowingsRequest = new Request("GET_FOLLOWINGS","muhammad.ksht"/*ApplicationRunner.loggedinuser*/);
-        apiHandler.setRequest(getFollowingsRequest);
-        apiHandler.sendRequest();
-        Collections.addAll(followings,apiHandler.receiveFollowersFollowings());
     }
 
     private Post minePostBody(String postID) throws IOException
@@ -193,37 +208,31 @@ public class FeedController implements Initializable
         return apiHandler.receiveQuantity();
     }
 
-    @FXML
-    public void onAddPostClick() throws IOException
+    public void onFollowerClick() throws IOException
     {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../post/savepost.fxml")));
+        Parent root = FXMLLoader.load(getClass().getResource("follow/followersStage/followersStage.fxml"));
         Scene scene = new Scene(root);
-        Stage savePostStage = new Stage();
-        savePostStage.initStyle(StageStyle.DECORATED);
-        savePostStage.setScene(scene);
-        savePostStage.show();
+        Stage followersStage = new Stage();
+        followersStage.initStyle(StageStyle.DECORATED);
+        followersStage.setScene(scene);
+        followersStage.show();
     }
 
-    @FXML
-    public void onSetPicClick() throws IOException
+    public void onFollowingClick() throws IOException
     {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../register/setProfilePic.fxml")));
-        Scene scene = new Scene(root);
-        Stage savePostStage = new Stage();
-        savePostStage.initStyle(StageStyle.DECORATED);
-        savePostStage.setScene(scene);
-        savePostStage.show();
-    }
-
-    @FXML
-    public void onProfileClick() throws IOException
-    {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../profile/profile.fxml")));
+        Parent root = FXMLLoader.load(getClass().getResource("follow/followingStage/followingsStage.fxml"));
         Scene scene = new Scene(root);
         Stage profileStage = new Stage();
         profileStage.initStyle(StageStyle.DECORATED);
         profileStage.setScene(scene);
-        profileStage.setTitle("profile");
         profileStage.show();
+    }
+
+    private Image mineProfileImage(String username) throws IOException
+    {
+        Request getProfilePicRequest = new Request("GET_PROFILE_PIC",username);
+        apiHandler.setRequest(getProfilePicRequest);
+        apiHandler.sendRequest();
+        return SwingFXUtils.toFXImage(apiHandler.receivePhoto(),null);
     }
 }

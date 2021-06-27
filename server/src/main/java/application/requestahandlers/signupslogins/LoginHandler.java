@@ -22,4 +22,10 @@ public class LoginHandler
         Response response = new Response(DatabaseManager.getPassword(username));
         apiHandler.answerToClient(response);
     }
+
+    public void deliverBio(String username) throws IOException, SQLException
+    {
+        Response response = new Response(DatabaseManager.getBio(username));
+        apiHandler.answerToClient(response);
+    }
 }

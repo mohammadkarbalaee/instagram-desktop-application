@@ -16,7 +16,6 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("feed.fxml"));
         primaryStage.setTitle("Instagram");
         primaryStage.setScene(new Scene(root,1510, 850));
-        primaryStage.setFullScreen(true);
         primaryStage.show();
     }
 
