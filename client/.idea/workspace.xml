@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/ClientBackendTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/ClientBackendTester.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/api/ApiHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/api/ApiHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/application/post/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/application/post/Post.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/mainmenu/FeedController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/mainmenu/FeedController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/mainmenu/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/mainmenu/PostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/post/SavepostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/post/SavepostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/backend/ClientBackendTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/backend/ClientBackendTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/backend/api/ApiHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/backend/api/ApiHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/backend/application/post/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/backend/application/post/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/frontend/mainmenu/FeedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/FeedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/frontend/post/SavepostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/post/SavepostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/PostPhotos/reyhan1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../server/PostPhotos/reyhan1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/api/RequestTerminal.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/build/classes/java/main/api/RequestTerminal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/application/datamanagement/database/DatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/build/classes/java/main/application/datamanagement/database/DatabaseManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/application/requestahandlers/followersfollowings/FollowersHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/build/classes/java/main/application/requestahandlers/followersfollowings/FollowersHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../server/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/api/RequestTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/api/RequestTerminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/application/datamanagement/database/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/application/datamanagement/database/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/application/requestahandlers/followersfollowings/FollowersHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/application/requestahandlers/followersfollowings/FollowersHandler.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,32 +181,32 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/sample/frontend/mainmenu" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.22682928" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend\post\photos" />
-      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\backend" />
       <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend\mainmenu" />
-      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client" />
-      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample" />
+      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend\profile" />
+      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend\post" />
+      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend" />
+      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend\post\photos" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend\mainmenu" />
+      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend\profile" />
       <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend" />
       <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend\post" />
       <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend\signuplogin" />
-      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend\fxml" />
-      <recent name="C:\Users\Muhammad\Desktop\instagram-app\client\src\sample\frontend\signuplogin\photos" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientBackendTester">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -207,20 +236,6 @@
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="JavaFxApplication" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ApplicationRunner (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sample.frontend.fxml.ApplicationRunner" />
-      <module name="JavaFxApplication" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sample.frontend.fxml.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -297,8 +312,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sample.frontend.mainmenu.Main" />
+      <module name="JavaFxApplication" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.frontend.mainmenu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -337,19 +379,18 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.App" />
-      <item itemvalue="Application.ApplicationRunner (1)" />
       <item itemvalue="Application.ApplicationRunner (2)" />
       <item itemvalue="Application.ApplicationRunner" />
-      <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.ClientBackendTester" />
+      <item itemvalue="Application.Main (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientBackendTester" />
-        <item itemvalue="Application.App" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.ApplicationRunner" />
+        <item itemvalue="Application.ClientBackendTester" />
         <item itemvalue="Application.ApplicationRunner (2)" />
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.ApplicationRunner" />
       </list>
     </recent_temporary>
   </component>
@@ -378,6 +419,10 @@
       <workItem from="1624617167185" duration="247000" />
       <workItem from="1624630649396" duration="280000" />
       <workItem from="1624630993408" duration="4079000" />
+      <workItem from="1624636741228" duration="300000" />
+      <workItem from="1624718284781" duration="164000" />
+      <workItem from="1624718472593" duration="9968000" />
+      <workItem from="1624759278218" duration="20352000" />
     </task>
     <servers />
   </component>

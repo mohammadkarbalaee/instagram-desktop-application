@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="365.0" stylesheets="@../mainmenu/css/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PostController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="365.0" stylesheets="@../mainmenu/css/styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.mainmenu.PostController">
    <children>
       <ImageView fx:id="postImage" fitHeight="365.0" fitWidth="365.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -24,14 +24,14 @@
                   <Image url="@../mainmenu/photos/userProf1.png" />
                </image>
             </ImageView>
-            <VBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="104.0">
+            <VBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="290.0">
                <children>
-                  <Label fx:id="username" prefHeight="25.0" prefWidth="86.0" text=" user 1">
+                  <Label fx:id="owner" prefHeight="25.0" prefWidth="86.0" text=" user 1">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="date" prefHeight="15.0" prefWidth="102.0" text=" 2 DAYS AGO">
+                  <Label fx:id="date" prefHeight="35.0" prefWidth="183.0" text=" 2 DAYS AGO">
                      <font>
                         <Font size="13.0" />
                      </font>

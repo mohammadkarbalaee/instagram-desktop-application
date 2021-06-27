@@ -11,6 +11,7 @@ import application.datacomponents.search.SearchResult;
 import com.google.gson.Gson;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 
 
 public class DatabaseManager
@@ -218,13 +219,14 @@ public class DatabaseManager
     synchronized public static void savePost(Post post,String saveAddress) throws SQLException
     {
         Integer nth = getPostQuantity(post.getOwner()) + 1;
-        String savePostQuery = "INSERT INTO posts(owner,caption,image_path,nth)" +
-                " VALUES (?, ?, ?,?)";
+        String savePostQuery = "INSERT INTO posts(owner,caption,image_path,nth,date)" +
+                " VALUES (?, ?, ?,?,?)";
         PreparedStatement statement = CONNECTION.prepareStatement(savePostQuery);
         statement.setString(1,post.getOwner());
         statement.setString(2,post.getCaption());
         statement.setString(3,saveAddress);
         statement.setInt(4,nth);
+        statement.setString(5, String.valueOf(post.getDateTime()));
         statement.execute();
         statement.close();
     }
@@ -249,7 +251,7 @@ public class DatabaseManager
     {
         Post wantedPost = new Post();
         String getPostQuery = "SELECT * FROM posts " +
-                "WHERE owner = ? & nth = ?";
+                "WHERE owner = ? AND nth = ?";
         PreparedStatement statement = CONNECTION.prepareStatement(getPostQuery);
         statement.setString(1,owner);
         statement.setInt(2,Integer.parseInt(nth));
@@ -258,6 +260,7 @@ public class DatabaseManager
         {
             wantedPost.setOwner(owner);
             wantedPost.setCaption(postSet.getString("caption"));
+            wantedPost.setDateTime(LocalDateTime.parse(postSet.getString("date")));
         }
         statement.close();
         return wantedPost;
@@ -267,7 +270,7 @@ public class DatabaseManager
     {
         String address = null;
         String getPostQuery = "SELECT * FROM posts " +
-                "WHERE owner = ? & nth = ?";
+                "WHERE owner = ? AND nth = ?";
         PreparedStatement statement = CONNECTION.prepareStatement(getPostQuery);
         statement.setString(1,owner);
         statement.setInt(2,Integer.parseInt(nth));
@@ -448,7 +451,7 @@ public class DatabaseManager
     synchronized public static boolean isLikeNew(Like like) throws SQLException
     {
         String searchQuery = "SELECT * FROM likes " +
-                "WHERE liker = ? && post = ?";
+                "WHERE liker = ? AND post = ?";
         PreparedStatement statement = CONNECTION.prepareStatement(searchQuery);
         statement.setString(1,like.getLiker());
         statement.setString(2,like.getPost());
@@ -471,11 +474,26 @@ public class DatabaseManager
     synchronized public static void addDislike(Like like) throws SQLException
     {
         String query = "DELETE FROM likes " +
-                "WHERE liker = ? && post = ?";
+                "WHERE liker = ? AND post = ?";
         PreparedStatement statement = CONNECTION.prepareStatement(query);
         statement.setString(1,like.getLiker());
         statement.setString(2,like.getPost());
         statement.execute();
         statement.close();
+    }
+
+    synchronized public static String getFollowings(String username) throws SQLException
+    {
+        String followings = "";
+        String query = "SELECT following FROM followings WHERE username = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(query);
+        statement.setString(1,username);
+        ResultSet followingsSet = statement.executeQuery();
+        while (followingsSet.next())
+        {
+            followings += followingsSet.getString("following") + "/";
+        }
+        statement.close();
+        return followings;
     }
 }

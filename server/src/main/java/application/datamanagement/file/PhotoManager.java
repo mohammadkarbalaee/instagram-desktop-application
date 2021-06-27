@@ -35,6 +35,7 @@ public class PhotoManager
 
     synchronized static public BufferedImage getPostPhoto(String photoAddress) throws IOException
     {
+        System.out.println(photoAddress);
         File file = new File(photoAddress);
         return ImageIO.read(file);
     }

@@ -11,15 +11,15 @@ import java.sql.SQLException;
 
 public class SearchHandler
 {
-    private static ApiHandler apiHandler;
+    private ApiHandler apiHandler;
     private static Gson gson = new Gson();
 
-    public static void build(ApiHandler newApiHandler)
+    public SearchHandler(ApiHandler apiHandler)
     {
-        apiHandler = newApiHandler;
+        this.apiHandler = apiHandler;
     }
 
-    public static void deliverSearchReuslt(String usenanme) throws IOException, SQLException
+    public void deliverSearchReuslt(String usenanme) throws IOException, SQLException
     {
         SearchResult searchResult = DatabaseManager.getSearchResult(usenanme);
         if (searchResult == null)

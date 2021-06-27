@@ -12,21 +12,21 @@ import java.sql.SQLException;
 
 public class DirectHandler
 {
-    private static ApiHandler apiHandler;
+    private ApiHandler apiHandler;
     private static Gson gson = new Gson();
 
-    public static void build(ApiHandler newApiHandler)
+    public DirectHandler(ApiHandler apiHandler)
     {
-        apiHandler = newApiHandler;
+        this.apiHandler = apiHandler;
     }
 
-    public static void deliverMessages(ChatRoom chatRoom) throws SQLException, IOException
+    public void deliverMessages(ChatRoom chatRoom) throws SQLException, IOException
     {
         Response response = new Response(DatabaseManager.getMessages(chatRoom));
         apiHandler.answerToClient(response);
     }
 
-    public static void addMessage(Message message) throws SQLException
+    public void addMessage(Message message) throws SQLException
     {
         ChatRoom chatRoom = new ChatRoom(message.getSender(),message.getReceiver());
         if (DatabaseManager.checkChatroomTableExistence(chatRoom))

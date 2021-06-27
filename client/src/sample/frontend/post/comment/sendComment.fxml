@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="256.0" prefWidth="254.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.comment.SendCommentController">
+   <children>
+      <TextArea fx:id="leaveComment" prefHeight="225.0" prefWidth="254.0" style="-fx-background-color: pink; -fx-border-color: white;">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextArea>
+      <Button fx:id="sendButton" layoutY="225.0" mnemonicParsing="false" onAction="#sendButtonOnAction" prefHeight="31.0" prefWidth="127.0" style="-fx-border-color: purple; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 2; -fx-background-color: pink;" text="Send" textFill="#650139">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="secondCancelButton" layoutX="127.0" layoutY="225.0" mnemonicParsing="false" onAction="#secondCancelButtonOnAction" prefHeight="31.0" prefWidth="127.0" style="-fx-border-color: purple; -fx-border-radius: 10; -fx-background-radius: 10; -fx-border-width: 2; -fx-background-color: pink;" text="Cancel" />
+   </children>
+</AnchorPane>

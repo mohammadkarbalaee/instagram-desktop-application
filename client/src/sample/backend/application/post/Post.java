@@ -1,17 +1,36 @@
 package sample.backend.application.post;
 
-public class Post
+import javafx.scene.image.Image;
+
+import java.time.LocalDateTime;
+
+public class Post implements Comparable<Post>
 {
     private String caption;
     private String owner;
+    private Image image;
+    private Integer likesQuantity;
+    private Integer commentsQuantity;
+    private LocalDateTime dateTime;
 
-    public Post(String owner, String caption)
+    public Post(String owner, String caption,LocalDateTime dateTime)
     {
         this.caption = caption;
         this.owner = owner;
+        this.dateTime = dateTime;
     }
 
     public Post(){}
+
+    public Post(String caption, String owner, Image image, Integer likesQuantity, Integer commentsQuantity,LocalDateTime dateTime)
+    {
+        this.caption = caption;
+        this.owner = owner;
+        this.image = image;
+        this.likesQuantity = likesQuantity;
+        this.commentsQuantity = commentsQuantity;
+        this.dateTime = dateTime;
+    }
 
     public String getCaption()
     {
@@ -31,5 +50,59 @@ public class Post
     public void setOwner(String owner)
     {
         this.owner = owner;
+    }
+
+    public Image getImage()
+    {
+        return image;
+    }
+
+    public void setImage(Image image)
+    {
+        this.image = image;
+    }
+
+    public Integer getLikesQuantity()
+    {
+        return likesQuantity;
+    }
+
+    public void setLikesQuantity(Integer likesQuantity)
+    {
+        this.likesQuantity = likesQuantity;
+    }
+
+    public Integer getCommentsQuantity()
+    {
+        return commentsQuantity;
+    }
+
+    public void setCommentsQuantity(Integer commentsQuantity)
+    {
+        this.commentsQuantity = commentsQuantity;
+    }
+
+    public LocalDateTime getDateTime()
+    {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime)
+    {
+        this.dateTime = dateTime;
+    }
+
+    @Override
+    public int compareTo(Post secondPost)
+    {
+        if(this.dateTime.isAfter(secondPost.dateTime))
+        {
+            return -1;
+        }
+        else if(this.dateTime.isBefore(secondPost.dateTime))
+        {
+            return +1;
+        }
+        return 0;
     }
 }

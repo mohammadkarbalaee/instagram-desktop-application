@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class ApiHandler
@@ -34,8 +35,19 @@ public class ApiHandler
 
     public void sendPhoto(BufferedImage postImage) throws IOException
     {
-        ImageIO.write(postImage,"png",requestPipeline.getDataOutputStream());
-        postImage.flush();
+        byte[] byteData = toByteArray(postImage);
+        System.out.println(byteData.length);
+        requestPipeline.getDataOutputStream().writeInt(byteData.length);
         requestPipeline.getDataOutputStream().flush();
+        requestPipeline.getDataOutputStream().write(byteData);
+        requestPipeline.getDataOutputStream().flush();
+    }
+
+    public byte[] toByteArray(BufferedImage bufferedImage) throws IOException
+    {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ImageIO.write(bufferedImage,"png", baos);
+        return baos.toByteArray();
+
     }
 }

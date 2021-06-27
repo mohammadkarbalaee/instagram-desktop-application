@@ -1,14 +1,18 @@
 package application.datacomponents.post;
 
+import java.time.LocalDateTime;
+
 public class Post
 {
     private String caption;
     private String owner;
+    private LocalDateTime dateTime;
 
-    public Post(String owner, String caption)
+    public Post(String owner, String caption,LocalDateTime dateTime)
     {
         this.caption = caption;
         this.owner = owner;
+        this.dateTime = dateTime;
     }
 
     public Post(){}
@@ -31,6 +35,16 @@ public class Post
     public void setOwner(String owner)
     {
         this.owner = owner;
+    }
+
+    public LocalDateTime getDateTime()
+    {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime)
+    {
+        this.dateTime = dateTime;
     }
 }
 
