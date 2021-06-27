@@ -1,4 +1,4 @@
-package sample.frontend.signuplogin;
+package sample.frontend.register;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
