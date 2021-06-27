@@ -151,6 +151,15 @@ public class RequestTerminal implements Runnable
                 case "GET_FOLLOWINGS":
                     followersHandler.deliverFollowings(request.getBody());
                     break;
+                case "SET_PROFILE_PIC":
+                    signupHandler.setProfilePic(request.getBody());
+                    break;
+                case "IS_PROFILE_PIC_SET":
+                    signupHandler.deliverIsPicSet(request.getBody());
+                    break;
+                case "GET_PROFILE_PIC":
+                    signupHandler.deliverProfilePic(request.getBody());
+                    break;
             }
         }
     }

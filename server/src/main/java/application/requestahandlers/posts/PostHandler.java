@@ -23,7 +23,7 @@ public class PostHandler
 
     public void addPost(Post post) throws IOException, SQLException
     {
-        DatabaseManager.savePost(post, PhotoManager.savePostPhoto(post.getOwner(),apiHandler.getPostImage()));
+        DatabaseManager.savePost(post, PhotoManager.savePostPhoto(post.getOwner(),apiHandler.getImage()));
     }
 
     public void deliverPost(String postID) throws SQLException, IOException
@@ -46,6 +46,6 @@ public class PostHandler
     public void deliverPostImage(String postID) throws SQLException, IOException
     {
         String[] pair = postID.split("/");
-        apiHandler.sendPhoto(PhotoManager.getPostPhoto(DatabaseManager.getPostSavedAddress(pair[0],pair[1])));
+        apiHandler.sendPhoto(PhotoManager.getPhoto(DatabaseManager.getPostSavedAddress(pair[0],pair[1])));
     }
 }
