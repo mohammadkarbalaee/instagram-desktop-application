@@ -496,4 +496,51 @@ public class DatabaseManager
         statement.close();
         return followings;
     }
+
+    synchronized public static void setProfilePic(String username,String savePath) throws SQLException
+    {
+        String insertQuery = "UPDATE users SET profile_pic_path = ? WHERE username = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(insertQuery);
+        statement.setString(1,savePath);
+        statement.setString(2,username);
+        statement.execute();
+        statement.close();
+    }
+
+    synchronized public static String getIsProfileSet(String username) throws SQLException
+    {
+        String query = "SELECT profile_pic_path FROM users WHERE username = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(query);
+        statement.setString(1,username);
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next())
+        {
+            if (resultSet.getString("profile_pic_path") == null)
+            {
+                return "false";
+            }
+            else
+            {
+                return "true";
+            }
+        }
+        statement.close();
+        return "true";
+    }
+
+    synchronized public static String getProfilePicSavedPath(String username) throws SQLException
+    {
+        String path = null;
+        String query = "SELECT profile_pic_path FROM users " +
+                "WHERE username = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(query);
+        statement.setString(1,username);
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next())
+        {
+            path = resultSet.getString("profile_pic_path");
+        }
+        statement.close();
+        return path;
+    }
 }

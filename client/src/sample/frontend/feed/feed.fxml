@@ -45,21 +45,17 @@
             </HBox>
             <VBox alignment="CENTER" prefHeight="264.0" prefWidth="300.0" spacing="5.0">
                <children>
-                  <ImageView fitHeight="140.0" fitWidth="140.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="profileView" fitHeight="140.0" fitWidth="140.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@photos/photo_2021-06-10_18-43-13.jpg" />
+                        <Image url="@photos/userProf1.png" />
                      </image>
                   </ImageView>
-                  <Label contentDisplay="CENTER" prefHeight="31.0" prefWidth="284.0" text="      Hasan Rokn abady">
-                     <font>
-                        <Font name="System Bold" size="24.0" />
-                     </font>
-                  </Label>
                   <Label contentDisplay="CENTER" prefHeight="29.0" prefWidth="284.0" text="                 @Hasan_Rokn" textFill="#686868">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
+                  <Button fx:id="setpicButton" onAction="#onSetPicClick" mnemonicParsing="false" prefHeight="42.0" prefWidth="100.0" text="set profile pic" visible="false"/>
                </children>
             </VBox>
             <VBox prefHeight="473.0" prefWidth="300.0" spacing="15.0">

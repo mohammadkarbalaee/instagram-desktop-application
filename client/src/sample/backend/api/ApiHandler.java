@@ -101,7 +101,6 @@ public class ApiHandler
         byte[] byteData = new byte[RequestPipeline.getDataInputStream().readInt()];
         RequestPipeline.getDataInputStream().readFully(byteData);
         InputStream byteStream = new ByteArrayInputStream(byteData);
-        System.out.println(byteData.length);
         return ImageIO.read(byteStream);
     }
 
@@ -155,4 +154,18 @@ public class ApiHandler
         return followingsUsernames.split("/");
     }
 
+    public boolean receiveIsProfileSet() throws IOException
+    {
+        String json = RequestPipeline.getDataInputStream().readUTF();
+        Response responseObject = gson.fromJson(json,Response.class);
+        String response = responseObject.getBody();
+        if (response.equals("true"))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

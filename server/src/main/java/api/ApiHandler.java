@@ -28,7 +28,7 @@ public class ApiHandler
         requestPipeline.getDataOutputStream().flush();
     }
 
-    public BufferedImage getPostImage() throws IOException
+    public BufferedImage getImage() throws IOException
     {
         return ImageIO.read(requestPipeline.getDataInputStream());
     }

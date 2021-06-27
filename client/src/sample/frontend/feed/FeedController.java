@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -29,15 +30,50 @@ public class FeedController implements Initializable
     @FXML
     public Button addpostButton;
     @FXML
+    public ImageView profileView;
+    @FXML
+    public Button setpicButton;
+    @FXML
     private GridPane postGrid;
 
     private final ApiHandler apiHandler = new ApiHandler();
     private final ArrayList<Post> posts = new ArrayList<>();
     private final ArrayList<String> followings = new ArrayList<>();
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources)
+    {
+        try
+        {
+            viewProfilePic();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        viewPosts();
+    }
+
+    private void viewProfilePic() throws IOException
+    {
+        Request request = new Request("IS_PROFILE_PIC_SET","hasan");
+        apiHandler.setRequest(request);
+        apiHandler.sendRequest();
+
+        if (apiHandler.receiveIsProfileSet())
+        {
+            request = new Request("GET_PROFILE_PIC","hasan");
+            apiHandler.setRequest(request);
+            apiHandler.sendRequest();
+            profileView.setImage(SwingFXUtils.toFXImage(apiHandler.receivePhoto(),null));
+        }
+        else
+        {
+            setpicButton.setVisible(true);
+        }
+    }
+
+    private void viewPosts()
     {
         int columns = 0, rows = 1;
 
@@ -151,9 +187,21 @@ public class FeedController implements Initializable
         return apiHandler.receiveQuantity();
     }
 
+    @FXML
     public void onAddPostClick() throws IOException
     {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../post/savepost.fxml")));
+        Scene scene = new Scene(root);
+        Stage savePostStage = new Stage();
+        savePostStage.initStyle(StageStyle.UNDECORATED);
+        savePostStage.setScene(scene);
+        savePostStage.show();
+    }
+
+    @FXML
+    private void onSetPicClick() throws IOException
+    {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../register/setProfilePic.fxml")));
         Scene scene = new Scene(root);
         Stage savePostStage = new Stage();
         savePostStage.initStyle(StageStyle.UNDECORATED);

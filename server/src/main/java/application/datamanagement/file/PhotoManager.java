@@ -12,30 +12,31 @@ import java.sql.SQLException;
 
 public class PhotoManager
 {
-    synchronized static public void saveProfilePhoto(String username, BufferedImage profilePhoto) throws IOException
+    synchronized static public String saveProfilePhoto(String username, BufferedImage profilePhoto) throws IOException
     {
-        File file = new File(System.getProperty("user.dir") + "\\ProfilePhotos\\" + username + ".jpg");
+        String savePath = System.getProperty("user.dir") + "\\ProfilePhotos\\" + username + ".png";
+        File file = new File(savePath);
         FileOutputStream outputStream = new FileOutputStream(file);
         ImageIO.write(profilePhoto,"png",outputStream);
         outputStream.flush();
         outputStream.close();
+        return savePath;
     }
 
     synchronized static public String savePostPhoto(String owner,BufferedImage postImage) throws IOException, SQLException
     {
         Integer nth = DatabaseManager.getPostQuantity(owner) + 1;
-        String saveAddress = System.getProperty("user.dir") + "\\PostPhotos\\" + owner + nth + ".png";
-        File file = new File(saveAddress);
+        String savePath = System.getProperty("user.dir") + "\\PostPhotos\\" + owner + nth + ".png";
+        File file = new File(savePath);
         FileOutputStream outputStream = new FileOutputStream(file);
         ImageIO.write(postImage,"png",outputStream);
         outputStream.flush();
         outputStream.close();
-        return saveAddress;
+        return savePath;
     }
 
-    synchronized static public BufferedImage getPostPhoto(String photoAddress) throws IOException
+    synchronized static public BufferedImage getPhoto(String photoAddress) throws IOException
     {
-        System.out.println(photoAddress);
         File file = new File(photoAddress);
         return ImageIO.read(file);
     }
