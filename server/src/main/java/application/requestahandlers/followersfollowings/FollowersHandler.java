@@ -10,25 +10,25 @@ import java.sql.SQLException;
 
 public class FollowersHandler
 {
-    private static ApiHandler apiHandler;
+    private ApiHandler apiHandler;
 
-    public static void build(ApiHandler newApiHandler)
+    public FollowersHandler(ApiHandler apiHandler)
     {
-        apiHandler = newApiHandler;
+        this.apiHandler = apiHandler;
     }
 
-    public static void addFollower(FollowerFollowingPack pack) throws SQLException
+    public void addFollower(FollowerFollowingPack pack) throws SQLException
     {
         DatabaseManager.setFollowerFollowing(pack);
     }
 
-    public static void deliverFollowersQuantity(String username) throws IOException, SQLException
+    public void deliverFollowersQuantity(String username) throws IOException, SQLException
     {
         Response response = new Response(DatabaseManager.getFollowersQuantity(username).toString());
         apiHandler.answerToClient(response);
     }
 
-    public static void deliverFollowingsQuantity(String username) throws IOException, SQLException
+    public void deliverFollowingsQuantity(String username) throws IOException, SQLException
     {
         Response response = new Response(DatabaseManager.getFollowingsQuantity(username).toString());
         apiHandler.answerToClient(response);

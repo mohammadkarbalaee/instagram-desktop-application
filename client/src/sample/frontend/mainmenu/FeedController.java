@@ -34,10 +34,19 @@ public class FeedController implements Initializable
 
         try
         {
+            mineData();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        try
+        {
             for (int i = 0; i < posts.size(); i++)
             {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("post.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("../post/post.fxml"));
 
                 VBox postBox = fxmlLoader.load();
                 PostController postController = fxmlLoader.getController();
@@ -66,27 +75,27 @@ public class FeedController implements Initializable
         Integer likesQuantity;
         Post mainPostContext;
         String postID;
-        System.out.println(minePostsQuantity());
-        for (int i = 1; i <= minePostsQuantity(); i++)
+        int postsQuantity = minePostsQuantity();
+        System.out.println(postsQuantity);
+        for (int i = 1; i <= postsQuantity; i++)
         {
             //postID = ApplicationRunner.getLoggedInUsername() + "/" + i;
             /*
             temporary value just for test
             */
             postID = "hasan" + "/" + i;
-            postImage = minePostImage(postID);
-            commentsQuantity = mineCommentsQuantity(postID);
-            likesQuantity = mineLikesQuantity(postID);
             mainPostContext = minePostBody(postID);
+            likesQuantity = mineLikesQuantity(postID);
+            commentsQuantity = mineCommentsQuantity(postID);
+            postImage = minePostImage(postID);
 
-            posts.add(new Post(mainPostContext.getCaption(),mainPostContext.getOwner(),postImage,likesQuantity,commentsQuantity));
+            posts.add(new Post(mainPostContext.getCaption(),mainPostContext.getOwner(),postImage,likesQuantity,commentsQuantity,mainPostContext.getDateTime()));
         }
 
     }
 
     private Post minePostBody(String postID) throws IOException
     {
-        System.out.println("i am in post quant");
         Request getPostBodyRequest = new Request("GET_POST",postID);
         apiHandler.setRequest(getPostBodyRequest);
         apiHandler.sendRequest();

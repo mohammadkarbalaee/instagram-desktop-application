@@ -10,14 +10,14 @@ import java.sql.SQLException;
 
 public class SignupHandler
 {
-    private static ApiHandler apiHandler;
+    private ApiHandler apiHandler;
 
-    public static void build(ApiHandler newApiHandler)
+    public SignupHandler(ApiHandler apiHandler)
     {
-        apiHandler = newApiHandler;
+        this.apiHandler = apiHandler;
     }
 
-    public static void deliverIsNew(String username) throws IOException, SQLException
+    public void deliverIsNew(String username) throws IOException, SQLException
     {
         if (DatabaseManager.isUserNew(username))
         {
@@ -31,7 +31,7 @@ public class SignupHandler
         }
     }
 
-    public static void addUser(User newUser) throws SQLException
+    public void addUser(User newUser) throws SQLException
     {
         DatabaseManager.addUserRecord(newUser);
     }

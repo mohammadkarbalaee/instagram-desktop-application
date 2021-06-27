@@ -10,14 +10,14 @@ import java.sql.SQLException;
 
 public class LoginHandler
 {
-    private static ApiHandler apiHandler;
+    private ApiHandler apiHandler;
 
-    public static void build(ApiHandler newApiHandler)
+    public LoginHandler(ApiHandler apiHandler)
     {
-        apiHandler = newApiHandler;
+        this.apiHandler = apiHandler;
     }
 
-    public static void deliverPassword(String username) throws SQLException, IOException
+    public void deliverPassword(String username) throws SQLException, IOException
     {
         Response response = new Response(DatabaseManager.getPassword(username));
         apiHandler.answerToClient(response);

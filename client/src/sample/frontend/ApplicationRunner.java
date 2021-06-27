@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sample.backend.api.RequestPipeline;
 
 public class ApplicationRunner extends Application
 {
@@ -31,7 +32,7 @@ public class ApplicationRunner extends Application
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-        //RequestPipeline.build();
+        RequestPipeline.build();
         Parent root = FXMLLoader.load(getClass().getResource("post/savepost.fxml"));
         String css = ApplicationRunner.class.getResource("post/css/buttonStyle.css").toExternalForm();
         Scene scene = new Scene(root);

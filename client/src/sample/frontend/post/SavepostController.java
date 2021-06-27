@@ -18,6 +18,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 public class SavepostController
 {
@@ -66,7 +67,7 @@ public class SavepostController
         }
         else
         {
-            Post newPost = new Post("hasan"/*ApplicationRunner.getLoggedInUsername()*/,caption);
+            Post newPost = new Post("hasan"/*ApplicationRunner.getLoggedInUsername()*/,caption, LocalDateTime.now());
             Request savePostRequest = new Request("SAVE_POST", ApplicationRunner.getGson().toJson(newPost));
             ApiHandler apiHandler = new ApiHandler(savePostRequest);
             apiHandler.sendRequest();

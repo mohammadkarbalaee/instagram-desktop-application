@@ -9,8 +9,10 @@ import sample.backend.application.search.SearchResult;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class ApiHandler
 {
@@ -33,6 +35,11 @@ public class ApiHandler
     {
         RequestPipeline.getDataOutputStream().writeUTF(gson.toJson(request));
         RequestPipeline.getDataOutputStream().flush();
+    }
+
+    public Request getRequest()
+    {
+        return request;
     }
 
     public boolean receiveIsNew() throws IOException
@@ -91,7 +98,11 @@ public class ApiHandler
 
     public BufferedImage receivePhoto() throws IOException
     {
-        return ImageIO.read(RequestPipeline.getDataInputStream());
+        byte[] byteData = new byte[RequestPipeline.getDataInputStream().readInt()];
+        RequestPipeline.getDataInputStream().readFully(byteData);
+        InputStream byteStream = new ByteArrayInputStream(byteData);
+        System.out.println(byteData.length);
+        return ImageIO.read(byteStream);
     }
 
     public Message[] receiveChatroomMessages() throws IOException

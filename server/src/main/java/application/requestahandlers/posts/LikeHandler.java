@@ -10,31 +10,31 @@ import java.sql.SQLException;
 
 public class LikeHandler
 {
-    private static ApiHandler apiHandler;
+    private ApiHandler apiHandler;
 
-    public static void build(ApiHandler newApiHandler)
+    public LikeHandler(ApiHandler apiHandler)
     {
-        apiHandler = newApiHandler;
+        this.apiHandler = apiHandler;
     }
 
-    public static void addLike(Like like) throws SQLException
+    public void addLike(Like like) throws SQLException
     {
         DatabaseManager.addLike(like);
     }
 
-    public static void deliverLikesQuantity(String post) throws IOException, SQLException
+    public void deliverLikesQuantity(String post) throws IOException, SQLException
     {
         Response response = new Response(DatabaseManager.getLikesQuantity(post).toString());
         apiHandler.answerToClient(response);
     }
 
-    public static void deliverLikes(String post) throws IOException, SQLException
+    public void deliverLikes(String post) throws IOException, SQLException
     {
         Response response = new Response(DatabaseManager.getLikes(post));
         apiHandler.answerToClient(response);
     }
 
-    public static void deliverIsNew(Like like) throws IOException, SQLException
+    public void deliverIsNew(Like like) throws IOException, SQLException
     {
         if (DatabaseManager.isLikeNew(like))
         {
@@ -48,7 +48,7 @@ public class LikeHandler
         }
     }
 
-    public static void addDisLike(Like like) throws SQLException
+    public void addDisLike(Like like) throws SQLException
     {
         DatabaseManager.addDislike(like);
     }

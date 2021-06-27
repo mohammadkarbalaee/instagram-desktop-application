@@ -13,13 +13,12 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception
     {
         RequestPipeline.build();
-
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
         primaryStage.setTitle("Instagram");
         primaryStage.setScene(new Scene(root,1510, 850));
+        primaryStage.setFullScreen(true);
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);

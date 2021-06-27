@@ -16,6 +16,7 @@ import application.requestahandlers.searches.SearchHandler;
 import application.requestahandlers.signupslogins.LoginHandler;
 import application.requestahandlers.signupslogins.SignupHandler;
 import com.google.gson.Gson;
+import com.mysql.cj.log.Log;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -26,6 +27,14 @@ public class RequestTerminal implements Runnable
     private final Socket socket;
     private ApiHandler apiHandler;
     private final Gson gson = new Gson();
+    private SignupHandler signupHandler;
+    private FollowersHandler followersHandler;
+    private SearchHandler searchHandler;
+    private LoginHandler loginHandler;
+    private PostHandler postHandler;
+    private CommentHandler commentHandler;
+    private DirectHandler directHandler;
+    private LikeHandler likeHandler;
 
     public RequestTerminal(Socket socket) throws IOException
     {
@@ -55,83 +64,89 @@ public class RequestTerminal implements Runnable
 
     private void buildHandlers()
     {
-        SignupHandler.build(apiHandler);
-        FollowersHandler.build(apiHandler);
-        SearchHandler.build(apiHandler);
-        LoginHandler.build(apiHandler);
-        PostHandler.build(apiHandler);
-        CommentHandler.build(apiHandler);
-        DirectHandler.build(apiHandler);
-        LikeHandler.build(apiHandler);
+        signupHandler = new SignupHandler(apiHandler);
+        followersHandler = new FollowersHandler(apiHandler);
+        searchHandler = new SearchHandler(apiHandler);
+        loginHandler = new LoginHandler(apiHandler);
+        postHandler = new PostHandler(apiHandler);
+        commentHandler = new CommentHandler(apiHandler);
+        directHandler = new DirectHandler(apiHandler);
+        likeHandler = new LikeHandler(apiHandler);
     }
 
     private void routePicker() throws SQLException, IOException
     {
         while(true)
         {
-            Request request = apiHandler.listenToClient();
+            Request request = null;
+
+            try {request = apiHandler.listenToClient();}
+            catch (IOException e) {}
 
             switch (request.getLabel())
             {
                 case "IS_NEW":
-                    SignupHandler.deliverIsNew(request.getBody());
+                    signupHandler.deliverIsNew(request.getBody());
                     break;
                 case "SEND_USER":
-                    SignupHandler.addUser(gson.fromJson(request.getBody(), User.class));
+                    signupHandler.addUser(gson.fromJson(request.getBody(), User.class));
                     break;
                 case "SEND_FOLLOWER":
-                    FollowersHandler.addFollower(gson.fromJson(request.getBody(), FollowerFollowingPack.class));
+                    followersHandler.addFollower(gson.fromJson(request.getBody(), FollowerFollowingPack.class));
                     break;
                 case "GET_SEARCH_RESULT":
-                    SearchHandler.deliverSearchReuslt(request.getBody());
+                    searchHandler.deliverSearchReuslt(request.getBody());
                     break;
                 case "GET_FOLLOWERS_COUNT":
-                    FollowersHandler.deliverFollowersQuantity(request.getBody());
+                    followersHandler.deliverFollowersQuantity(request.getBody());
                     break;
                 case "GET_FOLLOWINGS_COUNT":
-                    FollowersHandler.deliverFollowingsQuantity(request.getBody());
+                    followersHandler.deliverFollowingsQuantity(request.getBody());
                     break;
                 case "GET_PASSWORD":
-                    LoginHandler.deliverPassword(request.getBody());
+                    loginHandler.deliverPassword(request.getBody());
                     break;
                 case "SAVE_POST":
-                    PostHandler.addPost(gson.fromJson(request.getBody(), Post.class));
+                    postHandler.addPost(gson.fromJson(request.getBody(), Post.class));
                     break;
                 case "GET_POSTS_QUANTITY":
-                    PostHandler.deliverPostsQuantity(request.getBody());
+                    postHandler.deliverPostsQuantity(request.getBody());
                     break;
                 case "GET_POST":
-                    PostHandler.deliverPost(request.getBody());
+                    postHandler.deliverPost(request.getBody());
+                    break;
+                case "GET_POST_IMAGE":
+                    postHandler.deliverPostImage(request.getBody());
                     break;
                 case "SAVE_MESSAGE":
-                    DirectHandler.addMessage(gson.fromJson(request.getBody(), Message.class));
+                    directHandler.addMessage(gson.fromJson(request.getBody(), Message.class));
                     break;
                 case "GET_MESSAGES":
-                    DirectHandler.deliverMessages(gson.fromJson(request.getBody(), ChatRoom.class));
+                    directHandler.deliverMessages(gson.fromJson(request.getBody(), ChatRoom.class));
                     break;
                 case "ADD_COMMENT":
-                    CommentHandler.addComment(gson.fromJson(request.getBody(), Comment.class));
+                    commentHandler.addComment(gson.fromJson(request.getBody(), Comment.class));
                     break;
                 case "GET_COMMENTS_QUANTITY":
-                    CommentHandler.deliverCommentQuantity(request.getBody());
+                    commentHandler.deliverCommentQuantity(request.getBody());
                     break;
                 case "GET_COMMENTS":
-                    CommentHandler.deliverComments(request.getBody());
+                    commentHandler.deliverComments(request.getBody());
                     break;
                 case "ADD_LIKE":
-                    LikeHandler.addLike(gson.fromJson(request.getBody(), Like.class));
+                    likeHandler.addLike(gson.fromJson(request.getBody(), Like.class));
                     break;
                 case "GET_LIKES_QUANTITY":
-                    LikeHandler.deliverLikesQuantity(request.getBody());
+                    likeHandler.deliverLikesQuantity(request.getBody());
                     break;
                 case "GET_LIKES":
-                    LikeHandler.deliverLikes(request.getBody());
+                    likeHandler.deliverLikes(request.getBody());
                     break;
                 case "GET_IS_LIKE_NEW":
-                    LikeHandler.deliverIsNew(gson.fromJson(request.getBody(),Like.class));
+                    likeHandler.deliverIsNew(gson.fromJson(request.getBody(),Like.class));
                     break;
                 case "ADD_DISLIKE":
-                    LikeHandler.addDisLike(gson.fromJson(request.getBody(),Like.class));
+                    likeHandler.addDisLike(gson.fromJson(request.getBody(),Like.class));
                     break;
             }
         }
