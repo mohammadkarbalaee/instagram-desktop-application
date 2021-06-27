@@ -146,4 +146,13 @@ public class ApiHandler
         }
         return likes;
     }
+
+    public String[] receiveFollowings() throws IOException
+    {
+        String json = RequestPipeline.getDataInputStream().readUTF();
+        Response responseObject = gson.fromJson(json,Response.class);
+        String followingsUsernames = responseObject.getBody();
+        return followingsUsernames.split("/");
+    }
+
 }

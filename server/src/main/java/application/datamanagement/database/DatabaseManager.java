@@ -481,4 +481,19 @@ public class DatabaseManager
         statement.execute();
         statement.close();
     }
+
+    synchronized public static String getFollowings(String username) throws SQLException
+    {
+        String followings = "";
+        String query = "SELECT following FROM followings WHERE username = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(query);
+        statement.setString(1,username);
+        ResultSet followingsSet = statement.executeQuery();
+        while (followingsSet.next())
+        {
+            followings += followingsSet.getString("following") + "/";
+        }
+        statement.close();
+        return followings;
+    }
 }

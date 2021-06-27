@@ -18,16 +18,14 @@ application/datacomponents/comment/Comment.java
  application.datacomponents.comment.Comment
 application/datacomponents/directmessage/Message.java
  application.datacomponents.directmessage.Message
-ServerRunner.java
- ServerRunner
-application/datacomponents/like/Like.java
- application.datacomponents.like.Like
-api/RequestTerminal.java
- api.RequestTerminal
 application/datacomponents/post/Post.java
  application.datacomponents.post.Post
+application/datacomponents/like/Like.java
+ application.datacomponents.like.Like
 application/requestahandlers/signupslogins/SignupHandler.java
  application.requestahandlers.signupslogins.SignupHandler
+ServerRunner.java
+ ServerRunner
 application/requestahandlers/directmessages/DirectHandler.java
  application.requestahandlers.directmessages.DirectHandler
 application/datamanagement/database/DatabaseManager.java
@@ -44,5 +42,7 @@ application/requestahandlers/posts/LikeHandler.java
  application.requestahandlers.posts.LikeHandler
 application/requestahandlers/signupslogins/LoginHandler.java
  application.requestahandlers.signupslogins.LoginHandler
+api/RequestTerminal.java
+ api.RequestTerminal
 application/requestahandlers/searches/SearchHandler.java
  application.requestahandlers.searches.SearchHandler

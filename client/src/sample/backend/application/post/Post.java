@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 
 import java.time.LocalDateTime;
 
-public class Post
+public class Post implements Comparable<Post>
 {
     private String caption;
     private String owner;
@@ -90,5 +90,19 @@ public class Post
     public void setDateTime(LocalDateTime dateTime)
     {
         this.dateTime = dateTime;
+    }
+
+    @Override
+    public int compareTo(Post secondPost)
+    {
+        if(this.dateTime.isAfter(secondPost.dateTime))
+        {
+            return -1;
+        }
+        else if(this.dateTime.isBefore(secondPost.dateTime))
+        {
+            return +1;
+        }
+        return 0;
     }
 }

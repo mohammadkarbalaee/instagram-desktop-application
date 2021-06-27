@@ -148,6 +148,9 @@ public class RequestTerminal implements Runnable
                 case "ADD_DISLIKE":
                     likeHandler.addDisLike(gson.fromJson(request.getBody(),Like.class));
                     break;
+                case "GET_FOLLOWINGS":
+                    followersHandler.deliverFollowings(request.getBody());
+                    break;
             }
         }
     }

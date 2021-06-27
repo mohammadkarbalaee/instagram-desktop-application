@@ -67,7 +67,7 @@ public class SavepostController
         }
         else
         {
-            Post newPost = new Post("hasan"/*ApplicationRunner.getLoggedInUsername()*/,caption, LocalDateTime.now());
+            Post newPost = new Post("reyhan"/*ApplicationRunner.getLoggedInUsername()*/,caption, LocalDateTime.now());
             Request savePostRequest = new Request("SAVE_POST", ApplicationRunner.getGson().toJson(newPost));
             ApiHandler apiHandler = new ApiHandler(savePostRequest);
             apiHandler.sendRequest();
