@@ -69,7 +69,6 @@ public class LoginController implements Initializable {
 
     public void okButtonOnAction() throws IOException
     {
-        gotoMain();
         User oldUser = new User(usernameField.getText(),"",passwordField.getText());
         SignUpperLogInner loginner = new SignUpperLogInner(oldUser);
         if (loginner.checkUserUniqueness())

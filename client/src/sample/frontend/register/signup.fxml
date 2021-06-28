@@ -17,103 +17,117 @@
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.register.SigningController">
    <left>
       <AnchorPane prefHeight="450.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fx:id="logoImageView" fitHeight="457.0" fitWidth="220.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@photos/logo.jpg" />
-               </image>
-            </ImageView>
-            <ProgressBar fx:id="progressbar" layoutX="23.0" layoutY="283.0" prefHeight="26.0" prefWidth="151.0" progress="0.0" visible="false">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <effect>
-                  <DropShadow />
-               </effect></ProgressBar>
-         </children>
+         <ImageView fx:id="logoImageView" fitHeight="457.0" fitWidth="220.0" layoutY="-3.0" pickOnBounds="true"
+                    preserveRatio="true">
+            <Image url="@photos/logo.jpg"/>
+         </ImageView>
+         <ProgressBar fx:id="progressbar" layoutX="23.0" layoutY="283.0" prefHeight="26.0" prefWidth="151.0"
+                      progress="0.0" visible="false">
+            <opaqueInsets>
+               <Insets/>
+            </opaqueInsets>
+            <effect>
+               <DropShadow/>
+            </effect>
+         </ProgressBar>
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="450.0" prefWidth="750.0" style="-fx-background-color: #DCDCDC;" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fx:id="titleImageView" fitHeight="64.0" fitWidth="129.0" layoutX="210.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@photos/instagram-text.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="instagramImageView" fitHeight="62.0" fitWidth="44.0" layoutX="472.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@photos/instagram_32px.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="61.0" layoutY="96.0" prefHeight="25.0" prefWidth="79.0" text="Username">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Label>
-            <Label layoutX="61.0" layoutY="140.0" prefHeight="25.0" prefWidth="77.0" text="Password">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Label>
-            <Label layoutX="61.0" layoutY="194.0" prefHeight="25.0" prefWidth="62.0" text="Email">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <TextField fx:id="email" layoutX="151.0" layoutY="189.0" prefHeight="35.0" prefWidth="250.0" promptText="email" style="-fx-background-radius: 5;" stylesheets="@../feed/css/styles.css">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="rect-round" />
-                  <String fx:value="whit_background" />
-                  <String fx:value="mouse-moved2" />
-               </styleClass></TextField>
-            <PasswordField fx:id="password" layoutX="151.0" layoutY="135.0" prefHeight="35.0" prefWidth="250.0" promptText="Password" style="-fx-background-radius: 5;" stylesheets="@../feed/css/styles.css">
-               <font>
-                  <Font name="System Italic" size="13.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="rect-round" />
-                  <String fx:value="whit_background" />
-               </styleClass></PasswordField>
-            <Button fx:id="cancelButton" layoutX="211.0" layoutY="357.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="34.0" prefWidth="130.0" styleClass="mystyle" stylesheets="@../feed/css/styles.css" text="Cancel" textFill="#8d076e">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Button>
-            <Button fx:id="loginButton" layoutX="151.0" layoutY="303.0" mnemonicParsing="false" onAction="#alreadyHaveAnAccount" prefHeight="34.0" prefWidth="250.0" styleClass="mystyle" stylesheets="@../feed/css/styles.css" text="Already have an account?" textFill="#8d076e">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Button>
-            <Label layoutX="190.0" layoutY="414.0" prefHeight="25.0" prefWidth="234.0" text="All rights reserved to Instagram" textFill="#8d076e">
-               <font>
-                  <Font name="System Italic" size="13.0" />
-               </font></Label>
-            <TextField fx:id="username" layoutX="151.0" layoutY="91.0" prefHeight="35.0" prefWidth="250.0" promptText="Username" style="-fx-background-radius: 5;" stylesheets="@../feed/css/styles.css">
-               <styleClass>
-                  <String fx:value="rect-round" />
-                  <String fx:value="whit_background" />
-               </styleClass>
-               <font>
-                  <Font name="System Italic" size="13.0" />
-               </font></TextField>
-            <Button fx:id="okButtonSignup" layoutX="151.0" layoutY="258.0" mnemonicParsing="false" onAction="#okButtonSignupOnAction" prefHeight="35.0" prefWidth="250.0" styleClass="mystyle" stylesheets="@../feed/css/styles.css" text="OK" textFill="#8d076e">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Button>
-            <Label fx:id="isNotNew" alignment="CENTER" layoutX="155.0" layoutY="218.0" prefHeight="25.0" prefWidth="238.0" textFill="#ff0001">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-            <Label fx:id="usernameAsterisk" layoutX="415.0" layoutY="94.0" prefHeight="29.0" prefWidth="101.0" textFill="#ff0015" />
-            <Label fx:id="passwordAsterisk" layoutX="419.0" layoutY="138.0" prefHeight="29.0" prefWidth="93.0" textFill="#ff0505" />
-            <Label fx:id="emailAsterisk" layoutX="416.0" layoutY="191.0" prefHeight="31.0" prefWidth="100.0" textFill="#fc0404" />
-         </children>
+      <AnchorPane prefHeight="450.0" prefWidth="750.0" style="-fx-background-color: #DCDCDC;"
+                  BorderPane.alignment="CENTER">
+         <ImageView fx:id="titleImageView" fitHeight="64.0" fitWidth="129.0" layoutX="210.0" layoutY="14.0"
+                    pickOnBounds="true" preserveRatio="true">
+            <Image url="@photos/instagram-text.png"/>
+         </ImageView>
+         <ImageView fx:id="instagramImageView" fitHeight="62.0" fitWidth="44.0" layoutX="472.0" layoutY="392.0"
+                    pickOnBounds="true" preserveRatio="true">
+            <Image url="@photos/instagram_32px.png"/>
+         </ImageView>
+         <Label layoutX="61.0" layoutY="96.0" prefHeight="25.0" prefWidth="79.0" text="Username">
+            <font>
+               <Font name="System Bold" size="15.0"/>
+            </font>
+         </Label>
+         <Label layoutX="61.0" layoutY="140.0" prefHeight="25.0" prefWidth="77.0" text="Password">
+            <font>
+               <Font name="System Bold" size="15.0"/>
+            </font>
+         </Label>
+         <Label layoutX="61.0" layoutY="194.0" prefHeight="25.0" prefWidth="62.0" text="Email">
+            <font>
+               <Font name="System Bold" size="14.0"/>
+            </font>
+         </Label>
+         <TextField fx:id="email" layoutX="151.0" layoutY="189.0" prefHeight="35.0" prefWidth="250.0" promptText="email"
+                    style="-fx-background-radius: 5;" stylesheets="@../feed/css/styles.css">
+            <font>
+               <Font size="13.0"/>
+            </font>
+            <styleClass>
+               <String fx:value="rect-round"/>
+               <String fx:value="whit_background"/>
+               <String fx:value="mouse-moved2"/>
+            </styleClass>
+         </TextField>
+         <PasswordField fx:id="password" layoutX="151.0" layoutY="135.0" prefHeight="35.0" prefWidth="250.0"
+                        promptText="Password" style="-fx-background-radius: 5;" stylesheets="@../feed/css/styles.css">
+            <font>
+               <Font name="System Italic" size="13.0"/>
+            </font>
+            <styleClass>
+               <String fx:value="rect-round"/>
+               <String fx:value="whit_background"/>
+            </styleClass>
+         </PasswordField>
+         <Button fx:id="cancelButton" layoutX="211.0" layoutY="357.0" mnemonicParsing="false"
+                 onAction="#cancelButtonOnAction" prefHeight="34.0" prefWidth="130.0" styleClass="mystyle"
+                 stylesheets="@../feed/css/styles.css" text="Cancel" textFill="#8d076e">
+            <font>
+               <Font size="13.0"/>
+            </font>
+         </Button>
+         <Button fx:id="loginButton" layoutX="151.0" layoutY="303.0" mnemonicParsing="false"
+                 onAction="#alreadyHaveAnAccount" prefHeight="34.0" prefWidth="250.0" styleClass="mystyle"
+                 stylesheets="@../feed/css/styles.css" text="Already have an account?" textFill="#8d076e">
+            <font>
+               <Font size="13.0"/>
+            </font>
+         </Button>
+         <Label layoutX="190.0" layoutY="414.0" prefHeight="25.0" prefWidth="234.0"
+                text="All rights reserved to Instagram" textFill="#8d076e">
+            <font>
+               <Font name="System Italic" size="13.0"/>
+            </font>
+         </Label>
+         <TextField fx:id="username" layoutX="151.0" layoutY="91.0" prefHeight="35.0" prefWidth="250.0"
+                    promptText="Username" style="-fx-background-radius: 5;" stylesheets="@../feed/css/styles.css">
+            <styleClass>
+               <String fx:value="rect-round"/>
+               <String fx:value="whit_background"/>
+            </styleClass>
+            <font>
+               <Font name="System Italic" size="13.0"/>
+            </font>
+         </TextField>
+         <Button fx:id="okButtonSignup" layoutX="151.0" layoutY="258.0" mnemonicParsing="false"
+                 onAction="#okButtonSignupOnAction" prefHeight="35.0" prefWidth="250.0" styleClass="mystyle"
+                 stylesheets="@../feed/css/styles.css" text="OK" textFill="#8d076e">
+            <font>
+               <Font size="13.0"/>
+            </font>
+         </Button>
+         <Label fx:id="isNotNew" alignment="CENTER" layoutX="155.0" layoutY="218.0" prefHeight="25.0" prefWidth="238.0"
+                textFill="#ff0001">
+            <font>
+               <Font size="13.0"/>
+            </font>
+         </Label>
+         <Label fx:id="usernameAsterisk" layoutX="415.0" layoutY="94.0" prefHeight="29.0" prefWidth="101.0"
+                textFill="#ff0015"/>
+         <Label fx:id="passwordAsterisk" layoutX="419.0" layoutY="138.0" prefHeight="29.0" prefWidth="93.0"
+                textFill="#ff0505"/>
+         <Label fx:id="emailAsterisk" layoutX="416.0" layoutY="191.0" prefHeight="31.0" prefWidth="100.0"
+                textFill="#fc0404"/>
       </AnchorPane>
    </center>
 </BorderPane>

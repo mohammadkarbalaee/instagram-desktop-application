@@ -30,6 +30,16 @@ public class ApplicationRunner extends Application
         ApplicationRunner.loggedInUsername = loggedInUsername;
     }
 
+    public static String getSearchedUsername()
+    {
+        return searchedUsername;
+    }
+
+    public static void setSearchedUsername(String searchedUsername)
+    {
+        ApplicationRunner.searchedUsername = searchedUsername;
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception
     {

@@ -19,6 +19,7 @@ import javafx.stage.StageStyle;
 import sample.backend.api.ApiHandler;
 import sample.backend.api.Request;
 import sample.backend.application.post.Post;
+import sample.frontend.ApplicationRunner;
 
 import java.io.IOException;
 import java.net.URL;
@@ -67,13 +68,13 @@ public class FeedController implements Initializable
 
     private void viewProfilePic() throws IOException
     {
-        Request request = new Request("IS_PROFILE_PIC_SET","hasan");
+        Request request = new Request("IS_PROFILE_PIC_SET", ApplicationRunner.getLoggedInUsername());
         apiHandler.setRequest(request);
         apiHandler.sendRequest();
 
         if (apiHandler.receiveTrueFalse())
         {
-            request = new Request("GET_PROFILE_PIC","hasan");
+            request = new Request("GET_PROFILE_PIC",ApplicationRunner.getLoggedInUsername());
             apiHandler.setRequest(request);
             apiHandler.sendRequest();
             profileView.setImage(SwingFXUtils.toFXImage(apiHandler.receivePhoto(),null));
@@ -152,7 +153,7 @@ public class FeedController implements Initializable
 
     private void mineFollowings() throws IOException
     {
-        Request getFollowingsRequest = new Request("GET_FOLLOWINGS","muhammad.ksht"/*ApplicationRunner.loggedinuser*/);
+        Request getFollowingsRequest = new Request("GET_FOLLOWINGS",ApplicationRunner.getLoggedInUsername());
         apiHandler.setRequest(getFollowingsRequest);
         apiHandler.sendRequest();
         Collections.addAll(followings,apiHandler.receiveFollowersFollowings());
@@ -234,6 +235,7 @@ public class FeedController implements Initializable
 
     public void onSearchClick() throws IOException
     {
+        ApplicationRunner.setSearchedUsername(searchField.getText());
         Request searchRequest = new Request("GET_SEARCH_RESULT",searchField.getText());
         apiHandler.setRequest(searchRequest);
         apiHandler.sendRequest();
