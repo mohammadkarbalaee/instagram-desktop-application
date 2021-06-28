@@ -108,8 +108,8 @@ public class SigningController implements Initializable
         try {
             Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
             Stage loginStage = new Stage();
-            loginStage.initStyle(StageStyle.UNDECORATED);
-            loginStage.setScene(new Scene(root, 520, 400));
+            loginStage.initStyle(StageStyle.DECORATED);
+            loginStage.setScene(new Scene(root));
             loginStage.show();
 
         } catch (IOException e) {

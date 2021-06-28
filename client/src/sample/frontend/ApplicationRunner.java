@@ -34,11 +34,9 @@ public class ApplicationRunner extends Application
     public void start(Stage primaryStage) throws Exception
     {
         RequestPipeline.build();
-        Parent root = FXMLLoader.load(getClass().getResource("post/savepost.fxml"));
-        String css = ApplicationRunner.class.getResource("post/css/buttonStyle.css").toExternalForm();
+        Parent root = FXMLLoader.load(getClass().getResource("register/signup.fxml"));
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(css);
-        primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.initStyle(StageStyle.DECORATED);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

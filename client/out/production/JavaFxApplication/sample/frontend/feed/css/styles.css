@@ -2,12 +2,20 @@
     -fx-background-color: #fff;
 }
 
+.back-ground2{
+    -fx-background-color: #bcbcbc;
+}
+
 .primary-color{
     -fx-background-color: #F4F5F9;
 }
 
 .shadow{
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);
+}
+
+.sign-button{
+    -fx-background-color: #FFB6C1;
 }
 
 .rect-round{
@@ -25,3 +33,31 @@
 .mouse-moved:hover{
     -fx-background-color: #EFEFEF;
 }
+
+Button{
+    /*
+    -fx-font-size: 15;
+    -fx-border-width: 0 0 4 0;
+    -fx-border-color: yellow green #0d47a1 white;
+     */
+}
+
+.mystyle{
+    -fx-background-color: #87CEFA;
+    -fx-font-size: 15;
+    -fx-text-fill: white;
+
+
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: yellow green 	#000000  white;
+}
+.mystyle:hover{
+    -fx-background-color: #A9A9A9;
+
+
+}
+.mystyle:pressed{
+    -fx-background-color: 	#696969;
+    -fx-font-size: 12;
+}
+
