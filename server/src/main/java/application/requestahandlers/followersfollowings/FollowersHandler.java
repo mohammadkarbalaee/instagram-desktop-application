@@ -39,4 +39,10 @@ public class FollowersHandler
         Response response = new Response(DatabaseManager.getFollowings(username));
         apiHandler.answerToClient(response);
     }
+
+    public void deliverFollowers(String username) throws IOException, SQLException
+    {
+        Response response = new Response(DatabaseManager.getFollowers(username));
+        apiHandler.answerToClient(response);
+    }
 }

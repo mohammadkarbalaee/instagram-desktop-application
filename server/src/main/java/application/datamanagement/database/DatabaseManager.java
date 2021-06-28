@@ -543,4 +543,35 @@ public class DatabaseManager
         statement.close();
         return path;
     }
+
+    synchronized public static String getFollowers(String username) throws SQLException
+    {
+        String followers = "";
+        String query = "SELECT follower FROM followers WHERE username = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(query);
+        statement.setString(1,username);
+        ResultSet followersSet = statement.executeQuery();
+        while (followersSet.next())
+        {
+            followers += followersSet.getString("follower") + "/";
+        }
+        statement.close();
+        return followers;
+    }
+
+    synchronized public static String getBio(String username) throws SQLException
+    {
+        String query = "SELECT bio FROM users " +
+                "WHERE username = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(query);
+        statement.setString(1,username);
+        ResultSet resultSet = statement.executeQuery();
+        String bio = null;
+        while (resultSet.next())
+        {
+            bio = resultSet.getString("bio");
+        }
+        statement.close();
+        return bio;
+    }
 }
