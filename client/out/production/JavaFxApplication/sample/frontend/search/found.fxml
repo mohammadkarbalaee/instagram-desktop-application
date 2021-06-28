@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0"
+            prefWidth="369.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.search.SearchResultController">
+   <Button fx:id="showprofileButton" onAction="#onClick" layoutX="108.0" layoutY="5.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="135.0"
+           text="show profile"/>
+</AnchorPane>

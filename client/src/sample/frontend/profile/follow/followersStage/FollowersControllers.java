@@ -88,7 +88,7 @@ public class FollowersControllers implements Initializable
             apiHandler.setRequest(isSetRequest);
             apiHandler.sendRequest();
 
-            if (apiHandler.receiveIsProfileSet())
+            if (apiHandler.receiveTrueFalse())
             {
                 profilePic = mineProfileImage(followersUsernames.get(i));
             }
@@ -103,12 +103,15 @@ public class FollowersControllers implements Initializable
 
     private void mineMainPack(String username) throws IOException
     {
-        System.out.println("i am mining main pack");
         Request getPostBodyRequest = new Request("GET_FOLLOWERS",username);
         apiHandler.setRequest(getPostBodyRequest);
         apiHandler.sendRequest();
-        Collections.addAll(followersUsernames,apiHandler.receiveFollowersFollowings());
-        System.out.println(followersUsernames);
+        String[] usernames = apiHandler.receiveFollowersFollowings();
+        if (usernames == null)
+        {
+            return;
+        }
+        Collections.addAll(followersUsernames,usernames);
     }
 
     private Image mineProfileImage(String username) throws IOException

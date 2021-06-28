@@ -119,47 +119,12 @@ public class DatabaseManager
         statement2.close();
     }
 
-    synchronized public static SearchResult getSearchResult(String usernameToManipulate) throws SQLException
+    synchronized public static SearchResult getSearchResult(String username) throws SQLException
     {
-        if (isUserNew(usernameToManipulate))
+        if (isUserNew(username))
         {
             SearchResult searchResult = new SearchResult();
-
-            String getFollowersQuery = "SELECT * FROM followers " +
-                    "WHERE username = ?";
-            PreparedStatement statement1 = CONNECTION.prepareStatement(getFollowersQuery);
-            statement1.setString(1,usernameToManipulate);
-            ResultSet followersSet = statement1.executeQuery();
-            while (followersSet.next())
-            {
-                searchResult.addFollowers(followersSet.getString("follower"));
-            }
-            statement1.close();
-
-            String getFollowingsQuery = "SELECT * FROM followings " +
-                    "WHERE username = ?";
-            PreparedStatement statement2 = CONNECTION.prepareStatement(getFollowingsQuery);
-            statement2.setString(1,usernameToManipulate);
-            ResultSet followingsSet = statement2.executeQuery();
-            while (followingsSet.next())
-            {
-                searchResult.addFollowings(followingsSet.getString("following"));
-            }
-            statement2.close();
-
-            String getUser = "SELECT * FROM users " +
-                    "WHERE username = ?";
-            PreparedStatement statement3 = CONNECTION.prepareStatement(getUser);
-            statement3.setString(1,usernameToManipulate);
-            ResultSet userSet = statement3.executeQuery();
-            searchResult.setUsername(usernameToManipulate);
-            while (userSet.next())
-            {
-                searchResult.setEmail(userSet.getString("email"));
-                searchResult.setBio(userSet.getString("bio"));
-            }
-            statement3.close();
-
+            searchResult.setUsername(username);
             return searchResult;
         }
         else
@@ -573,5 +538,22 @@ public class DatabaseManager
         }
         statement.close();
         return bio;
+    }
+
+    synchronized public static String isFollowed(String username, String follower) throws SQLException
+    {
+        String query = "SELECT * FROM followers WHERE username = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(query);
+        statement.setString(1,username);
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next())
+        {
+            if (resultSet.getString("follower").equals(follower))
+            {
+                return "true";
+            }
+        }
+        statement.close();
+        return "false";
     }
 }

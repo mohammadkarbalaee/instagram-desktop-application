@@ -33,7 +33,7 @@ public class FollowingsController implements Initializable
     {
         try
         {
-            viewFollowers();
+            viewFollowings();
         }
         catch (IOException e)
         {
@@ -41,7 +41,7 @@ public class FollowingsController implements Initializable
         }
     }
 
-    private void viewFollowers() throws IOException
+    private void viewFollowings() throws IOException
     {
         mineData();
 
@@ -77,17 +77,16 @@ public class FollowingsController implements Initializable
 
     private void mineData() throws IOException
     {
-        mineMainPack("hasan");
+        mineMainPack("reyhan");
         Image profilePic;
         Request isSetRequest;
-
         for (int i = 0; i < followingsUsernames.size(); i++)
         {
             isSetRequest = new Request("IS_PROFILE_PIC_SET",followingsUsernames.get(i));
             apiHandler.setRequest(isSetRequest);
             apiHandler.sendRequest();
 
-            if (apiHandler.receiveIsProfileSet())
+            if (apiHandler.receiveTrueFalse())
             {
                 profilePic = mineProfileImage(followingsUsernames.get(i));
             }
@@ -105,7 +104,12 @@ public class FollowingsController implements Initializable
         Request getPostBodyRequest = new Request("GET_FOLLOWINGS",username);
         apiHandler.setRequest(getPostBodyRequest);
         apiHandler.sendRequest();
-        Collections.addAll(followingsUsernames,apiHandler.receiveFollowersFollowings());
+        String[] usernames = apiHandler.receiveFollowersFollowings();
+        if (usernames == null)
+        {
+            return;
+        }
+        Collections.addAll(followingsUsernames,usernames);
     }
 
     private Image mineProfileImage(String username) throws IOException

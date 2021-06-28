@@ -1,5 +1,6 @@
-package sample.frontend.profile;
+package sample.frontend.search.userProfile;
 
+import com.google.gson.Gson;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.backend.api.ApiHandler;
 import sample.backend.api.Request;
+import sample.backend.application.followerfollowing.FollowerFollowingPack;
 import sample.backend.application.post.Post;
 import sample.frontend.feed.PostController;
 
@@ -26,7 +28,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 
-public class ProfileController implements Initializable
+public class UserProfileController implements Initializable
 {
     @FXML
     public ImageView profileIMG;
@@ -43,10 +45,15 @@ public class ProfileController implements Initializable
     @FXML
     public Label bio;
     @FXML
+    public Button messageButton;
+    @FXML
+    public Button followButton;
+    @FXML
     private GridPane postGrid;
 
     private final ApiHandler apiHandler = new ApiHandler();
     private final ArrayList<Post> posts = new ArrayList<>();
+    private final Gson gson = new Gson();
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -64,22 +71,34 @@ public class ProfileController implements Initializable
 
     private void viewAppearances() throws IOException
     {
-        bio.setText(mineBio("muhammad.ksht"));
-        username.setText("muhammad.ksht");
-        Request isSetRequest;
-        isSetRequest = new Request("IS_PROFILE_PIC_SET","muhammad.ksht");
-        apiHandler.setRequest(isSetRequest);
+        bio.setText(mineBio("reyhan"));
+        username.setText("reyhan");
+        Request request;
+        request = new Request("IS_PROFILE_PIC_SET","reyhan");
+        apiHandler.setRequest(request);
         apiHandler.sendRequest();
         if (apiHandler.receiveTrueFalse())
         {
-            profileIMG.setImage(mineProfileImage("muhammad.ksht"));
+            profileIMG.setImage(mineProfileImage("reyhan"));
         }
         else
         {
-            profileIMG.setImage(new Image(getClass().getResourceAsStream("../feed/photos/userProf1.png")));
+            profileIMG.setImage(new Image(getClass().getResourceAsStream("../../feed/photos/userProf1.png")));
         }
-        numFollowersID.setText(String.valueOf(mineFollowersQuantity("muhammad.ksht")));
-        numFollowingID.setText(String.valueOf(mineFollowingsQuantity("muhammad.ksht")));
+        FollowerFollowingPack pack = new FollowerFollowingPack("hasan","reyhan",false);
+        request = new Request("IS_FOLLOWED",gson.toJson(pack));
+        apiHandler.setRequest(request);
+        apiHandler.sendRequest();
+        if (apiHandler.receiveTrueFalse())
+        {
+            followButton.setText("unfollow");
+        }
+        else
+        {
+            followButton.setText("follow");
+        }
+        numFollowersID.setText(String.valueOf(mineFollowersQuantity("reyhan")));
+        numFollowingID.setText(String.valueOf(mineFollowingsQuantity("reyhan")));
     }
 
     private String mineBio(String username) throws IOException
@@ -126,7 +145,7 @@ public class ProfileController implements Initializable
             for (int i = 0; i < posts.size(); i++)
             {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("../post/post.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("../../post/post.fxml"));
 
                 VBox postBox = fxmlLoader.load();
                 PostController postController = fxmlLoader.getController();
@@ -155,10 +174,10 @@ public class ProfileController implements Initializable
         Integer likesQuantity;
         Post mainPostContext;
         String postID;
-        int postsQuantity = minePostsQuantity("hasan");
+        int postsQuantity = minePostsQuantity("reyhan");
         for (int i = 1; i <= postsQuantity; i++)
         {
-            postID = "hasan" + "/" + i;
+            postID = "reyhan" + "/" + i;
             mainPostContext = minePostBody(postID);
             likesQuantity = mineLikesQuantity(postID);
             commentsQuantity = mineCommentsQuantity(postID);
@@ -210,7 +229,7 @@ public class ProfileController implements Initializable
 
     public void onFollowerClick() throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("follow/followersStage/followersStage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../../profile/follow/followersStage/followersStage.fxml"));
         Scene scene = new Scene(root);
         Stage followersStage = new Stage();
         followersStage.initStyle(StageStyle.DECORATED);
@@ -220,7 +239,7 @@ public class ProfileController implements Initializable
 
     public void onFollowingClick() throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("follow/followingStage/followingsStage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../../profile/follow/followingStage/followingsStage.fxml"));
         Scene scene = new Scene(root);
         Stage profileStage = new Stage();
         profileStage.initStyle(StageStyle.DECORATED);
@@ -235,4 +254,26 @@ public class ProfileController implements Initializable
         apiHandler.sendRequest();
         return SwingFXUtils.toFXImage(apiHandler.receivePhoto(),null);
     }
+
+    public void onMessageClick()
+    {
+
+    }
+
+    public void onFollowClick() throws IOException
+    {
+        if (followButton.getText().equals("unfollow"))
+        {
+            FollowerFollowingPack pack = new FollowerFollowingPack("hasan","reyhan",true);
+            apiHandler.setRequest(new Request("SEND_FOLLOWER",gson.toJson(pack)));
+            apiHandler.sendRequest();
+        }
+        else
+        {
+            FollowerFollowingPack pack = new FollowerFollowingPack("hasan","reyhan",false);
+            apiHandler.setRequest(new Request("SEND_FOLLOWER",gson.toJson(pack)));
+            apiHandler.sendRequest();
+        }
+    }
+
 }

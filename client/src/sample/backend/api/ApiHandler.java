@@ -5,7 +5,6 @@ import sample.backend.application.comment.Comment;
 import sample.backend.application.directmessage.Message;
 import sample.backend.application.like.Like;
 import sample.backend.application.post.Post;
-import sample.backend.application.search.SearchResult;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -57,12 +56,19 @@ public class ApiHandler
         }
     }
 
-    public SearchResult receiveSearchResult() throws IOException
+    public String receiveSearchResult() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
         Response responseObject = gson.fromJson(json,Response.class);
         String searchResultJson = responseObject.getBody();
-        return gson.fromJson(searchResultJson,SearchResult.class);
+        if (searchResultJson.equals("null"))
+        {
+            return null;
+        }
+        else
+        {
+            return searchResultJson;
+        }
     }
 
     public Integer receiveQuantity() throws IOException
@@ -151,10 +157,15 @@ public class ApiHandler
         String json = RequestPipeline.getDataInputStream().readUTF();
         Response responseObject = gson.fromJson(json,Response.class);
         String followingsUsernames = responseObject.getBody();
+        System.out.println("in api followings " + followingsUsernames);
+        if (followingsUsernames.equals(""))
+        {
+            return null;
+        }
         return followingsUsernames.split("/");
     }
 
-    public boolean receiveIsProfileSet() throws IOException
+    public boolean receiveTrueFalse() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
         Response responseObject = gson.fromJson(json,Response.class);

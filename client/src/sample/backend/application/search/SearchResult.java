@@ -1,43 +1,26 @@
 package sample.backend.application.search;
 
-import java.util.ArrayList;
+import javafx.scene.image.Image;
 
 public class SearchResult
 {
-    private ArrayList<String> followers;
-    private ArrayList<String> followings;
-    private String bio;
     private String username;
-    private String email;
+    private Image profileImage;
 
-    public ArrayList<String> getFollowers()
+    public SearchResult(String username, Image profileImage)
     {
-        return followers;
+        this.username = username;
+        this.profileImage = profileImage;
     }
 
-    public void setFollowers(ArrayList<String> followers)
+    public Image getProfileImage()
     {
-        this.followers = followers;
+        return profileImage;
     }
 
-    public ArrayList<String> getFollowings()
+    public void setProfileImage(Image profileImage)
     {
-        return followings;
-    }
-
-    public void setFollowings(ArrayList<String> followings)
-    {
-        this.followings = followings;
-    }
-
-    public String getBio()
-    {
-        return bio;
-    }
-
-    public void setBio(String bio)
-    {
-        this.bio = bio;
+        this.profileImage = profileImage;
     }
 
     public String getUsername()
@@ -48,15 +31,5 @@ public class SearchResult
     public void setUsername(String username)
     {
         this.username = username;
-    }
-
-    public String getEmail()
-    {
-        return email;
-    }
-
-    public void setEmail(String email)
-    {
-        this.email = email;
     }
 }

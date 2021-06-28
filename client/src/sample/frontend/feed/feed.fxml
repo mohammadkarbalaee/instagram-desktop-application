@@ -37,9 +37,8 @@
             </ImageView>
          </HBox>
          <VBox alignment="CENTER" prefHeight="248.0" prefWidth="300.0" spacing="5.0">
-            <ImageView fx:id="profileView" fitHeight="140.0" fitWidth="140.0" nodeOrientation="INHERIT"
-                       pickOnBounds="true" preserveRatio="true">
-               <Image url="@photos/userProf1.png"/>
+            <ImageView fx:id="profileView" fitHeight="140.0" fitWidth="140.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <Image url="@photos/userProf1.png" />
             </ImageView>
             <Label fx:id="username" alignment="center" contentDisplay="CENTER" prefHeight="29.0" prefWidth="284.0" text="Hasan_Rokn" textFill="#686868">
                <font>
@@ -110,7 +109,7 @@
                   <Insets left="-20.0" />
                </padding>
                <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@photos/paper_plane_100px.png"/>
+                  <Image url="@photos/paper_plane_100px.png" />
                </ImageView>
                <Label prefHeight="21.0" prefWidth="159.0" text="Direct">
                   <font>
@@ -147,7 +146,7 @@
                      <Font size="18.0" />
                   </font>
                </Label>
-               <Button fx:id="profileButton" onAction="#onProfileClick" mnemonicParsing="false" prefHeight="26.0" prefWidth="71.0" text="+">
+               <Button fx:id="profileButton" mnemonicParsing="false" onAction="#onProfileClick" prefHeight="26.0" prefWidth="71.0" text="+">
                   <font>
                      <Font size="20.0" />
                   </font>
@@ -193,11 +192,12 @@
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
-               <TextField prefHeight="31.0" prefWidth="246.0" promptText="Search" styleClass="transparent" stylesheets="@css/styles.css">
+               <TextField fx:id="searchField" prefHeight="31.0" prefWidth="218.0" promptText="Search" styleClass="transparent" stylesheets="@css/styles.css">
                   <font>
                      <Font name="System Italic" size="14.0" />
                   </font>
                </TextField>
+               <Button fx:id="searchButton" onAction="#onSearchClick" mnemonicParsing="false" text="serach" />
                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                   <Image url="@photos/search_100px.png" />
                </ImageView>

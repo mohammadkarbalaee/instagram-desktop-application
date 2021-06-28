@@ -12,6 +12,7 @@ import sample.backend.api.RequestPipeline;
 public class ApplicationRunner extends Application
 {
     private static String loggedInUsername;
+    private static String searchedUsername;
     private static Gson gson = new Gson();
 
     public static String getLoggedInUsername()
