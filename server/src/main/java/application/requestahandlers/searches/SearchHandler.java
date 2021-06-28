@@ -4,6 +4,7 @@ import api.ApiHandler;
 import api.Response;
 import application.datacomponents.search.SearchResult;
 import application.datamanagement.database.DatabaseManager;
+import application.datamanagement.file.PhotoManager;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class SearchHandler
         }
         else
         {
-            Response response = new Response(gson.toJson(searchResult));
+            Response response = new Response(usenanme);
             apiHandler.answerToClient(response);
         }
     }

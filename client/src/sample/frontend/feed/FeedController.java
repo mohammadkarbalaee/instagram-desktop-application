@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -39,6 +40,10 @@ public class FeedController implements Initializable
     @FXML
     public Button profileButton;
     @FXML
+    public Button searchButton;
+    @FXML
+    public TextField searchField;
+    @FXML
     private GridPane postGrid;
 
     private final ApiHandler apiHandler = new ApiHandler();
@@ -66,7 +71,7 @@ public class FeedController implements Initializable
         apiHandler.setRequest(request);
         apiHandler.sendRequest();
 
-        if (apiHandler.receiveIsProfileSet())
+        if (apiHandler.receiveTrueFalse())
         {
             request = new Request("GET_PROFILE_PIC","hasan");
             apiHandler.setRequest(request);
@@ -225,5 +230,34 @@ public class FeedController implements Initializable
         profileStage.setScene(scene);
         profileStage.setTitle("profile");
         profileStage.show();
+    }
+
+    public void onSearchClick() throws IOException
+    {
+        Request searchRequest = new Request("GET_SEARCH_RESULT",searchField.getText());
+        apiHandler.setRequest(searchRequest);
+        apiHandler.sendRequest();
+        String result = apiHandler.receiveSearchResult();
+
+        if (result == null)
+        {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../search/notFound.fxml")));
+            Scene scene = new Scene(root);
+            Stage notFoundStage = new Stage();
+            notFoundStage.initStyle(StageStyle.DECORATED);
+            notFoundStage.setScene(scene);
+            notFoundStage.setTitle("alert");
+            notFoundStage.show();
+        }
+        else
+        {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../search/found.fxml")));
+            Scene scene = new Scene(root);
+            Stage notFoundStage = new Stage();
+            notFoundStage.initStyle(StageStyle.DECORATED);
+            notFoundStage.setScene(scene);
+            notFoundStage.setTitle("alert");
+            notFoundStage.show();
+        }
     }
 }

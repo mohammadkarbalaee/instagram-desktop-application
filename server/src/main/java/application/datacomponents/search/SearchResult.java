@@ -1,43 +1,31 @@
 package application.datacomponents.search;
 
-import java.util.ArrayList;
+import javafx.scene.image.Image;
 
 public class SearchResult
 {
-    private ArrayList<String> followers = new ArrayList<>();
-    private ArrayList<String> followings = new ArrayList<>();
-    private String bio;
     private String username;
-    private String email;
+    private Image profileImage;
 
-    public ArrayList<String> getFollowers()
+    public SearchResult(String username, Image profileImage)
     {
-        return followers;
+        this.username = username;
+        this.profileImage = profileImage;
     }
 
-    public void addFollowers(String follower)
+    public SearchResult()
     {
-        followers.add(follower);
+
     }
 
-    public ArrayList<String> getFollowings()
+    public Image getProfileImage()
     {
-        return followings;
+        return profileImage;
     }
 
-    public void addFollowings(String following)
+    public void setProfileImage(Image profileImage)
     {
-        followings.add(following);
-    }
-
-    public String getBio()
-    {
-        return bio;
-    }
-
-    public void setBio(String bio)
-    {
-        this.bio = bio;
+        this.profileImage = profileImage;
     }
 
     public String getUsername()
@@ -48,15 +36,5 @@ public class SearchResult
     public void setUsername(String username)
     {
         this.username = username;
-    }
-
-    public String getEmail()
-    {
-        return email;
-    }
-
-    public void setEmail(String email)
-    {
-        this.email = email;
     }
 }

@@ -166,6 +166,9 @@ public class RequestTerminal implements Runnable
                 case "GET_PROFILE_PIC":
                     signupHandler.deliverProfilePic(request.getBody());
                     break;
+                case "IS_FOLLOWED":
+                    followersHandler.deliverIsFollowed(request.getBody());
+                    break;
             }
         }
     }
