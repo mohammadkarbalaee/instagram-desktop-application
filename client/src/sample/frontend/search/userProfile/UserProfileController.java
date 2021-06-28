@@ -20,6 +20,7 @@ import sample.backend.api.ApiHandler;
 import sample.backend.api.Request;
 import sample.backend.application.followerfollowing.FollowerFollowingPack;
 import sample.backend.application.post.Post;
+import sample.frontend.ApplicationRunner;
 import sample.frontend.feed.PostController;
 
 import java.io.IOException;
@@ -71,15 +72,15 @@ public class UserProfileController implements Initializable
 
     private void viewAppearances() throws IOException
     {
-        bio.setText(mineBio("reyhan"));
-        username.setText("reyhan");
+        bio.setText(mineBio(ApplicationRunner.getSearchedUsername()));
+        username.setText(ApplicationRunner.getSearchedUsername());
         Request request;
-        request = new Request("IS_PROFILE_PIC_SET","reyhan");
+        request = new Request("IS_PROFILE_PIC_SET",ApplicationRunner.getSearchedUsername());
         apiHandler.setRequest(request);
         apiHandler.sendRequest();
         if (apiHandler.receiveTrueFalse())
         {
-            profileIMG.setImage(mineProfileImage("reyhan"));
+            profileIMG.setImage(mineProfileImage(ApplicationRunner.getSearchedUsername()));
         }
         else
         {
@@ -97,8 +98,8 @@ public class UserProfileController implements Initializable
         {
             followButton.setText("follow");
         }
-        numFollowersID.setText(String.valueOf(mineFollowersQuantity("reyhan")));
-        numFollowingID.setText(String.valueOf(mineFollowingsQuantity("reyhan")));
+        numFollowersID.setText(String.valueOf(mineFollowersQuantity(ApplicationRunner.getSearchedUsername())));
+        numFollowingID.setText(String.valueOf(mineFollowingsQuantity(ApplicationRunner.getSearchedUsername())));
     }
 
     private String mineBio(String username) throws IOException
@@ -174,10 +175,10 @@ public class UserProfileController implements Initializable
         Integer likesQuantity;
         Post mainPostContext;
         String postID;
-        int postsQuantity = minePostsQuantity("reyhan");
+        int postsQuantity = minePostsQuantity(ApplicationRunner.getSearchedUsername());
         for (int i = 1; i <= postsQuantity; i++)
         {
-            postID = "reyhan" + "/" + i;
+            postID = ApplicationRunner.getSearchedUsername() + "/" + i;
             mainPostContext = minePostBody(postID);
             likesQuantity = mineLikesQuantity(postID);
             commentsQuantity = mineCommentsQuantity(postID);
@@ -264,13 +265,13 @@ public class UserProfileController implements Initializable
     {
         if (followButton.getText().equals("unfollow"))
         {
-            FollowerFollowingPack pack = new FollowerFollowingPack("hasan","reyhan",true);
+            FollowerFollowingPack pack = new FollowerFollowingPack(ApplicationRunner.getLoggedInUsername(),ApplicationRunner.getSearchedUsername(),true);
             apiHandler.setRequest(new Request("SEND_FOLLOWER",gson.toJson(pack)));
             apiHandler.sendRequest();
         }
         else
         {
-            FollowerFollowingPack pack = new FollowerFollowingPack("hasan","reyhan",false);
+            FollowerFollowingPack pack = new FollowerFollowingPack(ApplicationRunner.getLoggedInUsername(),ApplicationRunner.getSearchedUsername(),false);
             apiHandler.setRequest(new Request("SEND_FOLLOWER",gson.toJson(pack)));
             apiHandler.sendRequest();
         }

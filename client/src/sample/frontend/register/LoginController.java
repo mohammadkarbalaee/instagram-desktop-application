@@ -69,10 +69,9 @@ public class LoginController implements Initializable {
 
     public void okButtonOnAction() throws IOException
     {
-        gotoMain();
         User oldUser = new User(usernameField.getText(),"",passwordField.getText());
         SignUpperLogInner loginner = new SignUpperLogInner(oldUser);
-        if (!loginner.checkUserUniqueness())
+        if (loginner.checkUserUniqueness())
         {
             if (loginner.isPasswordMatch())
             {
@@ -95,10 +94,11 @@ public class LoginController implements Initializable {
 
     public void gotoMain() throws IOException
     {
+        ApplicationRunner.setLoggedInUsername(usernameField.getText());
         Parent root = FXMLLoader.load(getClass().getResource("../feed/feed.fxml"));
         Stage mainStage = new Stage();
-        mainStage.initStyle(StageStyle.UNDECORATED);
-        mainStage.setScene(new Scene(root, 520, 400));
+        mainStage.initStyle(StageStyle.DECORATED);
+        mainStage.setScene(new Scene(root));
         mainStage.show();
     }
 }

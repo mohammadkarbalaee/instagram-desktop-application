@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import sample.backend.api.ApiHandler;
 import sample.backend.api.Request;
 import sample.backend.application.followerfollowing.Follower;
+import sample.frontend.ApplicationRunner;
 import sample.frontend.profile.follow.components.follower.FollowerController;
 
 import java.io.IOException;
@@ -77,7 +78,7 @@ public class FollowersControllers implements Initializable
 
     private void mineData() throws IOException
     {
-        mineMainPack("reyhan");
+        mineMainPack(ApplicationRunner.getSearchedUsername());
         System.out.println(followersUsernames.size());
         Image profilePic;
         Request isSetRequest;

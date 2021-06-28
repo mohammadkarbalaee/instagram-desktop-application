@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -9,48 +10,82 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.register.LoginController">
-   <children>
-      <ImageView fx:id="logoLogin" fitHeight="400.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@photos/logoLogin.jpg" />
-         </image>
-      </ImageView>
-      <Label layoutX="227.0" layoutY="121.0" prefHeight="31.0" prefWidth="66.0" text="Username" textFill="#8d076e">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="227.0" layoutY="170.0" prefHeight="31.0" prefWidth="66.0" text="Password" textFill="#8d076e">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="usernameField" layoutX="319.0" layoutY="124.0" promptText="Username" />
-      <PasswordField fx:id="passwordField" layoutX="319.0" layoutY="173.0" prefHeight="25.0" prefWidth="149.0" promptText="Password" />
-      <Button fx:id="okButton" layoutX="283.0" layoutY="266.0" mnemonicParsing="false" onAction="#okButtonOnAction" prefHeight="25.0" prefWidth="149.0" text="OK" textFill="#8d076e">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <ImageView fx:id="instagramImageViewer" fitHeight="80.0" fitWidth="80.0" layoutX="434.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@photos/instagramLoginImage.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="titleImageViewer" fitHeight="64.0" fitWidth="129.0" layoutX="293.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@photos/titleLoginImage.jpg" />
-         </image>
-      </ImageView>
-      <Label layoutX="243.0" layoutY="334.0" prefHeight="31.0" prefWidth="180.0" text="All Instagram rights are reserved" textFill="#8d076e" />
-      <Button fx:id="cancelButton" layoutX="283.0" layoutY="309.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="25.0" prefWidth="149.0" text="Sign up" textFill="#8d076e">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Label fx:id="doesNotExist" alignment="CENTER" layoutX="202.0" layoutY="208.0" prefHeight="40.0" prefWidth="294.0" textFill="#f80000" />
-      <Label fx:id="usernameAsterisk" layoutX="311.0" layoutY="127.0" prefHeight="18.0" prefWidth="6.0" textFill="#fc0000" />
-      <Label fx:id="passwordAsterisk" layoutX="310.0" layoutY="176.0" prefHeight="18.0" prefWidth="6.0" textFill="RED" />
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0"
+            prefWidth="750.0" style="-fx-background-color: #DCDCDC;" stylesheets="@../feed/css/styles.css"
+            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.frontend.register.LoginController">
+   <ImageView fx:id="logoLogin" fitHeight="450.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@photos/logoLogin.jpg"/>
+   </ImageView>
+   <Label layoutX="262.0" layoutY="122.0" prefHeight="31.0" prefWidth="86.0" text="Username">
+      <font>
+         <Font name="System Bold" size="15.0"/>
+      </font>
+   </Label>
+   <Label layoutX="262.0" layoutY="171.0" prefHeight="31.0" prefWidth="86.0" text="Password">
+      <font>
+         <Font name="System Bold" size="15.0"/>
+      </font>
+   </Label>
+   <TextField fx:id="usernameField" layoutX="377.0" layoutY="120.0" prefHeight="35.0" prefWidth="250.0"
+              promptText="Username" style="-fx-background-radius: 5;" stylesheets="@../feed/css/styles.css">
+      <font>
+         <Font name="System Italic" size="13.0"/>
+      </font>
+      <styleClass>
+         <String fx:value="rect-round"/>
+         <String fx:value="shadow"/>
+         <String fx:value="whit_background"/>
+      </styleClass>
+   </TextField>
+   <PasswordField fx:id="passwordField" layoutX="377.0" layoutY="169.0" prefHeight="35.0" prefWidth="250.0"
+                  promptText="Password" style="-fx-background-radius: 5;" stylesheets="@../feed/css/styles.css">
+      <font>
+         <Font name="System Italic" size="13.0"/>
+      </font>
+      <styleClass>
+         <String fx:value="shadow"/>
+         <String fx:value="whit_background"/>
+         <String fx:value="rect-round"/>
+      </styleClass>
+   </PasswordField>
+   <Button fx:id="okButton" layoutX="377.0" layoutY="311.0" minHeight="-Infinity" mnemonicParsing="false"
+           onAction="#okButtonOnAction" prefHeight="35.0" prefWidth="250.0" styleClass="mystyle"
+           stylesheets="@../feed/css/styles.css" text="OK" textFill="#8d076e">
+      <font>
+         <Font size="14.0"/>
+      </font>
+   </Button>
+   <ImageView fx:id="instagramImageViewer" fitHeight="62.0" fitWidth="44.0" layoutX="699.0" layoutY="399.0"
+              pickOnBounds="true" preserveRatio="true">
+      <Image url="@../feed/photos/instagram_32px.png"/>
+   </ImageView>
+   <ImageView fx:id="titleImageViewer" fitHeight="54.0" fitWidth="129.0" layoutX="437.0" layoutY="14.0"
+              pickOnBounds="true" preserveRatio="true">
+      <Image url="@../feed/photos/instagram-text.png"/>
+   </ImageView>
+   <Label layoutX="401.0" layoutY="406.0" prefHeight="31.0" prefWidth="219.0" text="All Instagram rights are reserved"
+          textFill="#8d076e">
+      <font>
+         <Font name="System Italic" size="13.0"/>
+      </font>
+   </Label>
+   <Button fx:id="cancelButton" layoutX="377.0" layoutY="354.0" mnemonicParsing="false" onAction="#cancelButtonOnAction"
+           prefHeight="35.0" prefWidth="250.0" styleClass="mystyle" stylesheets="@../feed/css/styles.css" text="Sign up"
+           textFill="#8d076e">
+      <font>
+         <Font size="14.0"/>
+      </font>
+   </Button>
+   <Label fx:id="doesNotExist" layoutX="283.0" layoutY="218.0" prefHeight="73.0" prefWidth="430.0" textFill="RED"/>
+   <Label fx:id="usernameAsterisk" layoutX="364.0" layoutY="129.0" prefHeight="18.0" prefWidth="12.0" textFill="RED">
+      <font>
+         <Font size="14.0"/>
+      </font>
+   </Label>
+   <Label fx:id="passwordAsterisk" layoutX="358.0" layoutY="177.0" prefHeight="20.0" prefWidth="12.0" textFill="RED">
+      <font>
+         <Font size="14.0"/>
+      </font>
+   </Label>
 </AnchorPane>
