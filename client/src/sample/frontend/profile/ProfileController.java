@@ -1,6 +1,7 @@
 package sample.frontend.profile;
 
 import javafx.embed.swing.SwingFXUtils;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -235,5 +236,13 @@ public class ProfileController implements Initializable
         apiHandler.setRequest(getProfilePicRequest);
         apiHandler.sendRequest();
         return SwingFXUtils.toFXImage(apiHandler.receivePhoto(),null);
+    }
+
+    public void onMessageClick(ActionEvent event)
+    {
+    }
+
+    public void onFollowClick(ActionEvent event)
+    {
     }
 }
