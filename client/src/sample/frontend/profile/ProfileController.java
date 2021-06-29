@@ -1,7 +1,6 @@
 package sample.frontend.profile;
 
 import javafx.embed.swing.SwingFXUtils;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -67,7 +66,7 @@ public class ProfileController implements Initializable
     private void viewAppearances() throws IOException
     {
         bio.setText(mineBio(ApplicationRunner.getLoggedInUsername()));
-        username.setText("muhammad.ksht");
+        username.setText(ApplicationRunner.getLoggedInUsername());
         Request isSetRequest;
         isSetRequest = new Request("IS_PROFILE_PIC_SET",ApplicationRunner.getLoggedInUsername());
         apiHandler.setRequest(isSetRequest);
@@ -166,7 +165,7 @@ public class ProfileController implements Initializable
             commentsQuantity = mineCommentsQuantity(postID);
             postImage = minePostImage(postID);
 
-            posts.add(new Post(mainPostContext.getCaption(),mainPostContext.getOwner(),postImage,likesQuantity,commentsQuantity,mainPostContext.getDateTime()));
+            posts.add(new Post(postID,mainPostContext.getCaption(),mainPostContext.getOwner(),postImage,likesQuantity,commentsQuantity,mainPostContext.getDateTime()));
         }
     }
 
@@ -238,11 +237,4 @@ public class ProfileController implements Initializable
         return SwingFXUtils.toFXImage(apiHandler.receivePhoto(),null);
     }
 
-    public void onMessageClick(ActionEvent event)
-    {
-    }
-
-    public void onFollowClick(ActionEvent event)
-    {
-    }
 }

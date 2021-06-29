@@ -184,7 +184,7 @@ public class UserProfileController implements Initializable
             commentsQuantity = mineCommentsQuantity(postID);
             postImage = minePostImage(postID);
 
-            posts.add(new Post(mainPostContext.getCaption(),mainPostContext.getOwner(),postImage,likesQuantity,commentsQuantity,mainPostContext.getDateTime()));
+            posts.add(new Post(postID,mainPostContext.getCaption(),mainPostContext.getOwner(),postImage,likesQuantity,commentsQuantity,mainPostContext.getDateTime()));
         }
     }
 

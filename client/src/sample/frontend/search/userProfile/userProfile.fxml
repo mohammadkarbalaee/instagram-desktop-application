@@ -14,15 +14,14 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:controller="sample.frontend.search.userProfile.UserProfileController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="990.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="990.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.search.userProfile.UserProfileController">
    <children>
       <AnchorPane layoutX="5.0" prefHeight="243.0" prefWidth="990.0" style="-fx-background-color: #F0F0F0; -fx-background-radius: 10;" styleClass="transparent" stylesheets="@../../feed/css/styles.css" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox layoutX="4.0" prefHeight="43.0" prefWidth="227.0" />
             <ImageView fx:id="profileIMG" fitHeight="111.0" fitWidth="117.0" layoutX="32.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../Users/hraya/Desktop/1/instagram-app/client/src/sample/frontend/feed/photos/photo_2021-06-10_18-43-13.jpg" />
+                  <Image url="@../../feed/photos/photo_2021-06-10_18-43-13.jpg" />
                </image>
             </ImageView>
             <Label fx:id="username" layoutX="158.0" layoutY="102.0" prefHeight="40.0" prefWidth="167.0" text="Hasan_Rokn">
@@ -65,11 +64,11 @@
                         <Font name="System Bold Italic" size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="messageButton" layoutX="17.0" layoutY="69.0" mnemonicParsing="false" onAction="#onMessageClick" prefHeight="43.0" prefWidth="145.0" styleClass="mystyle2" text="message" />
-                  <Button fx:id="followButton" layoutX="89.0" layoutY="151.0" mnemonicParsing="false" onAction="#onFollowClick" prefHeight="43.0" prefWidth="145.0" styleClass="mystyle2" text="follow" />
+                  <Button fx:id="messageButton" layoutX="37.0" layoutY="90.0" mnemonicParsing="false" onAction="#onMessageClick" prefHeight="43.0" prefWidth="145.0" styleClass="mystyle2" text="message" />
+                  <Button fx:id="followButton" layoutX="37.0" layoutY="151.0" mnemonicParsing="false" onAction="#onFollowClick" prefHeight="43.0" prefWidth="145.0" styleClass="mystyle2" text="follow" />
                   <HBox layoutX="370.0" layoutY="2.0" maxWidth="-Infinity" prefHeight="40.0" prefWidth="291.0" spacing="10.0">
                      <children>
-                        <TextField prefHeight="31.0" prefWidth="244.0" promptText="Search" stylesheets="@../../../../../../../../../../Users/hraya/Desktop/1/instagram-app/client/src/sample/frontend/feed/css/styles.css">
+                        <TextField prefHeight="31.0" prefWidth="244.0" promptText="Search" stylesheets="@../../feed/css/styles.css">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -90,7 +89,7 @@
                               <Insets top="5.0" />
                            </HBox.margin>
                            <image>
-                              <Image url="@../../../../../../../../../../Users/hraya/Desktop/1/instagram-app/client/src/sample/frontend/feed/photos/search_100px.png" />
+                              <Image url="@../../feed/photos/search_100px.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -106,7 +105,7 @@
                   <Insets top="2.0" />
                </HBox.margin>
                <image>
-                  <Image url="@../../../../../../../../../../Users/hraya/Desktop/1/instagram-app/client/src/sample/frontend/feed/photos/instagram_32px.png" />
+                  <Image url="@../../feed/photos/instagram_32px.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="21.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
@@ -114,7 +113,7 @@
                   <Insets left="-5.0" top="10.0" />
                </HBox.margin>
                <image>
-                  <Image url="@../../../../../../../../../../Users/hraya/Desktop/1/instagram-app/client/src/sample/frontend/feed/photos/instagram-text.png" />
+                  <Image url="@../../feed/photos/instagram-text.png" />
                </image>
             </ImageView>
          </children>
