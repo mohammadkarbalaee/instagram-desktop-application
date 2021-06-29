@@ -8,163 +8,122 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="993.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.profile.ProfileController">
-   <top>
-      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="236.0" prefWidth="993.0" BorderPane.alignment="CENTER">
-         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="238.0" prefWidth="363.0">
-            <ImageView fx:id="profileIMG" fitHeight="111.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
-               <VBox.margin>
-                  <Insets left="58.0" top="60.0" />
-               </VBox.margin>
-               <Image url="@../feed/photos/photo_2021-06-10_18-43-13.jpg" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="990.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.profile.ProfileController">
+   <children>
+      <AnchorPane layoutX="5.0" prefHeight="243.0" prefWidth="990.0" style="-fx-background-color: #F0F0F0; -fx-background-radius: 10;" styleClass="transparent" stylesheets="@../feed/css/styles.css" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox layoutX="4.0" prefHeight="43.0" prefWidth="227.0" />
+            <ImageView fx:id="profileIMG" fitHeight="111.0" fitWidth="117.0" layoutX="32.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../feed/photos/photo_2021-06-10_18-43-13.jpg" />
+               </image>
             </ImageView>
-            <Label fx:id="bio" alignment="center" prefHeight="64.0" prefWidth="362.0" text="bio">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </Label>
-         </VBox>
-         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="245.0" prefWidth="622.0" styleClass="transparent" stylesheets="@../feed/css/styles.css">
-            <VBox.margin>
-               <Insets left="380.0" top="-240.0" />
-            </VBox.margin>
-            <HBox maxWidth="-Infinity" prefHeight="40.0" prefWidth="301.0" spacing="10.0">
-               <VBox.margin>
-                  <Insets left="310.0" top="5.0" />
-               </VBox.margin>
-               <TextField prefHeight="31.0" prefWidth="244.0" promptText="Search" stylesheets="@../feed/css/styles.css">
-                  <opaqueInsets>
-                     <Insets />
-                  </opaqueInsets>
-                  <HBox.margin>
-                     <Insets top="5.0" />
-                  </HBox.margin>
-                  <styleClass>
-                     <String fx:value="rect-round" />
-                     <String fx:value="shadow" />
-                     <String fx:value="whit_background" />
-                  </styleClass>
-                  <font>
-                     <Font name="System Italic" size="15.0" />
-                  </font>
-               </TextField>
-               <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                  <HBox.margin>
-                     <Insets top="5.0" />
-                  </HBox.margin>
-                  <Image url="@../feed/photos/search_100px.png" />
-               </ImageView>
-            </HBox>
-            <Label fx:id="numFollowersID" alignment="center" prefHeight="56.0" prefWidth="105.0" text="20">
-               <VBox.margin>
-                  <Insets left="148.0" top="20.0" />
-               </VBox.margin>
+            <Label fx:id="username" layoutX="158.0" layoutY="102.0" prefHeight="40.0" prefWidth="167.0" text="Hasan_Rokn">
                <font>
-                  <Font name="System Bold Italic" size="18.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="numFollowingID" alignment="center" prefHeight="56.0" prefWidth="105.0" text="45">
-               <VBox.margin>
-                  <Insets left="382.0" top="-56.0" />
-               </VBox.margin>
-               <font>
-                  <Font name="System Bold Italic" size="18.0" />
-               </font>
-            </Label>
-            <Button fx:id="followers" mnemonicParsing="false" onAction="#onFollowerClick" prefHeight="80.0" prefWidth="220.0" style="-fx-border-radius: 40;" stylesheets="@../feed/css/styles.css" text="followers">
-               <font>
-                  <Font name="System Bold Italic" size="24.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="90.0" top="-15.0" />
-               </VBox.margin>
-               <styleClass>
-                  <String fx:value="shadow" />
-                  <String fx:value="transparent" />
-                  <String fx:value="mouse-moved" />
-                  <String fx:value="rect-round" />
-               </styleClass>
-            </Button>
-            <Button fx:id="followings" mnemonicParsing="false" onAction="#onFollowingClick" prefHeight="80.0" prefWidth="220.0" stylesheets="@../feed/css/styles.css" text="followings">
-               <font>
-                  <Font name="System Bold Italic" size="24.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="321.0" top="-80.0" />
-               </VBox.margin>
-               <styleClass>
-                  <String fx:value="rect-round" />
-                  <String fx:value="shadow" />
-                  <String fx:value="transparent" />
-                  <String fx:value="mouse-moved" />
-               </styleClass>
-            </Button>
-         </VBox>
-         <HBox maxWidth="-Infinity" prefHeight="40.0" prefWidth="298.0" spacing="10.0">
-            <TextField prefHeight="31.0" prefWidth="244.0" promptText="Search" stylesheets="@../feed/css/styles.css">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <HBox.margin>
-                  <Insets top="5.0" />
-               </HBox.margin>
-               <styleClass>
-                  <String fx:value="rect-round" />
-                  <String fx:value="shadow" />
-                  <String fx:value="whit_background" />
-               </styleClass>
-               <font>
-                  <Font name="System Italic" size="15.0" />
-               </font>
-            </TextField>
-            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-               <HBox.margin>
-                  <Insets top="5.0" />
-               </HBox.margin>
-               <Image url="@../feed/photos/search_100px.png" />
-            </ImageView>
-         </HBox>
-         <HBox maxWidth="-Infinity" prefHeight="40.0" prefWidth="376.0" spacing="10.0">
-            <VBox.margin>
-               <Insets left="5.0" top="-280.0" />
-            </VBox.margin>
+            <Label fx:id="bio" alignment="center" layoutX="4.0" layoutY="182.0" prefHeight="61.0" prefWidth="304.0" text="bio" />
+            <AnchorPane layoutX="316.0" layoutY="3.0" prefHeight="241.0" prefWidth="665.0" style="-fx-background-color: #DCDCDC; -fx-background-radius: 30;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="316.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="followings" layoutX="462.0" layoutY="138.0" mnemonicParsing="false" onAction="#onFollowingClick" prefHeight="70.0" prefWidth="180.0" style="-fx-background-radius: 40;" stylesheets="@../feed/css/styles.css" text="followings">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="rect-round" />
+                        <String fx:value="shadow" />
+                        <String fx:value="transparent" />
+                        <String fx:value="mouse-moved" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="followers" layoutX="280.0" layoutY="138.0" mnemonicParsing="false" onAction="#onFollowerClick" prefHeight="70.0" prefWidth="180.0" style="-fx-background-radius: 40;" stylesheets="@../feed/css/styles.css" text="followers">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="transparent" />
+                        <String fx:value="mouse-moved" />
+                        <String fx:value="rect-round" />
+                     </styleClass>
+                  </Button>
+                  <Label fx:id="numFollowingID" alignment="center" layoutX="500.0" layoutY="84.0" prefHeight="56.0" prefWidth="105.0" text="45">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="numFollowersID" alignment="center" layoutX="318.0" layoutY="84.0" prefHeight="56.0" prefWidth="105.0" text="20">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="370.0" layoutY="2.0" maxWidth="-Infinity" prefHeight="40.0" prefWidth="291.0" spacing="10.0">
+                     <children>
+                        <TextField prefHeight="31.0" prefWidth="244.0" promptText="Search" stylesheets="@../feed/css/styles.css">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                           <styleClass>
+                              <String fx:value="rect-round" />
+                              <String fx:value="shadow" />
+                              <String fx:value="whit_background" />
+                           </styleClass>
+                           <font>
+                              <Font name="System Italic" size="15.0" />
+                           </font>
+                        </TextField>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../feed/photos/search_100px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <HBox layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" prefHeight="40.0" prefWidth="199.0" spacing="10.0">
+         <children>
             <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
                   <Insets top="2.0" />
                </HBox.margin>
-               <Image url="@../feed/photos/instagram_32px.png" />
+               <image>
+                  <Image url="@../feed/photos/instagram_32px.png" />
+               </image>
             </ImageView>
             <ImageView fitHeight="21.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
                   <Insets left="-5.0" top="10.0" />
                </HBox.margin>
-               <Image url="@../feed/photos/instagram-text.png" />
+               <image>
+                  <Image url="@../feed/photos/instagram-text.png" />
+               </image>
             </ImageView>
-            <Label fx:id="username" prefHeight="40.0" prefWidth="235.0" text="Hasan_Rokn" textFill="#387e80">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-         </HBox>
-      </VBox>
-   </top>
-   <center>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets bottom="2.0" left="5.0" right="5.0" />
-         </BorderPane.margin>
-         <GridPane fx:id="postGrid">
-            <rowConstraints>
-               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            </rowConstraints>
-         </GridPane>
+         </children>
+      </HBox>
+      <ScrollPane layoutY="243.0" prefHeight="605.0" prefWidth="980.0" style="-fx-background-radius: 50;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+         <content>
+            <GridPane fx:id="postGrid" prefHeight="43.0" prefWidth="3.0">
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </content>
       </ScrollPane>
-   </center>
-</BorderPane>
+   </children>
+</AnchorPane>

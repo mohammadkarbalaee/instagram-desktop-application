@@ -133,6 +133,10 @@ public class ApiHandler
         Comment[] comments = new Comment[commentObjects.length];
         for (int i = 0; i < comments.length; i++)
         {
+            if (commentObjects[i].equals(""))
+            {
+                break;
+            }
             comments[i] = gson.fromJson(commentObjects[i],Comment.class);
         }
         return comments;

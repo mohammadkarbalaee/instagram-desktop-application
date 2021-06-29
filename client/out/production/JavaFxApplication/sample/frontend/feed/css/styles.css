@@ -31,7 +31,11 @@
 }
 
 .mouse-moved:hover{
+    /*
     -fx-background-color: #EFEFEF;
+
+     */
+    -fx-background-color : #A9A9A9;
 }
 
 Button{
@@ -59,5 +63,35 @@ Button{
 .mystyle:pressed{
     -fx-background-color: 	#696969;
     -fx-font-size: 12;
+}
+
+
+
+
+
+
+.mystyle2{
+    -fx-background-color: #fff;
+    -fx-background-radius: 15;
+    -fx-font-size: 18;
+    /*
+    -fx-text-fill:
+     */
+
+
+    /*
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: yellow green 	#000000  white;
+
+     */
+}
+.mystyle2:hover{
+    -fx-background-color: #A9A9A9;
+
+
+}
+.mystyle2:pressed{
+    -fx-background-color: 	#696969;
+    -fx-font-size: 15;
 }
 

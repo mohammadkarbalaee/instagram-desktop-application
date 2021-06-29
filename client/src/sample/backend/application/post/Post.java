@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 
 public class Post implements Comparable<Post>
 {
+    private String postID;
     private String caption;
     private String owner;
     private Image image;
@@ -22,8 +23,9 @@ public class Post implements Comparable<Post>
 
     public Post(){}
 
-    public Post(String caption, String owner, Image image, Integer likesQuantity, Integer commentsQuantity,LocalDateTime dateTime)
+    public Post(String postID,String caption, String owner, Image image, Integer likesQuantity, Integer commentsQuantity,LocalDateTime dateTime)
     {
+        this.postID = postID;
         this.caption = caption;
         this.owner = owner;
         this.image = image;
@@ -104,5 +106,15 @@ public class Post implements Comparable<Post>
             return +1;
         }
         return 0;
+    }
+
+    public String getPostID()
+    {
+        return postID;
+    }
+
+    public void setPostID(String postID)
+    {
+        this.postID = postID;
     }
 }

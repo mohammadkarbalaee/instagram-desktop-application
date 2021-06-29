@@ -1,6 +1,5 @@
 package sample.frontend.post.comment;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -19,7 +18,7 @@ public class SendCommentController {
         leaveComment.getText();
     }
 
-    public void secondCancelButtonOnAction(ActionEvent event){
+    public void secondCancelButtonOnAction(){
         Stage secondStage = (Stage) secondCancelButton.getScene().getWindow();
         secondStage.close();
     }
