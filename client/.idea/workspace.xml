@@ -3,33 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/ClientBackendTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/ClientBackendTester.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/api/ApiHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/api/ApiHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/application/post/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/backend/application/post/Post.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/mainmenu/FeedController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/mainmenu/FeedController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/mainmenu/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/mainmenu/PostController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/post/SavepostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaFxApplication/sample/frontend/post/SavepostController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/backend/ClientBackendTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/backend/ClientBackendTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/backend/api/ApiHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/backend/api/ApiHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/backend/application/post/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/backend/application/post/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/frontend/mainmenu/FeedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/mainmenu/FeedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/frontend/post/SavepostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/post/SavepostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/6.8/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/PostPhotos/reyhan1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../server/PostPhotos/reyhan1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/api/RequestTerminal.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/build/classes/java/main/api/RequestTerminal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/application/datamanagement/database/DatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/build/classes/java/main/application/datamanagement/database/DatabaseManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/build/classes/java/main/application/requestahandlers/followersfollowings/FollowersHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/build/classes/java/main/application/requestahandlers/followersfollowings/FollowersHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../server/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/api/RequestTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/api/RequestTerminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/application/datamanagement/database/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/application/datamanagement/database/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/application/requestahandlers/followersfollowings/FollowersHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/application/requestahandlers/followersfollowings/FollowersHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/frontend/feed/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/frontend/feed/css/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +155,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/sample/frontend/mainmenu" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.22682928" />
@@ -332,15 +306,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -423,6 +395,7 @@
       <workItem from="1624718284781" duration="164000" />
       <workItem from="1624718472593" duration="9968000" />
       <workItem from="1624759278218" duration="20352000" />
+      <workItem from="1624958562587" duration="3755000" />
     </task>
     <servers />
   </component>
