@@ -23,6 +23,7 @@ public class CommentController implements Initializable
 {
     private static String postID;
     private static String captionText;
+    private static String owner;
 
     private ArrayList<Comment> comments = new ArrayList<>();
     private ApiHandler apiHandler = new ApiHandler();
@@ -45,6 +46,21 @@ public class CommentController implements Initializable
     public static void setPostID(String postID)
     {
         CommentController.postID = postID;
+    }
+
+    public static void setOwner(String owner)
+    {
+        CommentController.owner = owner;
+    }
+
+    public static String getOwner()
+    {
+        return owner;
+    }
+
+    public static String getPostID()
+    {
+        return postID;
     }
 
     public static void setCaption(String caption)

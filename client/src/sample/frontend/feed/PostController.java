@@ -56,6 +56,7 @@ public class PostController
     {
         CommentController.setPostID(post.getPostID());
         CommentController.setCaption(post.getCaption());
+        CommentController.setOwner(post.getOwner());
         CommentMain commentRunner = new CommentMain();
         commentRunner.setUp("comment.fxml");
     }
