@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.feed.FeedController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.feed.FeedController">
    <left>
       <VBox prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #fff;" stylesheets="@css/styles.css" BorderPane.alignment="CENTER">
          <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0" spacing="10.0">
@@ -36,7 +36,7 @@
                <Image url="@photos/instagram-text.png" />
             </ImageView>
          </HBox>
-         <VBox alignment="CENTER" prefHeight="248.0" prefWidth="300.0" spacing="5.0">
+         <VBox alignment="CENTER" prefHeight="236.0" prefWidth="300.0" spacing="5.0">
             <ImageView fx:id="profileView" fitHeight="140.0" fitWidth="140.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                <Image url="@photos/userProf1.png" />
             </ImageView>
@@ -47,7 +47,7 @@
             </Label>
             <Button fx:id="setpicButton" mnemonicParsing="false" onAction="#onSetPicClick" prefHeight="42.0" prefWidth="100.0" text="set profile pic" visible="false" />
          </VBox>
-         <VBox prefHeight="473.0" prefWidth="300.0" spacing="15.0">
+         <VBox prefHeight="536.0" prefWidth="300.0" spacing="15.0">
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" stylesheets="@css/styles.css">
                <padding>
                   <Insets left="-20.0" />
@@ -64,6 +64,12 @@
                      <Font name="System Bold" size="19.0" />
                   </font>
                </Label>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="75.0" />
+               </VBox.margin>
             </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@css/styles.css">
                <padding>
@@ -134,21 +140,16 @@
                   </font>
                </Label>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@css/styles.css">
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" styleClass="mouse-moved" stylesheets="@css/styles.css">
                <padding>
                   <Insets left="-20.0" />
                </padding>
                <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                   <Image url="@photos/contacts_64px.png" />
                </ImageView>
-               <Label prefHeight="27.0" prefWidth="78.0" text="Profile">
+               <Button fx:id="profileButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onProfileClick" prefHeight="44.0" prefWidth="171.0" styleClass="mystyle2" stylesheets="@css/styles.css" text="Profile">
                   <font>
                      <Font size="18.0" />
-                  </font>
-               </Label>
-               <Button fx:id="profileButton" mnemonicParsing="false" onAction="#onProfileClick" prefHeight="26.0" prefWidth="71.0" text="+">
-                  <font>
-                     <Font size="20.0" />
                   </font>
                </Button>
             </HBox>
@@ -167,7 +168,7 @@
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>
-               <Button fx:id="addpostButton" mnemonicParsing="false" onAction="#onAddPostClick" prefHeight="26.0" prefWidth="39.0" text="+">
+               <Button fx:id="addpostButton" mnemonicParsing="false" onAction="#onAddPostClick" prefHeight="26.0" prefWidth="39.0" style="-fx-background-color: #DCDCDC;" styleClass="mystyle2" stylesheets="@css/styles.css" text="+">
                   <font>
                      <Font size="17.0" />
                   </font>
@@ -192,14 +193,26 @@
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
-               <TextField fx:id="searchField" prefHeight="31.0" prefWidth="218.0" promptText="Search" styleClass="transparent" stylesheets="@css/styles.css">
+               <TextField fx:id="searchField" prefHeight="31.0" prefWidth="247.0" promptText="    Search" styleClass="transparent" stylesheets="@css/styles.css">
                   <font>
                      <Font name="System Italic" size="14.0" />
                   </font>
+                  <HBox.margin>
+                     <Insets left="20.0" />
+                  </HBox.margin>
                </TextField>
-               <Button fx:id="searchButton" onAction="#onSearchClick" mnemonicParsing="false" text="serach" />
-               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearchClick" prefHeight="50.0" prefWidth="135.0" style="-fx-background-radius: 15;" styleClass="mystyle2" stylesheets="@css/styles.css" HBox.hgrow="ALWAYS">
+                  <HBox.margin>
+                     <Insets left="50.0" right="-60.0" />
+                  </HBox.margin>
+                  <opaqueInsets>
+                     <Insets top="5.0" />
+                  </opaqueInsets></Button>
+               <ImageView fitHeight="32.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                   <Image url="@photos/search_100px.png" />
+                  <HBox.margin>
+                     <Insets right="15.0" />
+                  </HBox.margin>
                </ImageView>
             </HBox>
          </HBox>
@@ -211,7 +224,7 @@
                <Insets left="20.0" />
             </VBox.margin>
          </Label>
-         <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="transparent" stylesheets="@css/styles.css" VBox.vgrow="ALWAYS">
+         <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #DCDCDC;" styleClass="transparent" stylesheets="@css/styles.css" VBox.vgrow="ALWAYS">
             <VBox.margin>
                <Insets left="20.0" right="20.0" />
             </VBox.margin>
