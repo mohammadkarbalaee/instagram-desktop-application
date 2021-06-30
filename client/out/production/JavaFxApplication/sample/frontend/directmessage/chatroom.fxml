@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="610.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.directmessage.ChatroomController">
+   <children>
+      <AnchorPane prefHeight="45.0" prefWidth="610.0" style="-fx-background-color: #bdbdbd;">
+         <children>
+            <ImageView fx:id="profileImage" fitHeight="45.0" fitWidth="77.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="usernameLabel" alignment="CENTER" layoutX="96.0" layoutY="10.0" prefHeight="27.0" prefWidth="168.0" style="-fx-border-color: #e0e0e0; -fx-border-radius: 20; -fx-background-radius: 10; -fx-background-color: #e0e0e0;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="39.0" prefHeight="561.0" prefWidth="610.0" style="-fx-background-color: #e0e0e0; -fx-background-color: #bdbdbd;">
+         <children>
+            <ScrollPane layoutX="-1.0" layoutY="6.0" prefHeight="502.0" prefWidth="610.0">
+               <content>
+                  <VBox fx:id="chatRoomVBox" prefHeight="484.0" prefWidth="609.0" />
+               </content>
+            </ScrollPane>
+            <TextField fx:id="messageTextField" layoutX="14.0" layoutY="520.0" prefHeight="27.0" prefWidth="453.0" promptText="Type your message" style="-fx-background-color: #e0e0e0; -fx-background-radius: 10; -fx-border-radius: 10;" />
+            <Button fx:id="sendButton" layoutX="473.0" layoutY="520.0" mnemonicParsing="false" onAction="#sendButtonOnAction" prefHeight="27.0" prefWidth="65.0" style="-fx-border-color: #b3e5fc; -fx-background-radius: 20; -fx-border-radius: 20;" text="Send" />
+            <Button fx:id="closeButton" layoutX="538.0" layoutY="520.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="27.0" prefWidth="65.0" style="-fx-border-color: #b3e5fc; -fx-background-radius: 20; -fx-border-radius: 20;" text="Close" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

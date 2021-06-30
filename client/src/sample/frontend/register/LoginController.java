@@ -10,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -18,7 +17,6 @@ import sample.backend.application.signuplogin.SignUpperLogInner;
 import sample.backend.application.signuplogin.User;
 import sample.frontend.ApplicationRunner;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -48,17 +46,7 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        File instagram = new File("Photo/instagramLoginImage.png");
-        Image instagramImageView = new Image(instagram.toURI().toString());
-        instagramImageViewer.setImage(instagramImageView);
 
-        File title = new File("Photo/titleLoginImage.jpg");
-        Image titleImageView = new Image(title.toURI().toString());
-        titleImageViewer.setImage(titleImageView);
-
-        File logo = new File("Photo/logoLogin.jpg");
-        Image logoImageView = new Image(logo.toURI().toString());
-        logoLogin.setImage(logoImageView);
     }
 
     public void cancelButtonOnAction(ActionEvent event)

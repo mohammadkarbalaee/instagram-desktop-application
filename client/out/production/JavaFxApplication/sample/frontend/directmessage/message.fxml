@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="239.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.directmessage.MessageController">
+   <children>
+      <Label fx:id="messageLabel" alignment="TOP_LEFT" prefHeight="65.0" prefWidth="240.0" style="-fx-background-color: #bdbdbd;" textFill="#390303">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+   </children>
+</HBox>
