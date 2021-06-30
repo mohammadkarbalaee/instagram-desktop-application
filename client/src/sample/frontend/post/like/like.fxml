@@ -3,8 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -12,31 +10,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.post.like.LikeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="500.0" style="-fx-background-color: #B0B0B0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.post.like.LikeController">
     <top>
-        <VBox prefHeight="112.0" prefWidth="500.0" BorderPane.alignment="TOP_LEFT">
-            <HBox prefHeight="29.0" prefWidth="176.0" spacing="5.0">
-                <VBox.margin>
-                    <Insets left="5.0" right="320.0" top="5.0" />
-                </VBox.margin>
-                <ImageView fitHeight="29.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@photo/instagram_32px.png" />
-                </ImageView>
-                <ImageView fitHeight="24.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                    <HBox.margin>
-                        <Insets top="5.0" />
-                    </HBox.margin>
-                    <Image url="@photo/instagram-text.png" />
-                </ImageView>
-            </HBox>
-            <Label prefHeight="36.0" prefWidth="173.0" text="     likes">
+        <VBox prefHeight="38.0" prefWidth="500.0" BorderPane.alignment="TOP_LEFT">
+            <Label prefHeight="35.0" prefWidth="126.0" text="     likes">
                 <font>
-                    <Font name="System Bold Italic" size="21.0" />
+                    <Font name="System Bold Italic" size="24.0" />
                 </font>
                 <VBox.margin>
-                    <Insets top="20.0" />
+                    <Insets left="195.0" top="20.0" />
                 </VBox.margin>
             </Label>
+         <BorderPane.margin>
+            <Insets bottom="-5.0" top="-10.0" />
+         </BorderPane.margin>
         </VBox>
     </top>
     <center>
@@ -44,9 +31,9 @@
             <BorderPane.margin>
                 <Insets bottom="10.0" left="8.0" right="8.0" top="10.0" />
             </BorderPane.margin>
-            <ScrollPane prefHeight="528.0" prefWidth="493.0">
+            <ScrollPane prefHeight="625.0" prefWidth="490.0">
                 <HBox.margin>
-                    <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                    <Insets bottom="-4.0" left="-3.0" right="-3.0" />
                 </HBox.margin>
                 <GridPane fx:id="gridPaneLike" prefHeight="43.0" prefWidth="0.0">
                     <rowConstraints>

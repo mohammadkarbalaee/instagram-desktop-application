@@ -49,7 +49,9 @@ Button{
 .mystyle{
     -fx-background-color: #87CEFA;
     -fx-font-size: 15;
+    /*
     -fx-text-fill: white;
+     */
 
 
     -fx-border-width: 0 0 1 0;
@@ -94,4 +96,32 @@ Button{
     -fx-background-color: 	#696969;
     -fx-font-size: 15;
 }
+
+
+.mystyle3{
+    -fx-background-color: #F5F5F5;
+    -fx-background-radius: 20;
+    -fx-font-size: 18;
+    /*
+    -fx-text-fill:
+     */
+
+
+/*
+    -fx-border-width: 0 0 1.2 0;
+    -fx-border-color: yellow green #323234 white;
+
+ */
+
+}
+.mystyle3:hover{
+    -fx-background-color: #A9A9A9;
+
+
+}
+.mystyle3:pressed{
+    -fx-background-color: 	#696969;
+    -fx-font-size: 15;
+}
+
 
