@@ -1,6 +1,5 @@
 package sample.frontend.post.comment;
 
-import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -11,9 +10,10 @@ import sample.backend.application.comment.Comment;
 
 import java.io.IOException;
 
-public class SendCommentController {
+import static sample.frontend.ClientRunner.getGson;
 
-    private Gson gson = new Gson();
+public class SendCommentController
+{
     private ApiHandler apiHandler = new ApiHandler();
 
     @FXML
@@ -27,7 +27,7 @@ public class SendCommentController {
     public void sendButtonOnAction() throws IOException
     {
         Comment newComment = new Comment(leaveComment.getText(),CommentController.getOwner(),CommentController.getPostID());
-        Request request = new Request("ADD_COMMENT",gson.toJson(newComment));
+        Request request = new Request("ADD_COMMENT",getGson().toJson(newComment));
         apiHandler.setRequest(request);
         apiHandler.sendRequest();
     }

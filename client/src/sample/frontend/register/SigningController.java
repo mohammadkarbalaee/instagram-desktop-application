@@ -7,7 +7,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.backend.api.ApiHandler;
@@ -29,12 +28,6 @@ public class SigningController implements Initializable
     public ProgressBar progressbar;
     @FXML
     private Button cancelButton;
-    @FXML
-    private ImageView instagramImageView;
-    @FXML
-    private ImageView logoImageView;
-    @FXML
-    private ImageView titleImageView;
     @FXML
     private TextField username;
     @FXML

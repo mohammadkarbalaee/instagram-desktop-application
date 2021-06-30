@@ -23,7 +23,10 @@ public class RequestPipeline
     private static DataInputStream dataInputStream;
     private static DataOutputStream dataOutputStream;
 
-    public RequestPipeline() throws IOException {}
+    public RequestPipeline()
+    {
+
+    }
 
     public static void build() throws IOException
     {

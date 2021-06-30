@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="365.0" stylesheets="@../feed/css/styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.feed.PostController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="399.0" stylesheets="@../feed/css/styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.feed.PostController">
    <children>
-      <ImageView fx:id="postImage" fitHeight="313.0" fitWidth="364.0" pickOnBounds="true">
+      <ImageView fx:id="postImage" fitHeight="373.0" fitWidth="398.0" pickOnBounds="true">
          <image>
             <Image url="@../feed/photos/post1.jpg" />
          </image>
       </ImageView>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+      <HBox alignment="CENTER" prefHeight="131.0" prefWidth="399.0" spacing="10.0">
          <children>
             <ImageView fx:id="profileImage" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -39,23 +39,31 @@
                   </Label>
                </children>
             </VBox>
-            <Pane prefHeight="75.0" prefWidth="88.0" HBox.hgrow="ALWAYS" />
-            <Button fx:id="addLikeButton" mnemonicParsing="false" onAction="#onAddLikeClick" prefHeight="301.0" prefWidth="100.0" stylesheets="@../feed/css/styles.css">
+            <Button mnemonicParsing="false" onAction="#likeBTN" prefHeight="39.0" prefWidth="17.0" style="-fx-background-color: #FFC0CB; -fx-background-radius: 100;" styleClass="mystyle2" stylesheets="@../feed/css/styles.css" text="+">
                <HBox.margin>
-                  <Insets right="-35.0" />
+                  <Insets left="2.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Button>
+            <Pane prefHeight="75.0" prefWidth="88.0" HBox.hgrow="ALWAYS" />
+            <Button fx:id="addLikeButton" mnemonicParsing="false" onAction="#onAddLikeClick" prefHeight="300.0" prefWidth="100.0" stylesheets="@../feed/css/styles.css">
+               <HBox.margin>
+                  <Insets right="-40.0" />
                </HBox.margin>
                <styleClass>
-                  <String fx:value="mouse-moved" />
                   <String fx:value="whit_background" />
                   <String fx:value="rect-round" />
                   <String fx:value="shadow" />
+                  <String fx:value="mouse-moved" />
                </styleClass>
             </Button>
             <HBox prefHeight="65.0" prefWidth="115.0" spacing="10.0">
                <children>
                   <HBox alignment="CENTER" prefHeight="65.0" prefWidth="46.0">
                      <children>
-                        <ImageView fx:id="heart" fitHeight="38.0" fitWidth="43.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="heart" fitHeight="35.0" fitWidth="38.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../feed/photos/heart_10MMM0px.png" />
                            </image>
@@ -63,30 +71,33 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label fx:id="likes" prefHeight="20.0" prefWidth="20.0" text=" 20">
+                        <Label fx:id="likes" prefHeight="20.0" prefWidth="39.0" text=" 20">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
                         </Label>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="75.0" prefWidth="74.0">
                      <children>
-                        <Button fx:id="commentID" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#commentBTN" prefHeight="307.0" prefWidth="100.0" stylesheets="@../feed/css/styles.css">
+                        <Button fx:id="commentID" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#commentBTN" prefHeight="45.0" prefWidth="45.0" stylesheets="@../feed/css/styles.css">
                            <HBox.margin>
                               <Insets right="-25.0" />
                            </HBox.margin>
                            <styleClass>
                               <String fx:value="whit_background" />
-                              <String fx:value="mouse-moved" />
                               <String fx:value="rect-round" />
                               <String fx:value="shadow" />
+                              <String fx:value="mouse-moved" />
                            </styleClass>
                         </Button>
-                        <ImageView fitHeight="28.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../feed/photos/topic_100px.png" />
                            </image>
@@ -94,19 +105,22 @@
                               <Insets right="15.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label fx:id="comments" prefHeight="20.0" prefWidth="36.0" text=" 2">
+                        <Label fx:id="comments" prefHeight="20.0" prefWidth="33.0" text=" 2">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <HBox.margin>
                               <Insets right="5.0" />
                            </HBox.margin>
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
                         </Label>
                      </children>
                   </HBox>
                </children>
                <HBox.margin>
-                  <Insets right="5.0" />
+                  <Insets left="5.0" right="5.0" />
                </HBox.margin>
             </HBox>
          </children>
@@ -114,11 +128,6 @@
             <Insets left="10.0" right="10.0" top="10.0" />
          </padding>
       </HBox>
-      <Button id="likeID" contentDisplay="CENTER" mnemonicParsing="false" onAction="#likeBTN" prefHeight="42.0" prefWidth="365.0" style="-fx-alignment: center; -fx-background-color: #f26666; -fx-border-radius: 100; -fx-border-color: black; -fx-background-radius: 100;" text="Show likes">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
    </children>
    <styleClass>
       <String fx:value="whit_background" />

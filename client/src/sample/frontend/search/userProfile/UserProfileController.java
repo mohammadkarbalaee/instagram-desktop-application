@@ -1,6 +1,5 @@
 package sample.frontend.search.userProfile;
 
-import com.google.gson.Gson;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +19,7 @@ import sample.backend.api.ApiHandler;
 import sample.backend.api.Request;
 import sample.backend.application.followerfollowing.FollowerFollowingPack;
 import sample.backend.application.post.Post;
-import sample.frontend.ApplicationRunner;
+import sample.frontend.ClientRunner;
 import sample.frontend.feed.PostController;
 
 import java.io.IOException;
@@ -28,6 +27,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
+
+import static sample.frontend.ClientRunner.getGson;
 
 public class UserProfileController implements Initializable
 {
@@ -54,7 +55,6 @@ public class UserProfileController implements Initializable
 
     private final ApiHandler apiHandler = new ApiHandler();
     private final ArrayList<Post> posts = new ArrayList<>();
-    private final Gson gson = new Gson();
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -72,22 +72,22 @@ public class UserProfileController implements Initializable
 
     private void viewAppearances() throws IOException
     {
-        bio.setText(mineBio(ApplicationRunner.getSearchedUsername()));
-        username.setText(ApplicationRunner.getSearchedUsername());
+        bio.setText(mineBio(ClientRunner.getSearchedUsername()));
+        username.setText(ClientRunner.getSearchedUsername());
         Request request;
-        request = new Request("IS_PROFILE_PIC_SET",ApplicationRunner.getSearchedUsername());
+        request = new Request("IS_PROFILE_PIC_SET", ClientRunner.getSearchedUsername());
         apiHandler.setRequest(request);
         apiHandler.sendRequest();
         if (apiHandler.receiveTrueFalse())
         {
-            profileIMG.setImage(mineProfileImage(ApplicationRunner.getSearchedUsername()));
+            profileIMG.setImage(mineProfileImage(ClientRunner.getSearchedUsername()));
         }
         else
         {
             profileIMG.setImage(new Image(getClass().getResourceAsStream("../../feed/photos/userProf1.png")));
         }
         FollowerFollowingPack pack = new FollowerFollowingPack("hasan","reyhan",false);
-        request = new Request("IS_FOLLOWED",gson.toJson(pack));
+        request = new Request("IS_FOLLOWED",getGson().toJson(pack));
         apiHandler.setRequest(request);
         apiHandler.sendRequest();
         if (apiHandler.receiveTrueFalse())
@@ -98,8 +98,8 @@ public class UserProfileController implements Initializable
         {
             followButton.setText("follow");
         }
-        numFollowersID.setText(String.valueOf(mineFollowersQuantity(ApplicationRunner.getSearchedUsername())));
-        numFollowingID.setText(String.valueOf(mineFollowingsQuantity(ApplicationRunner.getSearchedUsername())));
+        numFollowersID.setText(String.valueOf(mineFollowersQuantity(ClientRunner.getSearchedUsername())));
+        numFollowingID.setText(String.valueOf(mineFollowingsQuantity(ClientRunner.getSearchedUsername())));
     }
 
     private String mineBio(String username) throws IOException
@@ -175,10 +175,10 @@ public class UserProfileController implements Initializable
         Integer likesQuantity;
         Post mainPostContext;
         String postID;
-        int postsQuantity = minePostsQuantity(ApplicationRunner.getSearchedUsername());
+        int postsQuantity = minePostsQuantity(ClientRunner.getSearchedUsername());
         for (int i = 1; i <= postsQuantity; i++)
         {
-            postID = ApplicationRunner.getSearchedUsername() + "/" + i;
+            postID = ClientRunner.getSearchedUsername() + "/" + i;
             mainPostContext = minePostBody(postID);
             likesQuantity = mineLikesQuantity(postID);
             commentsQuantity = mineCommentsQuantity(postID);
@@ -258,7 +258,7 @@ public class UserProfileController implements Initializable
 
     public void onMessageClick() throws IOException
     {
-        ApplicationRunner.setInChatUsername(ApplicationRunner.getSearchedUsername());
+        ClientRunner.setInChatUsername(ClientRunner.getSearchedUsername());
         Parent root = FXMLLoader.load(getClass().getResource("../../directmessage/chatroom.fxml"));
         Stage chatroomStage = new Stage();
         chatroomStage.setTitle("ChatRoom");
@@ -270,14 +270,14 @@ public class UserProfileController implements Initializable
     {
         if (followButton.getText().equals("unfollow"))
         {
-            FollowerFollowingPack pack = new FollowerFollowingPack(ApplicationRunner.getLoggedInUsername(),ApplicationRunner.getSearchedUsername(),true);
-            apiHandler.setRequest(new Request("SEND_FOLLOWER",gson.toJson(pack)));
+            FollowerFollowingPack pack = new FollowerFollowingPack(ClientRunner.getLoggedInUsername(), ClientRunner.getSearchedUsername(),true);
+            apiHandler.setRequest(new Request("SEND_FOLLOWER",getGson().toJson(pack)));
             apiHandler.sendRequest();
         }
         else
         {
-            FollowerFollowingPack pack = new FollowerFollowingPack(ApplicationRunner.getLoggedInUsername(),ApplicationRunner.getSearchedUsername(),false);
-            apiHandler.setRequest(new Request("SEND_FOLLOWER",gson.toJson(pack)));
+            FollowerFollowingPack pack = new FollowerFollowingPack(ClientRunner.getLoggedInUsername(), ClientRunner.getSearchedUsername(),false);
+            apiHandler.setRequest(new Request("SEND_FOLLOWER",getGson().toJson(pack)));
             apiHandler.sendRequest();
         }
     }

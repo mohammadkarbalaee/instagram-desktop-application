@@ -19,7 +19,7 @@ import javafx.stage.StageStyle;
 import sample.backend.api.ApiHandler;
 import sample.backend.api.Request;
 import sample.backend.application.post.Post;
-import sample.frontend.ApplicationRunner;
+import sample.frontend.ClientRunner;
 
 import java.io.IOException;
 import java.net.URL;
@@ -54,7 +54,7 @@ public class FeedController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        username.setText(ApplicationRunner.getLoggedInUsername());
+        username.setText(ClientRunner.getLoggedInUsername());
         try
         {
             viewProfilePic();
@@ -68,13 +68,13 @@ public class FeedController implements Initializable
 
     private void viewProfilePic() throws IOException
     {
-        Request request = new Request("IS_PROFILE_PIC_SET", ApplicationRunner.getLoggedInUsername());
+        Request request = new Request("IS_PROFILE_PIC_SET", ClientRunner.getLoggedInUsername());
         apiHandler.setRequest(request);
         apiHandler.sendRequest();
 
         if (apiHandler.receiveTrueFalse())
         {
-            request = new Request("GET_PROFILE_PIC",ApplicationRunner.getLoggedInUsername());
+            request = new Request("GET_PROFILE_PIC", ClientRunner.getLoggedInUsername());
             apiHandler.setRequest(request);
             apiHandler.sendRequest();
             profileView.setImage(SwingFXUtils.toFXImage(apiHandler.receivePhoto(),null));
@@ -153,7 +153,7 @@ public class FeedController implements Initializable
 
     private void mineFollowings() throws IOException
     {
-        Request getFollowingsRequest = new Request("GET_FOLLOWINGS",ApplicationRunner.getLoggedInUsername());
+        Request getFollowingsRequest = new Request("GET_FOLLOWINGS", ClientRunner.getLoggedInUsername());
         apiHandler.setRequest(getFollowingsRequest);
         apiHandler.sendRequest();
         Collections.addAll(followings,apiHandler.receiveFollowersFollowings());
@@ -235,7 +235,7 @@ public class FeedController implements Initializable
 
     public void onSearchClick() throws IOException
     {
-        ApplicationRunner.setSearchedUsername(searchField.getText());
+        ClientRunner.setSearchedUsername(searchField.getText());
         Request searchRequest = new Request("GET_SEARCH_RESULT",searchField.getText());
         apiHandler.setRequest(searchRequest);
         apiHandler.sendRequest();

@@ -13,7 +13,7 @@ import sample.backend.api.ApiHandler;
 import sample.backend.api.Request;
 import sample.backend.application.directmessage.ChatRoom;
 import sample.backend.application.directmessage.Message;
-import sample.frontend.ApplicationRunner;
+import sample.frontend.ClientRunner;
 
 import java.io.IOException;
 import java.net.URL;
@@ -55,9 +55,9 @@ public class ChatroomController implements Initializable
 
     private void mineChats() throws IOException
     {
-        usernameLabel.setText(ApplicationRunner.getInChatUsername());
-        ChatRoom chatRoom = new ChatRoom(ApplicationRunner.getLoggedInUsername(),ApplicationRunner.getInChatUsername());
-        Request request = new Request("GET_MESSAGES",ApplicationRunner.getGson().toJson(chatRoom));
+        usernameLabel.setText(ClientRunner.getInChatUsername());
+        ChatRoom chatRoom = new ChatRoom(ClientRunner.getLoggedInUsername(), ClientRunner.getInChatUsername());
+        Request request = new Request("GET_MESSAGES", ClientRunner.getGson().toJson(chatRoom));
         apiHandler.setRequest(request);
         apiHandler.sendRequest();
         Message[] messagesArray = apiHandler.receiveChatroomMessages();
@@ -71,12 +71,13 @@ public class ChatroomController implements Initializable
     @FXML
     public void sendButtonOnAction() throws IOException
     {
-        Message newMessage = new Message(ApplicationRunner.getLoggedInUsername(),ApplicationRunner.getInChatUsername(),messageTextField.getText());
+        Message newMessage = new Message(ClientRunner.getLoggedInUsername(), ClientRunner.getInChatUsername(),messageTextField.getText());
         messages.add(newMessage);
 
-        Request request = new Request("SAVE_MESSAGE",ApplicationRunner.getGson().toJson(newMessage));
+        Request request = new Request("SAVE_MESSAGE", ClientRunner.getGson().toJson(newMessage));
         apiHandler.setRequest(request);
         apiHandler.sendRequest();
+
         continueChat();
         messageTextField.clear();
     }

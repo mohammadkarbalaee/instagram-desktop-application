@@ -1,6 +1,5 @@
 package sample.frontend.post.comment;
 
-import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -27,15 +26,12 @@ public class CommentController implements Initializable
 
     private ArrayList<Comment> comments = new ArrayList<>();
     private ApiHandler apiHandler = new ApiHandler();
-    private Gson gson = new Gson();
 
     private double x = 0;
     private double y = 0;
 
     @FXML
     public Label caption;
-    @FXML
-    private Button openTextField;
 
     @FXML
     private Button firstCancelButton;
@@ -105,8 +101,6 @@ public class CommentController implements Initializable
 
         }
     }
-
-
 
     private void mineComments() throws IOException
     {

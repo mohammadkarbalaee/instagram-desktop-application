@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import sample.backend.api.ApiHandler;
 import sample.backend.api.Request;
 import sample.backend.application.post.Post;
-import sample.frontend.ApplicationRunner;
+import sample.frontend.ClientRunner;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -67,8 +67,8 @@ public class SavepostController
         }
         else
         {
-            Post newPost = new Post(ApplicationRunner.getLoggedInUsername(),caption, LocalDateTime.now());
-            Request savePostRequest = new Request("SAVE_POST", ApplicationRunner.getGson().toJson(newPost));
+            Post newPost = new Post(ClientRunner.getLoggedInUsername(),caption, LocalDateTime.now());
+            Request savePostRequest = new Request("SAVE_POST", ClientRunner.getGson().toJson(newPost));
             ApiHandler apiHandler = new ApiHandler(savePostRequest);
             apiHandler.sendRequest();
             apiHandler.sendPhoto(file);

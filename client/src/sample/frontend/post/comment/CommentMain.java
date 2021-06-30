@@ -9,8 +9,8 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class CommentMain extends Application {
-
+public class CommentMain extends Application
+{
     private double x = 0;
     private double y = 0;
 
@@ -41,8 +41,8 @@ public class CommentMain extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         launch(args);
     }
-
 }

@@ -11,6 +11,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import sample.backend.api.ApiHandler;
 import sample.backend.api.Request;
+import sample.frontend.ClientRunner;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -53,7 +54,7 @@ public class ProfilePicController
         }
         else
         {
-            Request setPicRequest = new Request("SET_PROFILE_PIC", "hasan");
+            Request setPicRequest = new Request("SET_PROFILE_PIC", ClientRunner.getLoggedInUsername());
             ApiHandler apiHandler = new ApiHandler(setPicRequest);
             apiHandler.sendRequest();
             apiHandler.sendPhoto(file);

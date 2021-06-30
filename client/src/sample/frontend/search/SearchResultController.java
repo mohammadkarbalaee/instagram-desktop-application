@@ -22,7 +22,7 @@ public class SearchResultController
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("userProfile/userProfile.fxml")));
         Scene scene = new Scene(root);
         Stage notFoundStage = new Stage();
-        notFoundStage.initStyle(StageStyle.DECORATED);
+        notFoundStage.initStyle(StageStyle.UNDECORATED);
         notFoundStage.setScene(scene);
         notFoundStage.setTitle("alert");
         notFoundStage.show();

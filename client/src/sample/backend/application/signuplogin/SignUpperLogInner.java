@@ -1,15 +1,15 @@
 package sample.backend.application.signuplogin;
 
-import com.google.gson.Gson;
 import sample.backend.api.Request;
 
 import java.io.IOException;
+
+import static sample.frontend.ClientRunner.getGson;
 
 public class SignUpperLogInner
 {
     private final SignUpAuthenticator signUpAuthenticator = new SignUpAuthenticator();
     private User user;
-    private final Gson gson = new Gson();
 
     public SignUpperLogInner(User user)
     {
@@ -21,9 +21,9 @@ public class SignUpperLogInner
         this.user = user;
     }
 
-    public Request makeRequest() throws IOException
+    public Request makeRequest()
     {
-        return new Request("SEND_USER",gson.toJson(user));
+        return new Request("SEND_USER",getGson().toJson(user));
     }
 
     public boolean checkPasswordValidation()
@@ -40,8 +40,6 @@ public class SignUpperLogInner
     {
         return signUpAuthenticator.isNew(user.getUserName());
     }
-
-
 
     public boolean isPasswordMatch() throws IOException
     {

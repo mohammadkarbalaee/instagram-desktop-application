@@ -36,7 +36,6 @@ public class ApiHandler
     public void sendPhoto(BufferedImage postImage) throws IOException
     {
         byte[] byteData = toByteArray(postImage);
-        System.out.println(byteData.length);
         requestPipeline.getDataOutputStream().writeInt(byteData.length);
         requestPipeline.getDataOutputStream().flush();
         requestPipeline.getDataOutputStream().write(byteData);

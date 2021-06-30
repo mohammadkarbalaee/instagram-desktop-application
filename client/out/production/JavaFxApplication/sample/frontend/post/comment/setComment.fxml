@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<?import java.lang.String?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="240.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.post.comment.SetComment">
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="240.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.post.comment.SetComment">
    <children>
-      <Label fx:id="commentLabel" alignment="TOP_LEFT" prefHeight="80.0" prefWidth="240.0">
+      <Label fx:id="commentLabel" alignment="TOP_LEFT" prefHeight="80.0" prefWidth="240.0" stylesheets="@../../feed/css/styles.css">
          <font>
             <Font size="15.0" />
          </font>
+         <styleClass>
+            <String fx:value="whit_background" />
+            <String fx:value="back-ground2" />
+            <String fx:value="rect-round" />
+         </styleClass>
       </Label>
    </children>
 </HBox>

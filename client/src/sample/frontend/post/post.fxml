@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="399.0" stylesheets="@../feed/css/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.feed.PostController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="399.0" stylesheets="@../feed/css/styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.feed.PostController">
    <children>
       <ImageView fx:id="postImage" fitHeight="373.0" fitWidth="398.0" pickOnBounds="true">
          <image>
@@ -39,7 +39,7 @@
                   </Label>
                </children>
             </VBox>
-            <Button mnemonicParsing="false" onAction="#likeBTN" prefHeight="20.0" prefWidth="32.0" style="-fx-background-color: #FFC0CB;" styleClass="mystyle2" stylesheets="@../feed/css/styles.css" text="....   ">
+            <Button mnemonicParsing="false" onAction="#likeBTN" prefHeight="39.0" prefWidth="17.0" style="-fx-background-color: #FFC0CB; -fx-background-radius: 100;" styleClass="mystyle2" stylesheets="@../feed/css/styles.css" text="+">
                <HBox.margin>
                   <Insets left="2.0" />
                </HBox.margin>
@@ -48,7 +48,7 @@
                </padding>
             </Button>
             <Pane prefHeight="75.0" prefWidth="88.0" HBox.hgrow="ALWAYS" />
-            <Button fx:id="addLikeButton" mnemonicParsing="false" onAction="#onAddLikeClick" prefHeight="45.0" prefWidth="40.0" stylesheets="@../feed/css/styles.css">
+            <Button fx:id="addLikeButton" mnemonicParsing="false" onAction="#onAddLikeClick" prefHeight="300.0" prefWidth="100.0" stylesheets="@../feed/css/styles.css">
                <HBox.margin>
                   <Insets right="-40.0" />
                </HBox.margin>

@@ -18,7 +18,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.feed.FeedController">
    <left>
-      <VBox prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #fff;" stylesheets="@css/styles.css" BorderPane.alignment="CENTER">
+      <VBox prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #E8E8E8;" stylesheets="@css/styles.css" BorderPane.alignment="CENTER">
          <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0" spacing="10.0">
             <padding>
                <Insets left="20.0" />
@@ -157,7 +157,7 @@
       </VBox>
    </left>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="primary-color" stylesheets="@css/styles.css" BorderPane.alignment="CENTER">
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #D0D0D0;" stylesheets="@css/styles.css" BorderPane.alignment="CENTER">
          <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0">
             <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="45.0" prefWidth="170.0" spacing="10.0" stylesheets="@css/styles.css">
                <styleClass>
@@ -226,7 +226,7 @@
          </Label>
          <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #DCDCDC;" styleClass="transparent" stylesheets="@css/styles.css" VBox.vgrow="ALWAYS">
             <VBox.margin>
-               <Insets left="20.0" right="20.0" />
+               <Insets left="13.0" right="13.0" />
             </VBox.margin>
             <GridPane fx:id="postGrid">
                <rowConstraints>

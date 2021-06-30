@@ -10,7 +10,7 @@ import javafx.stage.StageStyle;
 import sample.backend.api.ApiHandler;
 import sample.backend.api.RequestPipeline;
 
-public class ApplicationRunner extends Application
+public class ClientRunner extends Application
 {
     private static String loggedInUsername;
     private static String searchedUsername;
@@ -25,7 +25,7 @@ public class ApplicationRunner extends Application
 
     public static void setApiHandler(ApiHandler apiHandler)
     {
-        ApplicationRunner.apiHandler = apiHandler;
+        ClientRunner.apiHandler = apiHandler;
     }
 
     public static String getLoggedInUsername()
@@ -40,7 +40,7 @@ public class ApplicationRunner extends Application
 
     public static void setLoggedInUsername(String loggedInUsername)
     {
-        ApplicationRunner.loggedInUsername = loggedInUsername;
+        ClientRunner.loggedInUsername = loggedInUsername;
     }
 
     public static String getSearchedUsername()
@@ -50,17 +50,17 @@ public class ApplicationRunner extends Application
 
     public static void setSearchedUsername(String searchedUsername)
     {
-        ApplicationRunner.searchedUsername = searchedUsername;
+        ClientRunner.searchedUsername = searchedUsername;
     }
 
     public static void setInChatUsername(String inChatUsername)
     {
-        ApplicationRunner.inChatUsername = inChatUsername;
+        ClientRunner.inChatUsername = inChatUsername;
     }
 
     public static void setGson(Gson gson)
     {
-        ApplicationRunner.gson = gson;
+        ClientRunner.gson = gson;
     }
 
     public static String getInChatUsername()

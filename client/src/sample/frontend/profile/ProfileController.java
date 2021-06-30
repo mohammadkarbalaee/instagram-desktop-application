@@ -18,7 +18,7 @@ import javafx.stage.StageStyle;
 import sample.backend.api.ApiHandler;
 import sample.backend.api.Request;
 import sample.backend.application.post.Post;
-import sample.frontend.ApplicationRunner;
+import sample.frontend.ClientRunner;
 import sample.frontend.feed.PostController;
 
 import java.io.IOException;
@@ -65,22 +65,22 @@ public class ProfileController implements Initializable
 
     private void viewAppearances() throws IOException
     {
-        bio.setText(mineBio(ApplicationRunner.getLoggedInUsername()));
-        username.setText(ApplicationRunner.getLoggedInUsername());
+        bio.setText(mineBio(ClientRunner.getLoggedInUsername()));
+        username.setText(ClientRunner.getLoggedInUsername());
         Request isSetRequest;
-        isSetRequest = new Request("IS_PROFILE_PIC_SET",ApplicationRunner.getLoggedInUsername());
+        isSetRequest = new Request("IS_PROFILE_PIC_SET", ClientRunner.getLoggedInUsername());
         apiHandler.setRequest(isSetRequest);
         apiHandler.sendRequest();
         if (apiHandler.receiveTrueFalse())
         {
-            profileIMG.setImage(mineProfileImage(ApplicationRunner.getLoggedInUsername()));
+            profileIMG.setImage(mineProfileImage(ClientRunner.getLoggedInUsername()));
         }
         else
         {
             profileIMG.setImage(new Image(getClass().getResourceAsStream("../feed/photos/userProf1.png")));
         }
-        numFollowersID.setText(String.valueOf(mineFollowersQuantity(ApplicationRunner.getLoggedInUsername())));
-        numFollowingID.setText(String.valueOf(mineFollowingsQuantity(ApplicationRunner.getLoggedInUsername())));
+        numFollowersID.setText(String.valueOf(mineFollowersQuantity(ClientRunner.getLoggedInUsername())));
+        numFollowingID.setText(String.valueOf(mineFollowingsQuantity(ClientRunner.getLoggedInUsername())));
     }
 
     private String mineBio(String username) throws IOException
@@ -156,10 +156,10 @@ public class ProfileController implements Initializable
         Integer likesQuantity;
         Post mainPostContext;
         String postID;
-        int postsQuantity = minePostsQuantity(ApplicationRunner.getLoggedInUsername());
+        int postsQuantity = minePostsQuantity(ClientRunner.getLoggedInUsername());
         for (int i = 1; i <= postsQuantity; i++)
         {
-            postID = ApplicationRunner.getLoggedInUsername() + "/" + i;
+            postID = ClientRunner.getLoggedInUsername() + "/" + i;
             mainPostContext = minePostBody(postID);
             likesQuantity = mineLikesQuantity(postID);
             commentsQuantity = mineCommentsQuantity(postID);

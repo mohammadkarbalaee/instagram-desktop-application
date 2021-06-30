@@ -1,6 +1,5 @@
 package sample.frontend.register;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -10,12 +9,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.backend.application.signuplogin.SignUpperLogInner;
 import sample.backend.application.signuplogin.User;
-import sample.frontend.ApplicationRunner;
+import sample.frontend.ClientRunner;
 
 import java.io.IOException;
 import java.net.URL;
@@ -30,17 +28,9 @@ public class LoginController implements Initializable {
     @FXML
     private Button cancelButton;
     @FXML
-    private ImageView logoLogin;
-    @FXML
-    private ImageView instagramImageViewer;
-    @FXML
-    private ImageView titleImageViewer;
-    @FXML
     private TextField usernameField;
     @FXML
     private PasswordField passwordField;
-    @FXML
-    private Button okButton;
     @FXML
     private Label doesNotExist;
 
@@ -49,7 +39,7 @@ public class LoginController implements Initializable {
 
     }
 
-    public void cancelButtonOnAction(ActionEvent event)
+    public void cancelButtonOnAction()
     {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
@@ -63,7 +53,7 @@ public class LoginController implements Initializable {
         {
             if (loginner.isPasswordMatch())
             {
-                ApplicationRunner.setLoggedInUsername(usernameField.getText());
+                ClientRunner.setLoggedInUsername(usernameField.getText());
                 gotoMain();
             }
             else
@@ -82,7 +72,7 @@ public class LoginController implements Initializable {
 
     public void gotoMain() throws IOException
     {
-        ApplicationRunner.setLoggedInUsername(usernameField.getText());
+        ClientRunner.setLoggedInUsername(usernameField.getText());
         Parent root = FXMLLoader.load(getClass().getResource("../feed/feed.fxml"));
         Stage mainStage = new Stage();
         mainStage.initStyle(StageStyle.DECORATED);

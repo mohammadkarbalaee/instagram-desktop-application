@@ -4,8 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import sample.backend.application.comment.Comment;
 
-public class SetComment {
-
+public class SetComment
+{
     @FXML
     private Label commentLabel;
 
