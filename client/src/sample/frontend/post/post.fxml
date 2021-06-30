@@ -39,12 +39,12 @@
                   </Label>
                </children>
             </VBox>
-            <Button mnemonicParsing="false" onAction="#likeBTN" prefHeight="39.0" prefWidth="27.0" styleClass="mystyle2" stylesheets="@../feed/css/styles.css" text="...">
+            <Button mnemonicParsing="false" onAction="#likeBTN" prefHeight="20.0" prefWidth="32.0" style="-fx-background-color: #FFC0CB;" styleClass="mystyle2" stylesheets="@../feed/css/styles.css" text="....   ">
                <HBox.margin>
-                  <Insets left="5.0" />
+                  <Insets left="2.0" />
                </HBox.margin>
                <padding>
-                  <Insets left="10.0" />
+                  <Insets left="5.0" />
                </padding>
             </Button>
             <Pane prefHeight="75.0" prefWidth="88.0" HBox.hgrow="ALWAYS" />
