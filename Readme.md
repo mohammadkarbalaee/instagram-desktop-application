@@ -6,7 +6,7 @@
 
 ## Developers
 
-Update Galaxy team:
+**Update Galaxy team:**
 - [**Muhammad Karbalaee Shabani**](https://gitlab.com/muhammadksht)
 - [**Reyhaneh Saffar**](https://gitlab.com/rsf122456)
 - [**Hasan Roknabady**](https://gitlab.com/HasanRoknabady)
