@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0"
             prefWidth="750.0" style="-fx-background-color: #DCDCDC;" stylesheets="@../feed/css/styles.css"
-            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="sample.frontend.register.LoginController">
    <ImageView fx:id="logoLogin" fitHeight="450.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@photos/logoLogin.jpg"/>
