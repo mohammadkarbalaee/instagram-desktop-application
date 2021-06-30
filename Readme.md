@@ -23,9 +23,9 @@ Our application is meant to be a template of Instagram desktop application.
   
 - GUI 
 
-  contains an impressive GUI designed and implemented by JavaFX technology
+  contains an impressive GUI, designed and implemented by JavaFX technology
 
-  -  login and sign up stages neatly designed
+  -  login and sign up
   
 <p align="center">
   <img src = "readmeContext/signup.png" height = "350">
