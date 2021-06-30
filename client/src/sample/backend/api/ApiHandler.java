@@ -153,7 +153,7 @@ public class ApiHandler
         {
             if (likeObjects[i].equals(""))
             {
-                break;
+                return null;
             }
             Like temp = gson.fromJson(likeObjects[i],Like.class);
             likers[i] = temp.getLiker();

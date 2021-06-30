@@ -556,4 +556,21 @@ public class DatabaseManager
         statement.close();
         return "false";
     }
+
+    public static String getIsLiked(String post, String liker) throws SQLException
+    {
+        String query = "SELECT * FROM likes WHERE liker = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(query);
+        statement.setString(1,liker);
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next())
+        {
+            if (resultSet.getString("post").equals(post))
+            {
+                return "true";
+            }
+        }
+        statement.close();
+        return "false";
+    }
 }

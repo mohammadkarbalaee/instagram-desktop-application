@@ -168,6 +168,9 @@ public class RequestTerminal implements Runnable
                 case "IS_FOLLOWED":
                     followersHandler.deliverIsFollowed(request.getBody());
                     break;
+                case "IS_LIKED":
+                    likeHandler.deliverIsLiked(request.getBody());
+                    break;
             }
         }
     }
