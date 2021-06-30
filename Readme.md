@@ -21,7 +21,7 @@ This project is developed as the final project for our advanced Java programming
 Our application is meant to be a template of Instagram desktop application.
 ### Features
   
-- #####GUI 
+- GUI 
 
   contains an impressive GUI designed and implemented by JavaFX technology
 
