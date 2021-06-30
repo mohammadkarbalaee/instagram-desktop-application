@@ -3,7 +3,7 @@ package sample.frontend.post.like.liker;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import sample.backend.application.followerfollowing.Follower;
+import sample.backend.application.like.Liker;
 
 
 public class LikerController
@@ -15,9 +15,9 @@ public class LikerController
     private Label userID;
 
 
-    public void setData(Follower follower)
+    public void setData(Liker liker)
     {
-        profileID.setImage(follower.getProfilePic());
-        userID.setText(follower.getUsername());
+        profileID.setImage(liker.getProfilePic());
+        userID.setText(liker.getUsername());
     }
 }

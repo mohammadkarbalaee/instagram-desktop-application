@@ -54,7 +54,7 @@ public class FeedController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        username.setText("hasan");
+        username.setText(ApplicationRunner.getLoggedInUsername());
         try
         {
             viewProfilePic();

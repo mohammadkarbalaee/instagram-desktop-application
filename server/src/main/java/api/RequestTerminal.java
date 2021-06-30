@@ -16,7 +16,6 @@ import application.requestahandlers.searches.SearchHandler;
 import application.requestahandlers.signupslogins.LoginHandler;
 import application.requestahandlers.signupslogins.SignupHandler;
 import com.google.gson.Gson;
-import com.mysql.cj.log.Log;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -142,7 +141,7 @@ public class RequestTerminal implements Runnable
                 case "GET_LIKES_QUANTITY":
                     likeHandler.deliverLikesQuantity(request.getBody());
                     break;
-                case "GET_LIKES":
+                case "GET_LIKERS":
                     likeHandler.deliverLikes(request.getBody());
                     break;
                 case "GET_IS_LIKE_NEW":

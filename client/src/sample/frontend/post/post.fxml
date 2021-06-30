@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="365.0" stylesheets="@../feed/css/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.feed.PostController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="365.0" stylesheets="@../feed/css/styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.feed.PostController">
    <children>
       <ImageView fx:id="postImage" fitHeight="365.0" fitWidth="365.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -25,7 +25,7 @@
                   <Image url="@../feed/photos/userProf1.png" />
                </image>
             </ImageView>
-            <VBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="290.0">
+            <VBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="167.0">
                <children>
                   <Label fx:id="owner" prefHeight="25.0" prefWidth="86.0" text=" user 1">
                      <font>
@@ -51,11 +51,11 @@
                   <String fx:value="shadow" />
                </styleClass>
             </Button>
-            <HBox prefHeight="65.0" prefWidth="127.0" spacing="10.0">
+            <HBox prefHeight="65.0" prefWidth="223.0" spacing="10.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="65.0" prefWidth="93.0">
+                  <HBox alignment="CENTER" prefHeight="65.0" prefWidth="46.0">
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="38.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../feed/photos/heart_10MMM0px.png" />
                            </image>

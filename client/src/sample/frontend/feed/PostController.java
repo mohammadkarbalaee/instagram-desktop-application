@@ -1,11 +1,18 @@
 package sample.frontend.feed;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import sample.backend.application.post.Post;
 import sample.frontend.post.comment.CommentController;
 import sample.frontend.post.comment.CommentMain;
+import sample.frontend.post.like.LikeController;
 
 import java.io.IOException;
 
@@ -16,6 +23,8 @@ public class PostController
     public Label date;
     @FXML
     public ImageView profileImage;
+    @FXML
+    public Button likeID;
     @FXML
     private ImageView postImage;
 
@@ -47,9 +56,15 @@ public class PostController
         date.setText(dateTimeToShow);
     }
 
-    public void likeBTN()
+    public void likeBTN() throws IOException
     {
-
+        LikeController.setPostID(post.getPostID());
+        Parent root = FXMLLoader.load(getClass().getResource("../post/like/like.fxml"));
+        Scene scene = new Scene(root);
+        Stage likeStage = new Stage();
+        likeStage.initStyle(StageStyle.DECORATED);
+        likeStage.setScene(scene);
+        likeStage.show();
     }
 
     public void commentBTN() throws Exception
