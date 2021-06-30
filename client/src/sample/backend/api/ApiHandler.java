@@ -115,10 +115,18 @@ public class ApiHandler
         String json = RequestPipeline.getDataInputStream().readUTF();
         Response responseObject = gson.fromJson(json,Response.class);
         String body = responseObject.getBody();
+        if (body == null)
+        {
+            return null;
+        }
         String[] messageObjects = body.split("/");
         Message[] messages = new Message[messageObjects.length];
         for (int i = 0; i < messages.length; i++)
         {
+            if (messageObjects[0].equals(""))
+            {
+                return null;
+            }
             messages[i] = gson.fromJson(messageObjects[i],Message.class);
         }
         return messages;

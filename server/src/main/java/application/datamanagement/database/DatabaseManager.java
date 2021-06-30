@@ -295,7 +295,15 @@ public class DatabaseManager
     {
         String getMessagesQuery = "SELECT * FROM " + chatRoom.getChatroomTableName();
         Statement statement = CONNECTION.createStatement();
-        ResultSet resultSet = statement.executeQuery(getMessagesQuery);
+        ResultSet resultSet = null;
+        try
+        {
+            resultSet = statement.executeQuery(getMessagesQuery);
+        }
+        catch (SQLException throwables)
+        {
+            return null;
+        }
         String messagesJson = "";
         Message message;
         String sender;

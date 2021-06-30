@@ -256,9 +256,14 @@ public class UserProfileController implements Initializable
         return SwingFXUtils.toFXImage(apiHandler.receivePhoto(),null);
     }
 
-    public void onMessageClick()
+    public void onMessageClick() throws IOException
     {
-
+        ApplicationRunner.setInChatUsername(ApplicationRunner.getSearchedUsername());
+        Parent root = FXMLLoader.load(getClass().getResource("../../directmessage/chatroom.fxml"));
+        Stage chatroomStage = new Stage();
+        chatroomStage.setTitle("ChatRoom");
+        chatroomStage.setScene(new Scene(root));
+        chatroomStage.show();
     }
 
     public void onFollowClick() throws IOException
