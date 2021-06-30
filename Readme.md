@@ -20,12 +20,12 @@ This project is developed as the final project for our advanced Java programming
 \
 Our application is meant to be a template of Instagram desktop application.
 ### Features
+  
+- #####GUI 
 
-**1:GUI** 
-\
   contains an impressive GUI designed and implemented by JavaFX technology
 
-login and sign up stages neatly designed
+  -  login and sign up stages neatly designed
   
 <p align="center">
   <img src = "readmeContext/signup.png" height = "350">
