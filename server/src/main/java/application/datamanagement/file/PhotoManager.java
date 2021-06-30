@@ -40,6 +40,4 @@ public class PhotoManager
         File file = new File(photoAddress);
         return ImageIO.read(file);
     }
-
-
 }

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -14,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.post.like.LikeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.frontend.post.like.LikeController">
     <top>
         <VBox prefHeight="112.0" prefWidth="500.0" BorderPane.alignment="TOP_LEFT">
             <HBox prefHeight="29.0" prefWidth="176.0" spacing="5.0">
@@ -29,24 +27,6 @@
                         <Insets top="5.0" />
                     </HBox.margin>
                     <Image url="@photo/instagram-text.png" />
-                </ImageView>
-            </HBox>
-            <HBox prefHeight="74.0" prefWidth="287.0" spacing="10.0" stylesheets="@../../feed/css/styles.css">
-                <VBox.margin>
-                    <Insets bottom="5.0" left="220.0" right="15.0" />
-                </VBox.margin>
-                <styleClass>
-                    <String fx:value="shadow" />
-                    <String fx:value="whit_background" />
-                    <String fx:value="rect-round" />
-                </styleClass>
-                <TextField prefHeight="38.0" prefWidth="250.0" promptText=" Search" styleClass="transparent" stylesheets="@../../feed/css/styles.css">
-                    <font>
-                        <Font name="System Italic" size="15.0" />
-                    </font>
-                </TextField>
-                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@photo/search_100px.png" />
                 </ImageView>
             </HBox>
             <Label prefHeight="36.0" prefWidth="173.0" text="     likes">
@@ -68,7 +48,7 @@
                 <HBox.margin>
                     <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                 </HBox.margin>
-                <GridPane fx:id="gridPaneFollow" prefHeight="43.0" prefWidth="0.0">
+                <GridPane fx:id="gridPaneLike" prefHeight="43.0" prefWidth="0.0">
                     <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>

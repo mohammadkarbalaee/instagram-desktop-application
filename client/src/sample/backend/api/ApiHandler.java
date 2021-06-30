@@ -142,18 +142,23 @@ public class ApiHandler
         return comments;
     }
 
-    public Like[] receiveLikes() throws IOException
+    public String[] receiveLikes() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
         Response responseObject = gson.fromJson(json,Response.class);
         String body = responseObject.getBody();
         String[] likeObjects = body.split("@");
-        Like[] likes = new Like[likeObjects.length];
-        for (int i = 0; i < likes.length; i++)
+        String[] likers = new String[likeObjects.length];
+        for (int i = 0; i < likers.length; i++)
         {
-            likes[i] = gson.fromJson(likeObjects[i],Like.class);
+            if (likeObjects[i].equals(""))
+            {
+                return null;
+            }
+            Like temp = gson.fromJson(likeObjects[i],Like.class);
+            likers[i] = temp.getLiker();
         }
-        return likes;
+        return likers;
     }
 
     public String[] receiveFollowersFollowings() throws IOException
