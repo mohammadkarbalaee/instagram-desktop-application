@@ -1,7 +1,6 @@
 package sample.frontend.register;
 
 import javafx.embed.swing.SwingFXUtils;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -32,7 +31,7 @@ public class ProfilePicController
     public Label alert;
     private File file = null;
 
-    public void onFileChooserClick(ActionEvent actionEvent) throws IOException
+    public void onFileChooserClick() throws IOException
     {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PNG photo","*.png"));

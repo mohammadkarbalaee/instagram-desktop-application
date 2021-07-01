@@ -31,6 +31,10 @@ Our application is meant to be a template of Instagram desktop application.
       <img src = "readmeContext/signup.png" height = "350">
     </p>
 
-  -  main feed 
-  
+  -  main feed
+    <p align="center">
+      <img src = "readmeContext/main.png" height = "350">
+    </p>
+
+  -  
                                                                                                                                                                                                                                                                                                        

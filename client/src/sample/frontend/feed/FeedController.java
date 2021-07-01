@@ -156,7 +156,12 @@ public class FeedController implements Initializable
         Request getFollowingsRequest = new Request("GET_FOLLOWINGS", ClientRunner.getLoggedInUsername());
         apiHandler.setRequest(getFollowingsRequest);
         apiHandler.sendRequest();
-        Collections.addAll(followings,apiHandler.receiveFollowersFollowings());
+        String[] followingsArray = apiHandler.receiveFollowersFollowings();
+        if (followingsArray == null)
+        {
+            return;
+        }
+        Collections.addAll(followings,followingsArray);
     }
 
     private Post minePostBody(String postID) throws IOException

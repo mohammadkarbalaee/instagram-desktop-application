@@ -1,5 +1,6 @@
 package sample.frontend.feed;
 
+import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -60,6 +61,8 @@ public class PostController
 
         updateLikeStatus();
 
+        mineProfilePic(post.getOwner());
+
         postImage.setImage(post.getImage());
         owner.setText(post.getOwner());
         likes.setText(post.getLikesQuantity().toString());
@@ -70,6 +73,14 @@ public class PostController
                 post.getDateTime().getHour() + ":" +
                 post.getDateTime().getMinute() + "min";
         date.setText(dateTimeToShow);
+    }
+
+    private void mineProfilePic(String postOwner) throws IOException
+    {
+        Request request = new Request("GET_PROFILE_PIC", postOwner);
+        apiHandler.setRequest(request);
+        apiHandler.sendRequest();
+        profileImage.setImage(SwingFXUtils.toFXImage(apiHandler.receivePhoto(),null));
     }
 
     private void updateLikeStatus() throws IOException
@@ -132,4 +143,5 @@ public class PostController
         apiHandler.sendRequest();
         updateLikeStatus();
     }
+
 }

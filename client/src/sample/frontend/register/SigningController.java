@@ -47,7 +47,7 @@ public class SigningController implements Initializable
         User newUser = new User(username.getText(),email.getText(),password.getText());
         SignUpperLogInner signUpper =  new SignUpperLogInner(newUser);
         ApiHandler apiHandler = new ApiHandler();
-        if (signUpper.checkUserUniqueness())
+        if (!signUpper.checkUserUniqueness())
         {
             if(signUpper.checkPasswordValidation())
             {

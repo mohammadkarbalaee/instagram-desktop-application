@@ -86,7 +86,7 @@ public class UserProfileController implements Initializable
         {
             profileIMG.setImage(new Image(getClass().getResourceAsStream("../../feed/photos/userProf1.png")));
         }
-        FollowerFollowingPack pack = new FollowerFollowingPack("hasan","reyhan",false);
+        FollowerFollowingPack pack = new FollowerFollowingPack(ClientRunner.getSearchedUsername(),ClientRunner.getLoggedInUsername(),false);
         request = new Request("IS_FOLLOWED",getGson().toJson(pack));
         apiHandler.setRequest(request);
         apiHandler.sendRequest();
@@ -270,15 +270,17 @@ public class UserProfileController implements Initializable
     {
         if (followButton.getText().equals("unfollow"))
         {
-            FollowerFollowingPack pack = new FollowerFollowingPack(ClientRunner.getLoggedInUsername(), ClientRunner.getSearchedUsername(),true);
+            FollowerFollowingPack pack = new FollowerFollowingPack(ClientRunner.getSearchedUsername(),ClientRunner.getLoggedInUsername(),true);
             apiHandler.setRequest(new Request("SEND_FOLLOWER",getGson().toJson(pack)));
             apiHandler.sendRequest();
+            followButton.setText("follow");
         }
         else
         {
-            FollowerFollowingPack pack = new FollowerFollowingPack(ClientRunner.getLoggedInUsername(), ClientRunner.getSearchedUsername(),false);
+            FollowerFollowingPack pack = new FollowerFollowingPack(ClientRunner.getSearchedUsername(),ClientRunner.getLoggedInUsername(),false);
             apiHandler.setRequest(new Request("SEND_FOLLOWER",getGson().toJson(pack)));
             apiHandler.sendRequest();
+            followButton.setText("unfollow");
         }
     }
 
