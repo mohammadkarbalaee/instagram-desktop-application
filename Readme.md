@@ -44,7 +44,7 @@ Our application is meant to be a template of Instagram desktop application.
 
   - _user search_
     <p align="center">
-      <img src = "readmeContext/search.png" height = "350">
+      <img src = "readmeContext/search.png" height = "100">
     </p>
   
   - _profile_
