@@ -230,7 +230,7 @@ public class UserProfileController implements Initializable
 
     public void onFollowerClick() throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("../../profile/follow/followersStage/followersStage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("follow/followersStage/followersStage.fxml"));
         Scene scene = new Scene(root);
         Stage followersStage = new Stage();
         followersStage.initStyle(StageStyle.DECORATED);
@@ -240,7 +240,7 @@ public class UserProfileController implements Initializable
 
     public void onFollowingClick() throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("../../profile/follow/followingStage/followingsStage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("follow/followingStage/followingsStage.fxml"));
         Scene scene = new Scene(root);
         Stage profileStage = new Stage();
         profileStage.initStyle(StageStyle.DECORATED);

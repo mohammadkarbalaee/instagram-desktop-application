@@ -78,7 +78,7 @@ public class FollowingsController implements Initializable
 
     private void mineData() throws IOException
     {
-        mineMainPack(ClientRunner.getSearchedUsername());
+        mineMainPack(ClientRunner.getLoggedInUsername());
         Image profilePic;
         Request isSetRequest;
         for (int i = 0; i < followingsUsernames.size(); i++)

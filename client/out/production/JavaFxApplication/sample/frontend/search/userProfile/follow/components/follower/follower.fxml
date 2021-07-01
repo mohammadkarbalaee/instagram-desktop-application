@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<VBox fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="55.0" prefWidth="450.0" spacing="10.0" stylesheets="@../../../../../feed/css/styles.css"
+      xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="sample.frontend.search.userProfile.follow.components.follower.FollowerController">
+   <styleClass>
+      <String fx:value="rect-round"/>
+      <String fx:value="user-list-color"/>
+   </styleClass>
+   <ImageView fx:id="profileID" fitHeight="46.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+      <VBox.margin>
+         <Insets bottom="4.0" left="10.0" top="5.0"/>
+      </VBox.margin>
+      <Image url="@../../../../../feed/photos/userProf1.png"/>
+   </ImageView>
+   <Label fx:id="userID" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="39.0"
+          prefWidth="201.0" stylesheets="@../../../../../feed/css/styles.css" text="user 1">
+      <VBox.margin>
+         <Insets bottom="12.0" left="70.0" top="-65.0"/>
+      </VBox.margin>
+      <padding>
+         <Insets right="5.0" top="18.0"/>
+      </padding>
+      <font>
+         <Font name="System Bold Italic" size="15.0"/>
+      </font>
+      <styleClass>
+         <String fx:value="transparent"/>
+         <String fx:value="rect-round"/>
+         <String fx:value="shadow"/>
+         <String fx:value="whit_background"/>
+      </styleClass>
+   </Label>
+   <VBox prefHeight="200.0" prefWidth="100.0"/>
+</VBox>
