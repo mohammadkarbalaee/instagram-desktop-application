@@ -131,6 +131,8 @@ the race condition and data loss
 - __**Documentation**__
 
 All classes and methods and packages are documented using Javadoc and used by team members during the development process
+\
+[Link to documentations](http://janax-artwork.ir/)
 
 ### Acknowledgements
 
