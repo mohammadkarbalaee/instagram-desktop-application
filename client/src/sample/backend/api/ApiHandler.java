@@ -14,33 +14,63 @@ import java.io.InputStream;
 
 import static sample.frontend.ClientRunner.getGson;
 
+/**
+ * @author Muhammad Karbalaee Shabani
+ * this class contains methods that handle requests and responses when communicating with server
+ */
+
 public class ApiHandler
 {
     private Request request;
 
+    /**
+     * empty constructor for usecases whithout given request when making new object
+     */
     public ApiHandler() {}
 
+    /**
+     * constructor to initialize a new instance with an object of Request
+     * @param request
+     */
     public ApiHandler(Request request)
     {
         this.request = request;
     }
 
+    /**
+     * a setter for Request field
+     * @param request
+     */
     public void setRequest(Request request)
     {
         this.request = request;
     }
 
+    /**
+     * to send the request to server through socket
+     * @throws IOException
+     */
     public void sendRequest() throws IOException
     {
         RequestPipeline.getDataOutputStream().writeUTF(getGson().toJson(request));
         RequestPipeline.getDataOutputStream().flush();
     }
 
+    /**
+     *
+     * @return the request field
+     */
     public Request getRequest()
     {
         return request;
     }
 
+    /**
+     * used to receive the response to uniqueness of a user.
+     * this method is used after an "IS_NEW"-labeled request
+     * @return a boolean which is true if the user is new and otherwise,false
+     * @throws IOException
+     */
     public boolean receiveIsNew() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
@@ -56,6 +86,11 @@ public class ApiHandler
         }
     }
 
+    /**
+     * this method is used after a request of "GET_SEARCH_RESULT"
+     * @return an string containing the username of the searched user
+     * @throws IOException
+     */
     public String receiveSearchResult() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
@@ -71,6 +106,13 @@ public class ApiHandler
         }
     }
 
+    /**
+     *
+     * @return this method is used with every request that acquires a single integer as the response
+     * namely,"GET_FOLLOWERS_COUNT" "GET_FOLLOWINGS_COUNT" "GET_POSTS_QUANTITY" "GET_COMMENTS_QUANTITY"
+     *"GET_LIKES_QUANTITY"
+     * @throws IOException
+     */
     public Integer receiveQuantity() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
@@ -79,6 +121,11 @@ public class ApiHandler
         return Integer.parseInt(body);
     }
 
+    /**
+     *
+     * @return the non-jason string received from "GET_PASSWORD" "GET_PASSWORD requests
+     * @throws IOException
+     */
     public String receivePlainString() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
@@ -86,6 +133,11 @@ public class ApiHandler
         return responseObject.getBody();
     }
 
+    /**
+     *
+     * @return a post which was requested with "GET_POST"
+     * @throws IOException
+     */
     public Post receiveWantedPost() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
@@ -94,6 +146,12 @@ public class ApiHandler
         return getGson().fromJson(body,Post.class);
     }
 
+    /**
+     *
+     * @param file an object of File class. returned from the FileChooser object in setProfilePic
+     *             and in savePost
+     * @throws IOException
+     */
     public void sendPhoto(File file) throws IOException
     {
         BufferedImage bufferedImage = ImageIO.read(file);
@@ -102,6 +160,11 @@ public class ApiHandler
         RequestPipeline.getDataOutputStream().flush();
     }
 
+    /**
+     * every photo is received with this method after being requested
+     * @return a BufferedImage
+     * @throws IOException
+     */
     public BufferedImage receivePhoto() throws IOException
     {
         byte[] byteData = new byte[RequestPipeline.getDataInputStream().readInt()];
@@ -110,6 +173,11 @@ public class ApiHandler
         return ImageIO.read(byteStream);
     }
 
+    /**
+     * to receive the the requested data by "GET_MESSAGES" request
+     * @return and Array of Messages
+     * @throws IOException
+     */
     public Message[] receiveChatroomMessages() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
@@ -132,6 +200,11 @@ public class ApiHandler
         return messages;
     }
 
+    /**
+     * to receive the the requested data by "GET_COMMENTS" request
+     * @return and Array of Comments
+     * @throws IOException
+     */
     public Comment[] receiveComments() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
@@ -150,6 +223,11 @@ public class ApiHandler
         return comments;
     }
 
+    /**
+     * receives the respone for "GET_LIKERS" request
+     * @return an String array of usernames of the people who liked the post
+     * @throws IOException
+     */
     public String[] receiveLikes() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
@@ -169,6 +247,11 @@ public class ApiHandler
         return likers;
     }
 
+    /**
+     * receives the respone for "GET_FOLLOWERS" or "GET_FOLLOWINGS" request
+     * @return an String of the usernames of the people whom either followers or followings
+     * @throws IOException
+     */
     public String[] receiveFollowersFollowings() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
@@ -181,6 +264,12 @@ public class ApiHandler
         return followingsUsernames.split("/");
     }
 
+    /**
+     * every request which expects a boolean as the response is handled by this method
+     * namely,"IS_FOLLOWED" "IS_LIKED" "IS_PROFILE_PIC_SET"
+     * @return a boolean
+     * @throws IOException
+     */
     public boolean receiveTrueFalse() throws IOException
     {
         String json = RequestPipeline.getDataInputStream().readUTF();
