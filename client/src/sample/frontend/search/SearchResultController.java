@@ -20,7 +20,7 @@ public class SearchResultController
     public void onClick() throws IOException
     {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("userProfile/userProfile.fxml")));
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root,1290,900);
         Stage notFoundStage = new Stage();
         notFoundStage.initStyle(StageStyle.DECORATED);
         notFoundStage.setScene(scene);
