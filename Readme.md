@@ -86,5 +86,54 @@ classes and fxml files of its own. we tried to obey the SOLID rules as much as w
   <img src = "readmeContext/oop.png" height = "350">
 </p>
 
-- Version Control tools
+- __**Version Control tools**__
 
+Our team work was organized and merged and developed upon Git and we made separate branches for different kind of tasks
+and after implementing an specific part of the project the team members would push the changes and notifying the
+maintainer of the project to merge their changes after checking their provided code.
+
+- __**Team work**__
+
+The entire project was developed under four main phases
+- 1st phase: designing and building an API
+- 2nd phase: implementing follow,profile,login,sign up features
+- 3rd phase: implementing direct,post,comment,like features
+- 4th phase: adding additional features and testing and debugging the whole project
+
+Each phase very well organized and divided into separate tasks assigned to a developer and having a due date
+\
+[Task Boards](https://gitlab.com/update-galaxy-group/instagram-app/-/boards/2842705)
+\
+[Git graph](https://gitlab.com/update-galaxy-group/instagram-app/-/network/master)
+\
+[Contributions](https://gitlab.com/update-galaxy-group/instagram-app/-/graphs/master)
+
+- __**Database**__
+
+For this project Mysql database is used for storing data on server.
+\
+Here is the schema:
+<p align="center">
+  <img src = "readmeContext/db.png" height = "350">
+</p>
+
+- __**Socket Programming**__
+
+This project consists of two different applications, a client app and a server app developed by the socket programming tools and 
+concpets in Java
+
+- __**Multi-threading**__
+
+To handle numerous clients simultaneously on server-side multi-threading concepts are used. clients are 
+handled by being passed to a threadpool and shared methods between multiple threads are synchronized to avoid 
+the race condition and data loss
+
+###Acknowledgements
+
+I myself thank my teammates,[Reyhaneh Saffar](https://gitlab.com/rsf122456) and [Hasan Roknabady](https://gitlab.com/HasanRoknabady) ,for this great cooperation and their contributions, also the high-quality codes
+that they provided and further developed the project.
+\
+I also should thank my mentors, [Ali Aliabadi](https://gitlab.com/ali-aliabadi) 
+and [Saeid Cheshmi](https://gitlab.com/s.ch), for helping me during the Advanced Programming course at SBU.
+\
+Finally I thank Prof. Kheradpisheh, the master of this course, for the great and high-quality course that they provided us with.
