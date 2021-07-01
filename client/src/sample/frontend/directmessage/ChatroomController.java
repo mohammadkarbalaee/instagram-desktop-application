@@ -21,6 +21,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 
+/**
+ * @author Reyhaneh Saffar
+ * this class and its methods control a chatroom
+ */
 public class ChatroomController implements Initializable
 {
     private ArrayList<Message> messages = new ArrayList<>();
@@ -38,7 +42,11 @@ public class ChatroomController implements Initializable
     @FXML
     private VBox chatRoomVBox;
 
-
+    /**
+     * the methods which gets automatically called when starting the stage
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
@@ -53,6 +61,11 @@ public class ChatroomController implements Initializable
         showChat();
     }
 
+    /**
+     * this method fills the List messages with the array of messages that it
+     * gets from the server and database
+     * @throws IOException
+     */
     private void mineChats() throws IOException
     {
         usernameLabel.setText(ClientRunner.getInChatUsername());
@@ -68,6 +81,12 @@ public class ChatroomController implements Initializable
         Collections.addAll(messages,messagesArray);
     }
 
+    /**
+     * is called when the send button is pressed.
+     * sends a new message to server and adds it to the messages arrayList in this class
+     * for the rest of the chat
+     * @throws IOException
+     */
     @FXML
     public void sendButtonOnAction() throws IOException
     {
@@ -82,6 +101,10 @@ public class ChatroomController implements Initializable
         messageTextField.clear();
     }
 
+    /**
+     * shows the chats with making objects of Hbox and shows then upon the
+     * chatroom stages one by one
+     */
     public void showChat()
     {
         if (messages.size() != 0)
@@ -109,6 +132,9 @@ public class ChatroomController implements Initializable
         }
     }
 
+    /**
+     * called after send button to show the newly added chats
+     */
     public void continueChat()
     {
         int index = 0;
@@ -144,6 +170,9 @@ public class ChatroomController implements Initializable
         }
     }
 
+    /**
+     * to exit the chatroom
+     */
     @FXML
     public void closeButtonOnAction()
     {

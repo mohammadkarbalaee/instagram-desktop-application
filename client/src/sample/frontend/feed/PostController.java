@@ -26,7 +26,10 @@ import java.io.InputStream;
 
 import static sample.frontend.ClientRunner.getGson;
 
-
+/**
+ * @author Hasan Roknabady
+ * to handle events and actions of a post
+ */
 public class PostController
 {
     private ApiHandler apiHandler = new ApiHandler();
@@ -54,7 +57,11 @@ public class PostController
     private Post post;
     private boolean isLiked;
 
-
+    /**
+     * to set up all the field and datas within each post
+     * @param post is got from the feedController class
+     * @throws IOException
+     */
     public void setData(Post post) throws IOException
     {
         this.post = post;
@@ -75,6 +82,12 @@ public class PostController
         date.setText(dateTimeToShow);
     }
 
+    /**
+     * @author Muhammad Karbalaee Shabani
+     * gets profile pic from server and sets it up in the imageView
+     * @param postOwner
+     * @throws IOException
+     */
     private void mineProfilePic(String postOwner) throws IOException
     {
         Request request = new Request("GET_PROFILE_PIC", postOwner);
@@ -83,6 +96,11 @@ public class PostController
         profileImage.setImage(SwingFXUtils.toFXImage(apiHandler.receivePhoto(),null));
     }
 
+    /**
+     * updates the status of the like button
+     * @author Muhammad Karbalaee Shabani
+     * @throws IOException
+     */
     private void updateLikeStatus() throws IOException
     {
         Like like = new Like(ClientRunner.getLoggedInUsername(),post.getPostID());
@@ -104,6 +122,10 @@ public class PostController
         }
     }
 
+    /**
+     * shows the stage of likes. this stage lists every user that has liked this post
+     * @throws IOException
+     */
     public void likeBTN() throws IOException
     {
         LikeController.setPostID(post.getPostID());
@@ -115,6 +137,10 @@ public class PostController
         likeStage.show();
     }
 
+    /**
+     * shows the comment section
+     * @throws Exception
+     */
     public void commentBTN() throws Exception
     {
         CommentController.setPostID(post.getPostID());
@@ -123,7 +149,10 @@ public class PostController
         CommentMain commentRunner = new CommentMain();
         commentRunner.setUp("comment.fxml");
     }
-
+    /**
+     * adds a like for the post and sends this to server
+     * @throws IOException
+     */
     public void onAddLikeClick() throws IOException
     {
         Like newLike = new Like(ClientRunner.getLoggedInUsername(),post.getPostID());
@@ -143,5 +172,4 @@ public class PostController
         apiHandler.sendRequest();
         updateLikeStatus();
     }
-
 }

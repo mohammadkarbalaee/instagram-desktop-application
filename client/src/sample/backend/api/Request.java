@@ -1,5 +1,9 @@
 package sample.backend.api;
 
+/**
+ * @author Muhammad Karbalaee Shabani
+ * a class, representing a Request object
+ */
 public class Request
 {
     private String label;

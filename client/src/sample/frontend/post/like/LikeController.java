@@ -18,7 +18,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
-
+/**
+ * @author Muhammad Karbalaee Shabani
+ * controls the like stage
+ */
 public class LikeController implements Initializable
 {
     @FXML
@@ -81,6 +84,10 @@ public class LikeController implements Initializable
         }
     }
 
+    /**
+     * gets data from server and sets it
+     * @throws IOException
+     */
     private void mineData() throws IOException
     {
         mineMainPack(postID);
@@ -119,6 +126,12 @@ public class LikeController implements Initializable
         Collections.addAll(likersUsernames,likers);
     }
 
+    /**
+     * gets the photo of post likers from the server
+     * @param username
+     * @return
+     * @throws IOException
+     */
     private Image mineProfileImage(String username) throws IOException
     {
         Request getProfilePicRequest = new Request("GET_PROFILE_PIC",username);

@@ -27,6 +27,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 
+/**
+ * @author Muhammad Karbalaee Shabani
+ * controls the profile stage
+ */
 public class ProfileController implements Initializable
 {
     @FXML
@@ -63,6 +67,11 @@ public class ProfileController implements Initializable
         viewPosts();
     }
 
+    /**
+     * shows all the appearances of the app by getting data from server and setting them into
+     * proper variables and fields
+     * @throws IOException
+     */
     private void viewAppearances() throws IOException
     {
         bio.setText(mineBio(ClientRunner.getLoggedInUsername()));
@@ -83,6 +92,12 @@ public class ProfileController implements Initializable
         numFollowingID.setText(String.valueOf(mineFollowingsQuantity(ClientRunner.getLoggedInUsername())));
     }
 
+    /**
+     *
+     * @param username
+     * @return the bio of a user from server
+     * @throws IOException
+     */
     private String mineBio(String username) throws IOException
     {
         Request request = new Request("GET_BIO",username);
@@ -91,6 +106,12 @@ public class ProfileController implements Initializable
         return apiHandler.receivePlainString();
     }
 
+    /**
+     *
+     * @param username
+     * @return the numbers of followers a user has
+     * @throws IOException
+     */
     private Integer mineFollowersQuantity(String username) throws IOException
     {
         Request request = new Request("GET_FOLLOWERS_COUNT",username);
@@ -99,6 +120,12 @@ public class ProfileController implements Initializable
         return apiHandler.receiveQuantity();
     }
 
+    /**
+     *
+     * @param username
+     * @return the number of followings a user has
+     * @throws IOException
+     */
     private Integer mineFollowingsQuantity(String username) throws IOException
     {
         Request request = new Request("GET_FOLLOWINGS_COUNT",username);
@@ -107,6 +134,9 @@ public class ProfileController implements Initializable
         return apiHandler.receiveQuantity();
     }
 
+    /**
+     * shows posts on by one in rows and columns
+     */
     private void viewPosts()
     {
         int columns = 0, rows = 1;
@@ -149,6 +179,10 @@ public class ProfileController implements Initializable
         }
     }
 
+    /**
+     * a method to call other mine methods to get all the needed data from the server
+     * @throws IOException
+     */
     private void mineData() throws IOException
     {
         Image postImage;
@@ -177,6 +211,12 @@ public class ProfileController implements Initializable
         return apiHandler.receiveWantedPost();
     }
 
+    /**
+     *
+     * @param postID
+     * @return how many likes a post has
+     * @throws IOException
+     */
     private Integer mineLikesQuantity(String postID) throws IOException
     {
         Request getLikesQuantityRequest = new Request("GET_LIKES_QUANTITY",postID);
@@ -185,6 +225,12 @@ public class ProfileController implements Initializable
         return apiHandler.receiveQuantity();
     }
 
+    /**
+     *
+     * @param postID
+     * @return how many comments a post has
+     * @throws IOException
+     */
     private Integer mineCommentsQuantity(String postID) throws IOException
     {
         Request getCommentsQuantityRequest = new Request("GET_COMMENTS_QUANTITY",postID);
@@ -193,6 +239,12 @@ public class ProfileController implements Initializable
         return apiHandler.receiveQuantity();
     }
 
+    /**
+     *
+     * @param postID
+     * @return the image of a post
+     * @throws IOException
+     */
     private Image minePostImage(String postID) throws IOException
     {
         Request getPostImageRequest = new Request("GET_POST_IMAGE",postID);
@@ -201,6 +253,12 @@ public class ProfileController implements Initializable
         return SwingFXUtils.toFXImage(apiHandler.receivePhoto(),null);
     }
 
+    /**
+     *
+     * @param username
+     * @return how many posts a user has
+     * @throws IOException
+     */
     private Integer minePostsQuantity(String username) throws IOException
     {
         Request getPostsQuantityRequest = new Request("GET_POSTS_QUANTITY", username);
@@ -209,6 +267,10 @@ public class ProfileController implements Initializable
         return apiHandler.receiveQuantity();
     }
 
+    /**
+     * shows the lists of followers a user has
+     * @throws IOException
+     */
     public void onFollowerClick() throws IOException
     {
         Parent root = FXMLLoader.load(getClass().getResource("follow/followersStage/followersStage.fxml"));
@@ -218,7 +280,10 @@ public class ProfileController implements Initializable
         followersStage.setScene(scene);
         followersStage.show();
     }
-
+    /**
+     * shows the lists of followings a user has
+     * @throws IOException
+     */
     public void onFollowingClick() throws IOException
     {
         Parent root = FXMLLoader.load(getClass().getResource("follow/followingStage/followingsStage.fxml"));
@@ -229,6 +294,12 @@ public class ProfileController implements Initializable
         profileStage.show();
     }
 
+    /**
+     *
+     * @param username
+     * @return the profile image of the user
+     * @throws IOException
+     */
     private Image mineProfileImage(String username) throws IOException
     {
         Request getProfilePicRequest = new Request("GET_PROFILE_PIC",username);

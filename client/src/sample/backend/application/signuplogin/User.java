@@ -1,5 +1,9 @@
 package sample.backend.application.signuplogin;
 
+/**
+ * @author Muhammad Karbalaee Shabani
+ * a class to represent a User as an object
+ */
 public class User
 {
     private String userName;

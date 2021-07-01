@@ -9,6 +9,10 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
+/**
+ * @author Reyhaneh Saffar
+ * is the runner class for stages in comment section
+ */
 public class CommentMain extends Application
 {
     private double x = 0;

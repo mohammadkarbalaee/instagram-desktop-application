@@ -5,6 +5,12 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
+/**
+ * @author Muhammad Karabalaee Shabani
+ * a class to represent a RequestPipeline, which is socket connnetion
+ * between the server and client and the input/output streams on this socket to send requests and
+ * receive the related responses
+ */
 public class RequestPipeline
 {
     private static Socket socket;

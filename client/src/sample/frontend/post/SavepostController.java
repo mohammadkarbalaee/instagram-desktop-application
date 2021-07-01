@@ -20,6 +20,10 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
+/**
+ * @author Muhammad Karbalaee Shabani
+ * controls the events and action within the savePost stage
+ */
 public class SavepostController
 {
     @FXML
@@ -37,6 +41,11 @@ public class SavepostController
     @FXML
     public Button cancelButton;
 
+    /**
+     * opens a filechooser in which the user can pick a photo of format png
+     * after being picked, this method will set the File to the file field in this class
+     * @throws IOException
+     */
     public void onFileChooserClick() throws IOException
     {
         FileChooser fileChooser = new FileChooser();
@@ -45,6 +54,11 @@ public class SavepostController
         updateImageView(file);
     }
 
+    /**
+     * sets the imageview to the picture that user has chose to post
+     * @param file
+     * @throws IOException
+     */
     private void updateImageView(File file) throws IOException
     {
         BufferedImage bufferedImage = ImageIO.read(file);
@@ -52,12 +66,19 @@ public class SavepostController
         imageView.setImage(image);
     }
 
+    /**
+     * closes the stage
+     */
     public void onCancelClick()
     {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * sends a new post to server
+     * @throws IOException
+     */
     public void onSaveClick() throws IOException
     {
         caption = captionField.getText();

@@ -1,5 +1,8 @@
 package sample.backend.application.comment;
-
+/**
+ * @author Muhammad Karbalaee Shabani
+ * a class, representing a Comment object
+ */
 public class Comment
 {
     private String text;

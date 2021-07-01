@@ -5,7 +5,10 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import sample.backend.application.like.Liker;
 
-
+/**
+ * @author Muhammad Karbalaee Shabani
+ * controls the liker stage
+ */
 public class LikerController
 {
     @FXML
@@ -14,7 +17,10 @@ public class LikerController
     @FXML
     private Label userID;
 
-
+    /**
+     *
+     * @param liker is got for like controller
+     */
     public void setData(Liker liker)
     {
         profileID.setImage(liker.getProfilePic());

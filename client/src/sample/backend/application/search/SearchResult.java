@@ -1,7 +1,10 @@
 package sample.backend.application.search;
 
 import javafx.scene.image.Image;
-
+/**
+ * @author Muhammad Karbalaee Shabani
+ * a class, representing a SearchResult object
+ */
 public class SearchResult
 {
     private String username;

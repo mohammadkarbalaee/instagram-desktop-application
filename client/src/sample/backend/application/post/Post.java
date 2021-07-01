@@ -3,7 +3,11 @@ package sample.backend.application.post;
 import javafx.scene.image.Image;
 
 import java.time.LocalDateTime;
-
+/**
+ * @author Muhammad Karbalaee Shabani
+ * a class, representing a Post object.
+ * This class implements Comparable interface,so that being sorted with Collections.sort()
+ */
 public class Post implements Comparable<Post>
 {
     private String postID;
@@ -94,6 +98,12 @@ public class Post implements Comparable<Post>
         this.dateTime = dateTime;
     }
 
+    /**
+     * this method is overrided from Comparable interface. to give the instances of this
+     * class comparable to one another.
+     * @param secondPost
+     * @return either 1 -1 or 0 as a comparison number
+     */
     @Override
     public int compareTo(Post secondPost)
     {

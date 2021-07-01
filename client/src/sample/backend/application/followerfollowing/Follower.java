@@ -1,7 +1,10 @@
 package sample.backend.application.followerfollowing;
 
 import javafx.scene.image.Image;
-
+/**
+ * @author Muhammad Karbalaee Shabani
+ * a class, representing a Follower object
+ */
 public class Follower
 {
     private String username;

@@ -1,5 +1,8 @@
 package sample.backend.api;
-
+/**
+ * @author Muhammad Karbalaee Shabani
+ * a class, representing a Response object
+ */
 public class Response
 {
     private String body;

@@ -18,6 +18,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 
+/**
+ * @author Reyhaneh Saffar
+ * controls events and actions in comment stage
+ */
 public class CommentController implements Initializable
 {
     private static String postID;
@@ -102,6 +106,10 @@ public class CommentController implements Initializable
         }
     }
 
+    /**
+     * gets all comments of a post from server
+     * @throws IOException
+     */
     private void mineComments() throws IOException
     {
         caption.setText(captionText);
@@ -112,12 +120,19 @@ public class CommentController implements Initializable
         Collections.addAll(comments,commentsArray);
     }
 
+    /**
+     * shows the add new comment stage
+     * @throws IOException
+     */
     public void openTextFieldOnAction() throws IOException
     {
         CommentMain main = new CommentMain();
         main.setUp("sendComment.fxml");
     }
 
+    /**
+     * closes the entire comment stage
+     */
     public void firstCancelButtonOnAction()
     {
         Stage stage = (Stage) firstCancelButton.getScene().getWindow();

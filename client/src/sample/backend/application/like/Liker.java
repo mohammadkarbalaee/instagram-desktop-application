@@ -1,7 +1,10 @@
 package sample.backend.application.like;
 
 import javafx.scene.image.Image;
-
+/**
+ * @author Muhammad Karbalaee Shabani
+ * a class, representing a Liker object
+ */
 public class Liker
 {
     private String username;

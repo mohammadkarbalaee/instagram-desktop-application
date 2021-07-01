@@ -12,6 +12,10 @@ import java.io.IOException;
 
 import static sample.frontend.ClientRunner.getGson;
 
+/**
+ * @author Reyhaneh Saffar
+ * controls events and action in sendComment stage
+ */
 public class SendCommentController
 {
     private ApiHandler apiHandler = new ApiHandler();
@@ -24,6 +28,10 @@ public class SendCommentController
     @FXML
     private Button secondCancelButton;
 
+    /**
+     * sends the new comment to server
+     * @throws IOException
+     */
     public void sendButtonOnAction() throws IOException
     {
         Comment newComment = new Comment(leaveComment.getText(),CommentController.getOwner(),CommentController.getPostID());

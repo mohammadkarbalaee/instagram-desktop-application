@@ -4,6 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import sample.backend.application.directmessage.Message;
 
+/**
+ * @author Reyhaneh Saffar
+ * representing every message which appears on the screen
+ */
 public class MessageController
 {
 

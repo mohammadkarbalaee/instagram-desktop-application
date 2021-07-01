@@ -1,5 +1,8 @@
 package sample.backend.application.followerfollowing;
-
+/**
+ * @author Muhammad Karbalaee Shabani
+ * a class, representing a FollowerFollowingPack object
+ */
 public class FollowerFollowingPack
 {
     private String username;

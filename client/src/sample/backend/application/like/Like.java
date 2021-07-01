@@ -1,5 +1,8 @@
 package sample.backend.application.like;
-
+/**
+ * @author Muhammad Karbalaee Shabani
+ * a class, representing a Like object
+ */
 public class Like
 {
     private String liker;

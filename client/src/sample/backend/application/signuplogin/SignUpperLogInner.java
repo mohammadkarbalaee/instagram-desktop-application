@@ -6,6 +6,10 @@ import java.io.IOException;
 
 import static sample.frontend.ClientRunner.getGson;
 
+/**
+ * @author Muhammad Karbalaee Shabani
+ * a class in with methods in charge of validation and finally loggin in a user
+ */
 public class SignUpperLogInner
 {
     private final SignUpAuthenticator signUpAuthenticator = new SignUpAuthenticator();

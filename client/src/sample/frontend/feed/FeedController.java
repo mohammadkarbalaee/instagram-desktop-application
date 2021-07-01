@@ -28,6 +28,10 @@ import java.util.Collections;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+/**
+ * @author Hasan Roknabady
+ * contains methods to control events and action within the Feed stage
+ */
 public class FeedController implements Initializable
 {
     @FXML
@@ -66,6 +70,11 @@ public class FeedController implements Initializable
         viewPosts();
     }
 
+    /**
+     * gets the profile pic of the logged in user and shows it in the provided imageView
+     * @author Muahmmad Karbalaee Shabani
+     * @throws IOException
+     */
     private void viewProfilePic() throws IOException
     {
         Request request = new Request("IS_PROFILE_PIC_SET", ClientRunner.getLoggedInUsername());
@@ -85,6 +94,10 @@ public class FeedController implements Initializable
         }
     }
 
+    /**
+     * @author Hasan Roknabady
+     * views the posts of the people who the logged in user follows
+     */
     private void viewPosts()
     {
         int columns = 0, rows = 1;
@@ -127,6 +140,12 @@ public class FeedController implements Initializable
         }
     }
 
+    /**
+     * gets datas of every post one by one from server and makes new instances of this class Post
+     * and adds them to the arraylist field in this class
+     * @author Muhammad Karbalaee Shabani
+     * @throws IOException
+     */
     private void mineData() throws IOException
     {
         mineFollowings();
@@ -151,6 +170,11 @@ public class FeedController implements Initializable
         }
     }
 
+    /**
+     * gets all the followings of the logged in user
+     * @author Muhammad Karbalaee Shabani
+     * @throws IOException
+     */
     private void mineFollowings() throws IOException
     {
         Request getFollowingsRequest = new Request("GET_FOLLOWINGS", ClientRunner.getLoggedInUsername());
@@ -164,6 +188,13 @@ public class FeedController implements Initializable
         Collections.addAll(followings,followingsArray);
     }
 
+    /**
+     * gets the caption and username of a post wrapped in an incomplete instance of Post
+     * @author Muhammad Karbalaee Shabani
+     * @param postID
+     * @return a Post
+     * @throws IOException
+     */
     private Post minePostBody(String postID) throws IOException
     {
         Request getPostBodyRequest = new Request("GET_POST",postID);
@@ -172,6 +203,12 @@ public class FeedController implements Initializable
         return apiHandler.receiveWantedPost();
     }
 
+    /**
+     *
+     * @param postID
+     * @return how many likes a post has
+     * @throws IOException
+     */
     private Integer mineLikesQuantity(String postID) throws IOException
     {
         Request getLikesQuantityRequest = new Request("GET_LIKES_QUANTITY",postID);
@@ -180,6 +217,12 @@ public class FeedController implements Initializable
         return apiHandler.receiveQuantity();
     }
 
+    /**
+     *
+     * @param postID
+     * @return how many comments a post has
+     * @throws IOException
+     */
     private Integer mineCommentsQuantity(String postID) throws IOException
     {
         Request getCommentsQuantityRequest = new Request("GET_COMMENTS_QUANTITY",postID);
@@ -188,6 +231,12 @@ public class FeedController implements Initializable
         return apiHandler.receiveQuantity();
     }
 
+    /**
+     *
+     * @param postID
+     * @return what the image of this post is
+     * @throws IOException
+     */
     private Image minePostImage(String postID) throws IOException
     {
         Request getPostImageRequest = new Request("GET_POST_IMAGE",postID);
@@ -196,6 +245,12 @@ public class FeedController implements Initializable
         return SwingFXUtils.toFXImage(apiHandler.receivePhoto(),null);
     }
 
+    /**
+     *
+     * @param username
+     * @return how many posts a user has. here all users are in the followings list of the logged in user
+     * @throws IOException
+     */
     private Integer minePostsQuantity(String username) throws IOException
     {
         Request getPostsQuantityRequest = new Request("GET_POSTS_QUANTITY", username);
@@ -204,6 +259,10 @@ public class FeedController implements Initializable
         return apiHandler.receiveQuantity();
     }
 
+    /**
+     * opens up the add post stage
+     * @throws IOException
+     */
     @FXML
     public void onAddPostClick() throws IOException
     {
@@ -215,6 +274,10 @@ public class FeedController implements Initializable
         savePostStage.show();
     }
 
+    /**
+     * opens up the setPic stage
+     * @throws IOException
+     */
     @FXML
     public void onSetPicClick() throws IOException
     {
@@ -226,6 +289,10 @@ public class FeedController implements Initializable
         savePostStage.show();
     }
 
+    /**
+     * opens up the profile stage
+     * @throws IOException
+     */
     @FXML
     public void onProfileClick() throws IOException
     {
@@ -238,6 +305,10 @@ public class FeedController implements Initializable
         profileStage.show();
     }
 
+    /**
+     * opens ups the alert stage
+     * @throws IOException
+     */
     public void onSearchClick() throws IOException
     {
         ClientRunner.setSearchedUsername(searchField.getText());
@@ -268,6 +339,10 @@ public class FeedController implements Initializable
         }
     }
 
+    /**
+     * opens up the bio setting stage
+     * @throws IOException
+     */
     public void onBioClick() throws IOException
     {
         Parent root = FXMLLoader.load(getClass().getResource("../register/setbio.fxml"));

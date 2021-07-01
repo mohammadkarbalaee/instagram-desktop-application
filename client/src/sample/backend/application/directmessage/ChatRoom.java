@@ -1,5 +1,8 @@
 package sample.backend.application.directmessage;
-
+/**
+ * @author Muhammad Karbalaee Shabani
+ * a class, representing a ChatRoom object
+ */
 public class ChatRoom
 {
     private String sender;

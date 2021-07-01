@@ -1,5 +1,8 @@
 package sample.backend.application.directmessage;
-
+/**
+ * @author Muhammad Karbalaee Shabani
+ * a class, representing a Message object
+ */
 public class Message
 {
     private String sender;
