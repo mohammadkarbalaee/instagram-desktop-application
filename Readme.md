@@ -128,7 +128,7 @@ To handle numerous clients simultaneously on server-side multi-threading concept
 handled by being passed to a threadpool and shared methods between multiple threads are synchronized to avoid 
 the race condition and data loss
 
-###Acknowledgements
+### Acknowledgements
 
 I myself thank my teammates,[Reyhaneh Saffar](https://gitlab.com/rsf122456) and [Hasan Roknabady](https://gitlab.com/HasanRoknabady) ,for this great cooperation and their contributions, also the high-quality codes
 that they provided and further developed the project.
