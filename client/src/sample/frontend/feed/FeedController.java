@@ -267,4 +267,13 @@ public class FeedController implements Initializable
             notFoundStage.show();
         }
     }
+
+    public void onBioClick() throws IOException
+    {
+        Parent root = FXMLLoader.load(getClass().getResource("../register/setbio.fxml"));
+        Stage bioStage = new Stage();
+        bioStage.initStyle(StageStyle.DECORATED);
+        bioStage.setScene(new Scene(root));
+        bioStage.show();
+    }
 }

@@ -58,6 +58,7 @@ public class ProfilePicController
             apiHandler.sendRequest();
             apiHandler.sendPhoto(file);
         }
+
     }
 
     private void updateImageView(File file) throws IOException

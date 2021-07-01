@@ -581,4 +581,14 @@ public class DatabaseManager
         statement.close();
         return "false";
     }
+
+    synchronized public static void addBio(User user) throws SQLException
+    {
+        String insertQuery = "UPDATE users SET bio = ? WHERE username = ?";
+        PreparedStatement statement = CONNECTION.prepareStatement(insertQuery);
+        statement.setString(1,user.getBio());
+        statement.setString(2,user.getUserName());
+        statement.execute();
+        statement.close();
+    }
 }

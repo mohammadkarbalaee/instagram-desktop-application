@@ -171,6 +171,9 @@ public class RequestTerminal implements Runnable
                 case "IS_LIKED":
                     likeHandler.deliverIsLiked(request.getBody());
                     break;
+                case "ADD_BIO":
+                    loginHandler.setBio(request.getBody());
+                    break;
             }
         }
     }
