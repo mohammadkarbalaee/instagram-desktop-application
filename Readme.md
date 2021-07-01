@@ -63,6 +63,15 @@ Our application is meant to be a template of Instagram desktop application.
     <p align="center">
       <img src = "readmeContext/post.png" height = "350">
     </p>
+    <p align="center">
+      <img src = "readmeContext/post1.jpg" height = "350">
+    </p>
+    <p align="center">
+      <img src = "readmeContext/post2.jpg" height = "350">
+    </p>
+    <p align="center">
+      <img src = "readmeContext/post3.jpg" height = "350">
+    </p>
   - _likes list_
     <p align="center">
       <img src = "readmeContext/likeslist.png" height = "350">
