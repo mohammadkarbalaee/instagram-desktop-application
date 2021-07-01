@@ -21,7 +21,7 @@ This project is developed as the final project for our advanced Java programming
 Our application is meant to be a template of Instagram desktop application.
 ### Features
   
-- Graphical User Interface
+- __**Graphical User Interface**__
   \
   \
   contains an impressive GUI, designed and implemented by JavaFX technology
@@ -75,4 +75,16 @@ Our application is meant to be a template of Instagram desktop application.
     <p align="center">
       <img src = "readmeContext/setbio.png" height = "350">
     </p>
-- Object-orientation
+- __**Object-orientation**__
+
+this project is implemented in an absolutely object-oriented approach. since we used Java for this project,
+we tried to use the full power of Java in terms of object orientation. the project is very well organized and maintainable
+because every part of the program is developed within a separate package obviously-named. Each package consists of 
+classes and fxml files of its own. we tried to obey the SOLID rules as much as we could in this project.
+
+<p align="center">
+  <img src = "readmeContext/oop.png" height = "350">
+</p>
+
+- Version Control tools
+
