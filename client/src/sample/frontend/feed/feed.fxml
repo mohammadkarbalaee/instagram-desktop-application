@@ -45,8 +45,8 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="setBioButtom" onAction="#onBioClick" mnemonicParsing="false" text="set bio" />
-            <Button fx:id="setpicButton" mnemonicParsing="false" onAction="#onSetPicClick" prefHeight="42.0" prefWidth="100.0" text="set profile pic" />
+            <Button fx:id="setBioButtom" mnemonicParsing="false" onAction="#onBioClick" prefHeight="40.0" prefWidth="85.0" styleClass="mystyle2" stylesheets="@css/styles.css" text="set bio" />
+            <Button fx:id="setpicButton" mnemonicParsing="false" onAction="#onSetPicClick" prefHeight="41.0" prefWidth="158.0" styleClass="mystyle2" stylesheets="@css/styles.css" text="set profile pic" />
          </VBox>
          <VBox prefHeight="536.0" prefWidth="300.0" spacing="15.0">
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0" stylesheets="@css/styles.css">

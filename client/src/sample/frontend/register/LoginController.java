@@ -76,7 +76,7 @@ public class LoginController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("../feed/feed.fxml"));
         Stage mainStage = new Stage();
         mainStage.initStyle(StageStyle.DECORATED);
-        mainStage.setScene(new Scene(root));
+        mainStage.setScene(new Scene(root,1600,900));
         mainStage.show();
     }
 }

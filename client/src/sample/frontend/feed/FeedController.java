@@ -230,7 +230,7 @@ public class FeedController implements Initializable
     public void onProfileClick() throws IOException
     {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../profile/profile.fxml")));
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root,1290,900);
         Stage profileStage = new Stage();
         profileStage.initStyle(StageStyle.DECORATED);
         profileStage.setScene(scene);
